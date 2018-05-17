@@ -1,0 +1,391 @@
+entity EmBorrowingTypes {
+	id Integer required,
+    code String required,
+    name String required,
+    description String,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant
+}
+
+entity EmContractTypes {
+	id Integer required,
+	code String required,
+	name String required,
+	description String,
+	createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant
+}
+
+
+entity EmEmpAccomplishments {
+	id Integer required,
+    title String required,
+    description String,
+    organization String,
+    location String,
+    association String,
+    ongoing String,
+    link String,
+    dateFrom LocalDate,
+    dateTo LocalDate,
+    occupation String,
+    proficiency String,
+    licenceNumber String,
+    rating Integer,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant,
+    idAccomplishmentType Integer
+}
+
+entity EmEmpBankAccounts {
+	id Integer required,
+    accountNumber String required,
+    status String,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant,
+    idBank Integer
+}
+
+entity EmEmpBorrowings {
+	id Integer required,
+    title String required,
+    description String,
+    serialNumber String,
+    dateFrom LocalDate required,
+    chargedBy String,
+    dateTo LocalDate,
+    dischargedBy String,
+    damage String,
+    damagedByEmployee String,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant
+}
+
+entity EmEmpCitizenships {
+	id Integer required
+    createdBy String
+    createdAt Instant
+    updatedBy String
+    updatedAt Instant
+}
+
+entity EmEmpContacts {
+	id Integer required
+    contact String
+    description String
+    createdBy String
+    createdAt Instant
+    updatedBy String
+    updatedAt Instant
+}
+
+entity EmEmpDisabilities {
+	id Integer required
+    description String
+    percentage Double
+    createdBy String
+    createdAt Instant
+    updatedBy String
+    updatedAt Instant
+}
+
+entity EmEmpDocuments{
+    id Integer required,
+    name String required,
+    description String,
+    dateCreated LocalDate required,
+    validFrom LocalDate,
+    validTo LocalDate,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant,
+    idDocumentType Integer,
+    idDocumentLink Integer
+}
+
+entity EmEmpEmgContacts {
+	id Integer required
+    firstName String
+    lastName String
+    createdBy String
+    createdAt Instant
+    updatedBy String
+    updatedAt Instant
+    phoneNumber String
+    email String
+}
+
+entity EmEmpFamilies {
+	id Integer required,
+    name String required,
+	middleName String,
+    surname String,
+    maidenName String,
+    identificationNumber String,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant,
+    idFamily Integer
+}
+
+entity EmEmpIdentifications {
+	id Integer required,
+    identificationNumber String required,
+    jurisdiction String,
+    validThrough LocalDate,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant,
+    idIdentification Integer,
+    idRegion Integer
+}
+
+entity EmEmpInjuries {
+	id Integer required,
+    description String,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant
+}
+
+entity EmEmpMetaData {
+	id Integer required
+    title String
+    value String
+    displayvalue String
+    ordering Double
+    createdBy String
+    createdAt Instant
+    updatedBy String
+    updatedAt Instant
+}
+
+entity EmEmpNotes {
+	id Integer required,
+    title String required,
+    decsription String,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant
+}
+
+entity EmEmpOrgWorkPlaces{
+	id Integer required,
+    dateFrom LocalDate required,
+    dateTo LocalDate,
+    workHistoryCoefficient Integer,
+	createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant,
+    idOrgWorkPlace Integer
+}
+
+entity EmEmpPreviousJobs {
+	id Int required
+    company String
+    position String
+    dateFrom LocalDate
+    dateTo LocalDate
+    reasonOfLeaving String
+    managerPosition String
+    lengthOfServiceYears Integer
+    lengthOfServiceMonths Integer
+    lengthOfServiceDays Integer
+    createdBy String
+    createdAt Instant
+    updatedBy String
+    updatedAt Instant
+}
+
+entity EmEmpResidences {
+	id Integer required
+    address String
+    dateFrom LocalDate
+    datoTo LocalDate
+    addressWork String
+    createdBy String
+    createdAt Instant
+    updatedBy String
+    updatedAt Instant
+}
+
+entity EmEmpRewards {
+	id Integer required,
+    description String,
+    dateReward LocalDate,
+    amount Integer,
+    rewardedBy String,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant
+}
+
+entity EmEmpSalaries {
+	id Integer required,
+    dateFrom LocalDate required,
+    dateTo LocalDate,
+    salaryAmount Integer,
+    salaryCoefficient Integer,
+    workHistoryCoefficient Integer,
+ 	createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant,
+    idWorkPlace Integer
+}
+
+entity EmEmpSchools {
+	id Integer required,
+    dateFrom LocalDate,
+    dateTo LocalDate,
+    major String,
+    degree String,
+    grade Integer,
+    description String,
+  	createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant,
+    idQualification Integer
+}
+
+entity EmEmpSkills {
+	id Integer required,
+    description String,
+    dateSkill LocalDate,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant,
+    idSkill Integer,
+    idGrade Integer
+}
+
+entity EmEmpTypes {
+	id Integer required,
+	code String required,
+	name String required,
+	description String,
+	createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant
+}
+
+entity EmEmployees {
+	id Integer required,
+    code String required,
+    name String required,
+    idUser Integer,
+    middleName String,
+    surname String,
+    maidenName String,
+    disabilityDegree Integer,
+    ethnicGroup String,
+    gender String,
+    residentialSituation String,
+    maritalStatus String,
+    bloodGroup String,
+    dateOfBirth LocalDate,
+    hireDate LocalDate,
+    ssn String,
+    taxNumber String,
+    imagePath String,
+    phoneNumber String,
+    email String,
+    personalPhoneNumber String,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant,
+    idLegalEntity Integer,
+    idQualification Integer
+}
+
+entity EmInjuryTypes {
+	id Integer required,
+    code String required,
+    name String required,
+    description String,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant
+}
+
+entity EmPenalties {
+	id Integer required,
+    description String,
+    dateFrom LocalDate,
+    dateTo LocalDate,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant
+}
+
+entity EmRewardTypes {
+	id Integer required,
+    code String required,
+    name String required,
+    description String,
+    createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant
+}
+
+entity EmStatuses {
+	id Integer required,
+	code String required,
+	name String required,
+	description String,
+	createdBy String,
+    createdAt Instant,
+    updatedBy String,
+    updatedAt Instant
+}
+
+relationship OneToOne {
+	EmEmpBorrowings{idEmployee} to EmEmployees
+    EmEmpBorrowings{idBorrowing(name)} to EmBorrowingTypes
+    EmEmpFamilies{idEmployee} to EmEmployees
+    EmEmpIdentifications{idEmployee} to EmEmployees
+    EmEmpInjuries{idEmployee} to EmEmployees
+    EmEmpInjuries{idInjury(name)} to EmInjuryTypes
+    EmEmpRewards{idEmployee} to EmEmployees
+    EmEmpRewards{idReward(name)} to EmRewardTypes
+    EmEmpSkills{idEmployee} to EmEmployees
+    EmPenalties{idEmployee} to EmEmployees
+	EmEmpNotes{idEmployee} to EmEmployees
+	EmEmpDocuments{idEmployee} to EmEmployees
+	EmEmpAccomplishments{idEmployee} to EmEmployees
+    EmEmpSchools{idEmployee} to EmEmployees
+	EmEmpSalaries{idEmployee} to EmEmployees
+    EmEmpSalaries{idContractType(name)} to EmContractTypes
+	EmEmpOrgWorkPlaces{idEmployee} to EmEmployees
+    EmEmpOrgWorkPlaces{idContractType(name)} to EmContractTypes
+	EmEmpBankAccounts{idEmployee} to EmEmployees
+    EmEmployees{idEmploymentType(name)} to EmEmpTypes
+    EmEmployees{idStatus(name)} to EmStatuses
+}
+
+paginate * with pagination
+dto * with mapstruct
