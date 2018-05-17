@@ -5,6 +5,49 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100417_added_entity_EmBorrowingTypes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100418_added_entity_EmContractTypes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100419_added_entity_EmEmpAccomplishments.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100420_added_entity_EmEmpBankAccounts.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100421_added_entity_EmEmpBorrowings.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100422_added_entity_EmEmpCitizenships.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100423_added_entity_EmEmpContacts.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100424_added_entity_EmEmpDisabilities.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100425_added_entity_EmEmpDocuments.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100426_added_entity_EmEmpEmgContacts.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100427_added_entity_EmEmpFamilies.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100428_added_entity_EmEmpIdentifications.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100429_added_entity_EmEmpInjuries.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100430_added_entity_EmEmpMetaData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100431_added_entity_EmEmpNotes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100432_added_entity_EmEmpOrgWorkPlaces.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100433_added_entity_EmEmpPreviousJobs.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100434_added_entity_EmEmpResidences.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100435_added_entity_EmEmpRewards.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100436_added_entity_EmEmpSalaries.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100437_added_entity_EmEmpSchools.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100438_added_entity_EmEmpSkills.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100439_added_entity_EmEmpTypes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100440_added_entity_EmEmployees.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100441_added_entity_EmInjuryTypes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100442_added_entity_EmPenalties.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100443_added_entity_EmRewardTypes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100444_added_entity_EmStatuses.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180517100419_added_entity_constraints_EmEmpAccomplishments.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100420_added_entity_constraints_EmEmpBankAccounts.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100421_added_entity_constraints_EmEmpBorrowings.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100425_added_entity_constraints_EmEmpDocuments.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100427_added_entity_constraints_EmEmpFamilies.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100428_added_entity_constraints_EmEmpIdentifications.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100429_added_entity_constraints_EmEmpInjuries.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100431_added_entity_constraints_EmEmpNotes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100432_added_entity_constraints_EmEmpOrgWorkPlaces.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100435_added_entity_constraints_EmEmpRewards.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100436_added_entity_constraints_EmEmpSalaries.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100437_added_entity_constraints_EmEmpSchools.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100438_added_entity_constraints_EmEmpSkills.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100440_added_entity_constraints_EmEmployees.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180517100442_added_entity_constraints_EmPenalties.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
