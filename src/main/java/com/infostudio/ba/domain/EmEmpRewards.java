@@ -16,7 +16,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "em_emp_rewards")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class EmEmpRewards implements Serializable {
+public class EmEmpRewards extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -36,18 +36,6 @@ public class EmEmpRewards implements Serializable {
 
     @Column(name = "rewarded_by")
     private String rewardedBy;
-
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "created_at")
-    private Instant createdAt;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
-    @Column(name = "updated_at")
-    private Instant updatedAt;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -118,58 +106,6 @@ public class EmEmpRewards implements Serializable {
         this.rewardedBy = rewardedBy;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public EmEmpRewards createdBy(String createdBy) {
-        this.createdBy = createdBy;
-        return this;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public EmEmpRewards createdAt(Instant createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public EmEmpRewards updatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-        return this;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public EmEmpRewards updatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public EmEmployees getIdEmployee() {
         return idEmployee;
     }
@@ -225,10 +161,6 @@ public class EmEmpRewards implements Serializable {
             ", dateReward='" + getDateReward() + "'" +
             ", amount=" + getAmount() +
             ", rewardedBy='" + getRewardedBy() + "'" +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
             "}";
     }
 }

@@ -17,7 +17,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "eeb")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class EmEmpBorrowings implements Serializable {
+public class EmEmpBorrowings extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -54,18 +54,6 @@ public class EmEmpBorrowings implements Serializable {
 
     @Column(name = "damaged_by_employee")
     private String damagedByEmployee;
-
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "created_at")
-    private Instant createdAt;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
-    @Column(name = "updated_at")
-    private Instant updatedAt;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -201,58 +189,6 @@ public class EmEmpBorrowings implements Serializable {
         this.damagedByEmployee = damagedByEmployee;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public EmEmpBorrowings createdBy(String createdBy) {
-        this.createdBy = createdBy;
-        return this;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public EmEmpBorrowings createdAt(Instant createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public EmEmpBorrowings updatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-        return this;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public EmEmpBorrowings updatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public EmEmployees getIdEmployee() {
         return idEmployee;
     }
@@ -313,10 +249,6 @@ public class EmEmpBorrowings implements Serializable {
             ", dischargedBy='" + getDischargedBy() + "'" +
             ", damage='" + getDamage() + "'" +
             ", damagedByEmployee='" + getDamagedByEmployee() + "'" +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
             "}";
     }
 }

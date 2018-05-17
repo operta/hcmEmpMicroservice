@@ -17,7 +17,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "eed")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class EmEmpDocuments implements Serializable {
+public class EmEmpDocuments extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -42,18 +42,6 @@ public class EmEmpDocuments implements Serializable {
 
     @Column(name = "valid_to")
     private LocalDate validTo;
-
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "created_at")
-    private Instant createdAt;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
-    @Column(name = "updated_at")
-    private Instant updatedAt;
 
     @Column(name = "id_document_type")
     private Integer idDocumentType;
@@ -139,58 +127,6 @@ public class EmEmpDocuments implements Serializable {
         this.validTo = validTo;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public EmEmpDocuments createdBy(String createdBy) {
-        this.createdBy = createdBy;
-        return this;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public EmEmpDocuments createdAt(Instant createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public EmEmpDocuments updatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-        return this;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public EmEmpDocuments updatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public Integer getIdDocumentType() {
         return idDocumentType;
     }
@@ -260,10 +196,6 @@ public class EmEmpDocuments implements Serializable {
             ", dateCreated='" + getDateCreated() + "'" +
             ", validFrom='" + getValidFrom() + "'" +
             ", validTo='" + getValidTo() + "'" +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
             ", idDocumentType=" + getIdDocumentType() +
             ", idDocumentLink=" + getIdDocumentLink() +
             "}";

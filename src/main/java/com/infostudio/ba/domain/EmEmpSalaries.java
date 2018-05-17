@@ -17,7 +17,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "ees")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class EmEmpSalaries implements Serializable {
+public class EmEmpSalaries extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -41,18 +41,6 @@ public class EmEmpSalaries implements Serializable {
 
     @Column(name = "work_history_coefficient")
     private Integer workHistoryCoefficient;
-
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "created_at")
-    private Instant createdAt;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
-    @Column(name = "updated_at")
-    private Instant updatedAt;
 
     @Column(name = "id_work_place")
     private Integer idWorkPlace;
@@ -139,58 +127,6 @@ public class EmEmpSalaries implements Serializable {
         this.workHistoryCoefficient = workHistoryCoefficient;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public EmEmpSalaries createdBy(String createdBy) {
-        this.createdBy = createdBy;
-        return this;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public EmEmpSalaries createdAt(Instant createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public EmEmpSalaries updatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-        return this;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public EmEmpSalaries updatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public Integer getIdWorkPlace() {
         return idWorkPlace;
     }
@@ -260,10 +196,6 @@ public class EmEmpSalaries implements Serializable {
             ", salaryAmount=" + getSalaryAmount() +
             ", salaryCoefficient=" + getSalaryCoefficient() +
             ", workHistoryCoefficient=" + getWorkHistoryCoefficient() +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
             ", idWorkPlace=" + getIdWorkPlace() +
             "}";
     }

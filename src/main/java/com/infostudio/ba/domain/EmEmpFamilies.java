@@ -16,7 +16,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "eef")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class EmEmpFamilies implements Serializable {
+public class EmEmpFamilies extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -40,18 +40,6 @@ public class EmEmpFamilies implements Serializable {
 
     @Column(name = "identification_number")
     private String identificationNumber;
-
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "created_at")
-    private Instant createdAt;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
-    @Column(name = "updated_at")
-    private Instant updatedAt;
 
     @Column(name = "id_family")
     private Integer idFamily;
@@ -134,58 +122,6 @@ public class EmEmpFamilies implements Serializable {
         this.identificationNumber = identificationNumber;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public EmEmpFamilies createdBy(String createdBy) {
-        this.createdBy = createdBy;
-        return this;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public EmEmpFamilies createdAt(Instant createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public EmEmpFamilies updatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-        return this;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public EmEmpFamilies updatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public Integer getIdFamily() {
         return idFamily;
     }
@@ -242,10 +178,6 @@ public class EmEmpFamilies implements Serializable {
             ", surname='" + getSurname() + "'" +
             ", maidenName='" + getMaidenName() + "'" +
             ", identificationNumber='" + getIdentificationNumber() + "'" +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
             ", idFamily=" + getIdFamily() +
             "}";
     }

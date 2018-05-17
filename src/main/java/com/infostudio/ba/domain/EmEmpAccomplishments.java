@@ -66,18 +66,6 @@ public class EmEmpAccomplishments implements Serializable {
     @Column(name = "rating")
     private Integer rating;
 
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "created_at")
-    private Instant createdAt;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
-    @Column(name = "updated_at")
-    private Instant updatedAt;
-
     @Column(name = "id_accomplishment_type")
     private Integer idAccomplishmentType;
 
@@ -263,58 +251,6 @@ public class EmEmpAccomplishments implements Serializable {
         this.rating = rating;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public EmEmpAccomplishments createdBy(String createdBy) {
-        this.createdBy = createdBy;
-        return this;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public EmEmpAccomplishments createdAt(Instant createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public EmEmpAccomplishments updatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-        return this;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public EmEmpAccomplishments updatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public Integer getIdAccomplishmentType() {
         return idAccomplishmentType;
     }
@@ -379,10 +315,6 @@ public class EmEmpAccomplishments implements Serializable {
             ", proficiency='" + getProficiency() + "'" +
             ", licenceNumber='" + getLicenceNumber() + "'" +
             ", rating=" + getRating() +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
             ", idAccomplishmentType=" + getIdAccomplishmentType() +
             "}";
     }

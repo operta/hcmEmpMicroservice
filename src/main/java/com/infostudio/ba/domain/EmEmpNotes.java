@@ -16,7 +16,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "em_emp_notes")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class EmEmpNotes implements Serializable {
+public class EmEmpNotes extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,23 +29,11 @@ public class EmEmpNotes implements Serializable {
     @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "decsription")
+    @Column(name = "description")
     private String decsription;
 
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "created_at")
-    private Instant createdAt;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
-    @Column(name = "updated_at")
-    private Instant updatedAt;
-
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_employee")
     private EmEmployees idEmployee;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
@@ -79,64 +67,12 @@ public class EmEmpNotes implements Serializable {
         return this;
     }
 
+     public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
     public void setDecsription(String decsription) {
         this.decsription = decsription;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public EmEmpNotes createdBy(String createdBy) {
-        this.createdBy = createdBy;
-        return this;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public EmEmpNotes createdAt(Instant createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public EmEmpNotes updatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-        return this;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public EmEmpNotes updatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public EmEmployees getIdEmployee() {
-        return idEmployee;
     }
 
     public EmEmpNotes idEmployee(EmEmployees emEmployees) {
@@ -175,10 +111,6 @@ public class EmEmpNotes implements Serializable {
             "id=" + getId() +
             ", title='" + getTitle() + "'" +
             ", decsription='" + getDecsription() + "'" +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
             "}";
     }
 }

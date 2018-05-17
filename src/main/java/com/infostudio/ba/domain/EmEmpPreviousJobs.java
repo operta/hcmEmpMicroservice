@@ -16,7 +16,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "em_emp_previous_jobs")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class EmEmpPreviousJobs implements Serializable {
+public class EmEmpPreviousJobs extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -51,18 +51,6 @@ public class EmEmpPreviousJobs implements Serializable {
 
     @Column(name = "length_of_service_days")
     private Integer lengthOfServiceDays;
-
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "created_at")
-    private Instant createdAt;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
-    @Column(name = "updated_at")
-    private Instant updatedAt;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -190,57 +178,6 @@ public class EmEmpPreviousJobs implements Serializable {
         this.lengthOfServiceDays = lengthOfServiceDays;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public EmEmpPreviousJobs createdBy(String createdBy) {
-        this.createdBy = createdBy;
-        return this;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public EmEmpPreviousJobs createdAt(Instant createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public EmEmpPreviousJobs updatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-        return this;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public EmEmpPreviousJobs updatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -276,10 +213,6 @@ public class EmEmpPreviousJobs implements Serializable {
             ", lengthOfServiceYears=" + getLengthOfServiceYears() +
             ", lengthOfServiceMonths=" + getLengthOfServiceMonths() +
             ", lengthOfServiceDays=" + getLengthOfServiceDays() +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
             "}";
     }
 }

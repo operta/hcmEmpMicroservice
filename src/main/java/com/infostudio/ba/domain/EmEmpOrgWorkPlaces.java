@@ -17,7 +17,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "eeowp")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class EmEmpOrgWorkPlaces implements Serializable {
+public class EmEmpOrgWorkPlaces extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -35,18 +35,6 @@ public class EmEmpOrgWorkPlaces implements Serializable {
 
     @Column(name = "work_history_coefficient")
     private Integer workHistoryCoefficient;
-
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "created_at")
-    private Instant createdAt;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
-    @Column(name = "updated_at")
-    private Instant updatedAt;
 
     @Column(name = "id_org_work_place")
     private Integer idOrgWorkPlace;
@@ -105,58 +93,6 @@ public class EmEmpOrgWorkPlaces implements Serializable {
 
     public void setWorkHistoryCoefficient(Integer workHistoryCoefficient) {
         this.workHistoryCoefficient = workHistoryCoefficient;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public EmEmpOrgWorkPlaces createdBy(String createdBy) {
-        this.createdBy = createdBy;
-        return this;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public EmEmpOrgWorkPlaces createdAt(Instant createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public EmEmpOrgWorkPlaces updatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-        return this;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public EmEmpOrgWorkPlaces updatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
     }
 
     public Integer getIdOrgWorkPlace() {
