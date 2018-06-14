@@ -37,9 +37,8 @@ spring:
             enabled: false # we use gulp + BrowserSync for livereload
     jackson:
         serialization.indent_output: true
-     datasource:
-        driverClassName: oracle.jdbc.OracleDriver
-        dataSourceClassName: oracle.jdbc.pool.OracleDataSource
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:oracle:thin:@192.168.1.218:1521/pdb_generic.infostudio.ba
         username: hcm
         password: hcm
