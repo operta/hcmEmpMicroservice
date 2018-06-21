@@ -14,7 +14,7 @@ import java.util.Objects;
  * A EmEmpBankAccounts.
  */
 @Entity
-@Table(name = "eeba")
+@Table(name = "em_emp_bank_accounts")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class EmEmpBankAccounts implements Serializable {
 
@@ -36,7 +36,7 @@ public class EmEmpBankAccounts implements Serializable {
     private Integer idBank;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_employee")
     private EmEmployees idEmployee;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

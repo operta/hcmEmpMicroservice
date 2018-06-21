@@ -95,11 +95,11 @@ public class EmEmployees extends AbstractAuditingEntity implements Serializable 
     private Integer idQualification;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_employment_type")
     private EmEmpTypes idEmploymentType;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_status")
     private EmStatuses idStatus;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

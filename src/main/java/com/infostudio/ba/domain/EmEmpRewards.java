@@ -38,11 +38,11 @@ public class EmEmpRewards extends AbstractAuditingEntity implements Serializable
     private String rewardedBy;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_employee")
     private EmEmployees idEmployee;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_reward")
     private EmRewardTypes idReward;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

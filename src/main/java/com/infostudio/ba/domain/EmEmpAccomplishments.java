@@ -15,7 +15,7 @@ import java.util.Objects;
  * A EmEmpAccomplishments.
  */
 @Entity
-@Table(name = "eea")
+@Table(name = "em_emp_accomplishments")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class EmEmpAccomplishments implements Serializable {
 
@@ -33,7 +33,7 @@ public class EmEmpAccomplishments implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "jhi_organization")
+    @Column(name = "organization")
     private String organization;
 
     @Column(name = "location")
@@ -45,7 +45,7 @@ public class EmEmpAccomplishments implements Serializable {
     @Column(name = "ongoing")
     private String ongoing;
 
-    @Column(name = "jhi_link")
+    @Column(name = "link")
     private String link;
 
     @Column(name = "date_from")
@@ -70,7 +70,7 @@ public class EmEmpAccomplishments implements Serializable {
     private Integer idAccomplishmentType;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_employee")
     private EmEmployees idEmployee;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

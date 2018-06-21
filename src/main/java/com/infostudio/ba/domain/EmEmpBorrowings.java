@@ -15,7 +15,7 @@ import java.util.Objects;
  * A EmEmpBorrowings.
  */
 @Entity
-@Table(name = "eeb")
+@Table(name = "em_emp_borrowings")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class EmEmpBorrowings extends AbstractAuditingEntity implements Serializable {
 
@@ -56,11 +56,11 @@ public class EmEmpBorrowings extends AbstractAuditingEntity implements Serializa
     private String damagedByEmployee;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_employee")
     private EmEmployees idEmployee;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_borrowing")
     private EmBorrowingTypes idBorrowing;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

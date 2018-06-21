@@ -27,7 +27,7 @@ public class EmEmpMetaData extends AbstractAuditingEntity implements Serializabl
     @Column(name = "title")
     private String title;
 
-    @Column(name = "jhi_value")
+    @Column(name = "value")
     private String value;
 
     @Column(name = "displayvalue")

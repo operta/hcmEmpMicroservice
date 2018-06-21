@@ -34,7 +34,7 @@ public class EmEmpSchools extends AbstractAuditingEntity implements Serializable
     @Column(name = "major")
     private String major;
 
-    @Column(name = "jhi_degree")
+    @Column(name = "degree")
     private String degree;
 
     @Column(name = "grade")
@@ -47,7 +47,7 @@ public class EmEmpSchools extends AbstractAuditingEntity implements Serializable
     private Integer idQualification;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_employee")
     private EmEmployees idEmployee;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

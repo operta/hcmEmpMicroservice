@@ -15,7 +15,7 @@ import java.util.Objects;
  * A EmEmpDocuments.
  */
 @Entity
-@Table(name = "eed")
+@Table(name = "em_emp_documents")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class EmEmpDocuments extends AbstractAuditingEntity implements Serializable {
 
@@ -50,7 +50,7 @@ public class EmEmpDocuments extends AbstractAuditingEntity implements Serializab
     private Integer idDocumentLink;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_employee")
     private EmEmployees idEmployee;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

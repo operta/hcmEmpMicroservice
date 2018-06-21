@@ -13,7 +13,7 @@ import java.util.Objects;
  * A EmEmpInjuries.
  */
 @Entity
-@Table(name = "eein")
+@Table(name = "em_emp_injuries")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class EmEmpInjuries implements Serializable {
 
@@ -28,11 +28,11 @@ public class EmEmpInjuries implements Serializable {
     private String description;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_employee")
     private EmEmployees idEmployee;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_injury")
     private EmInjuryTypes idInjury;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

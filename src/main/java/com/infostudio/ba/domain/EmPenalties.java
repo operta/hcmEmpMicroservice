@@ -35,7 +35,7 @@ public class EmPenalties extends AbstractAuditingEntity implements Serializable 
     private LocalDate dateTo;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(name = "id_employee")
     private EmEmployees idEmployee;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
