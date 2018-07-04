@@ -123,6 +123,21 @@ public class EmEmpAccomplishmentsResource {
     }
 
     /**
+     * GET  /em-emp-accomplishments/employee/:id.
+     *
+     * @param id
+     * @return the ResponseEntity with status 200 (OK) and with body the emEmpAccomplishmentsDTO, or with status 404 (Not Found)
+     */
+    @GetMapping("/em-emp-accomplishments/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpAccomplishmentsDTO>> getEmEmpAccomplishmentsByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpAccomplishments by EmployeeId: {}", id);
+        Page<EmEmpAccomplishments> page = emEmpAccomplishmentsRepository.findByIdEmployeeId(id);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/em-emp-accomplishments");
+        return new ResponseEntity<>(emEmpAccomplishmentsMapper.toDto(page.getContent()), headers, HttpStatus.OK);
+    }
+
+    /**
      * DELETE  /em-emp-accomplishments/:id : delete the "id" emEmpAccomplishments.
      *
      * @param id the id of the emEmpAccomplishmentsDTO to delete
