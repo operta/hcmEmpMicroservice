@@ -1,10 +1,11 @@
 package com.infostudio.ba.repository;
 
 import com.infostudio.ba.domain.EmEmpAccomplishments;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.*;
+
+import java.util.List;
 
 
 /**
@@ -13,6 +14,5 @@ import org.springframework.data.jpa.repository.*;
 @SuppressWarnings("unused")
 @Repository
 public interface EmEmpAccomplishmentsRepository extends JpaRepository<EmEmpAccomplishments, Long> {
-
-    Page<EmEmpAccomplishments> findByIdEmployeeId(long id);
+    List<EmEmpAccomplishments> findByIdEmployeeId(long id);
 }

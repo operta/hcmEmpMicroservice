@@ -123,7 +123,7 @@ public class EmEmpAccomplishmentsResource {
     }
 
     /**
-     * GET  /em-emp-accomplishments/employee/:id.
+     * GET  /em-emp-accomplishments/employee/:id : get the "id" emEmpAccomplishments.
      *
      * @param id
      * @return the ResponseEntity with status 200 (OK) and with body the emEmpAccomplishmentsDTO, or with status 404 (Not Found)
@@ -131,11 +131,12 @@ public class EmEmpAccomplishmentsResource {
     @GetMapping("/em-emp-accomplishments/employee/{id}")
     @Timed
     public ResponseEntity<List<EmEmpAccomplishmentsDTO>> getEmEmpAccomplishmentsByEmpId(@PathVariable Long id) {
-        log.debug("REST request to get EmEmpAccomplishments by EmployeeId: {}", id);
-        Page<EmEmpAccomplishments> page = emEmpAccomplishmentsRepository.findByIdEmployeeId(id);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/em-emp-accomplishments");
-        return new ResponseEntity<>(emEmpAccomplishmentsMapper.toDto(page.getContent()), headers, HttpStatus.OK);
+        log.debug("REST request to get EmEmpAccomplishments by Employee Id : {}", id);
+        List<EmEmpAccomplishments> emEmpAccomplishments = emEmpAccomplishmentsRepository.findByIdEmployeeId(id);
+        List<EmEmpAccomplishmentsDTO> emEmpAccomplishmentsDTO = emEmpAccomplishmentsMapper.toDto(emEmpAccomplishments);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpAccomplishmentsDTO));
     }
+
 
     /**
      * DELETE  /em-emp-accomplishments/:id : delete the "id" emEmpAccomplishments.

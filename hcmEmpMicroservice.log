@@ -1,0 +1,830 @@
+2018-07-04 13:45:16.332  INFO 13688 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : The following profiles are active: swagger,dev
+2018-07-04 13:45:24.734 DEBUG 13688 --- [restartedMain] c.i.ba.config.AsyncConfiguration         : Creating Async Task Executor
+2018-07-04 13:45:27.225 DEBUG 13688 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Registering JVM gauges
+2018-07-04 13:45:27.269 DEBUG 13688 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Monitoring the datasource
+2018-07-04 13:45:27.271 DEBUG 13688 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Initializing Metrics JMX reporting
+2018-07-04 13:45:29.766 DEBUG 13688 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast
+2018-07-04 13:45:29.919 DEBUG 13688 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast clustering for instanceId: hcmEmpMicroservice
+2018-07-04 13:45:29.921 DEBUG 13688 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-07-04 13:45:30.132  INFO 13688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-07-04 13:45:30.998  INFO 13688 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-07-04 13:45:30.999  INFO 13688 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-07-04 13:45:31.486  INFO 13688 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-07-04 13:45:31.488  INFO 13688 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-07-04 13:45:31.887  INFO 13688 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 13:45:32.040  INFO 13688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-04 13:45:32.041  INFO 13688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-04 13:45:32.042  INFO 13688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-04 13:45:32.043  INFO 13688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-04 13:45:32.044  INFO 13688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-04 13:45:32.044  INFO 13688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-07-04 13:45:32.047  INFO 13688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-04 13:45:32.560  INFO 13688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-04 13:45:32.561  INFO 13688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-07-04 13:45:32.564  INFO 13688 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-07-04 13:45:32.568  INFO 13688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1530704732568 with initial instances count: 0
+2018-07-04 13:45:32.921  INFO 13688 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13786, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13786], bind any local is true
+2018-07-04 13:45:32.964  INFO 13688 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13786
+2018-07-04 13:45:32.964  INFO 13688 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-07-04 13:45:32.964  INFO 13688 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-07-04 13:45:33.719  INFO 13688 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13786 [dev] [3.9.1] Backpressure is disabled
+2018-07-04 13:45:34.796  INFO 13688 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Creating TcpIpJoiner
+2018-07-04 13:45:35.790  INFO 13688 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13786 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-07-04 13:45:35.792  INFO 13688 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13786 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-07-04 13:45:35.800  INFO 13688 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTING
+2018-07-04 13:45:35.859  INFO 13688 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Cluster version set to 3.9
+2018-07-04 13:45:35.860  INFO 13688 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13786 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13786 - 29c3274b-9bf4-42df-91c3-ddd413668cab this
+]
+
+2018-07-04 13:45:35.939  INFO 13688 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTED
+2018-07-04 13:45:37.778  INFO 13688 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:627369be279d70e283d85b4b3d067246 - Re-registering apps/HCMEMPMICROSERVICE
+2018-07-04 13:45:37.780  INFO 13688 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:627369be279d70e283d85b4b3d067246: registering service...
+2018-07-04 13:45:38.341  INFO 13688 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:627369be279d70e283d85b4b3d067246 - registration status: 204
+2018-07-04 13:45:40.352  INFO 13688 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application configuration, using profiles: swagger
+2018-07-04 13:45:40.353 DEBUG 13688 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Initializing Metrics registries
+2018-07-04 13:45:40.441 DEBUG 13688 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Filter
+2018-07-04 13:45:40.442 DEBUG 13688 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Servlet
+2018-07-04 13:45:40.460  INFO 13688 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application fully configured
+2018-07-04 13:45:41.819 DEBUG 13688 --- [restartedMain] c.i.ba.config.DatabaseConfiguration      : Configuring Liquibase
+2018-07-04 13:45:41.840  WARN 13688 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-07-04 13:45:42.564  INFO 13688 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-04 13:45:42.566  INFO 13688 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-04 13:45:42.566  INFO 13688 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-04 13:45:42.567  INFO 13688 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-04 13:45:42.567  INFO 13688 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-04 13:45:42.583  INFO 13688 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-07-04 13:45:42.583  INFO 13688 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-04 13:45:42.718  INFO 13688 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-04 13:45:51.139  INFO 13688 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-07-04 13:45:51.151  INFO 13688 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [hcmEmpMicroservice].
+2018-07-04 13:45:52.580 ERROR 13688 --- [DiscoveryClient-1] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:63)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018-07-04 13:45:57.047  WARN 13688 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emEmpAccomplishmentsResource' defined in file [C:\Users\mehme\Documents\info_studio\hcmEmp\target\classes\com\infostudio\ba\web\rest\EmEmpAccomplishmentsResource.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emEmpAccomplishmentsRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Paging query needs to have a Pageable parameter! Offending method public abstract org.springframework.data.domain.Page com.infostudio.ba.repository.EmEmpAccomplishmentsRepository.findByIdEmployeeId(long)
+2018-07-04 13:45:57.049  INFO 13688 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Shutting down HazelcastCacheRegionFactory
+2018-07-04 13:45:57.053  WARN 13688 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : hibernate.cache.hazelcast.shutdown_on_session_factory_close property is set to 'false'. Leaving current HazelcastInstance active! (Warning: Do not disable Hazelcast hazelcast.shutdownhook.enabled property!)
+2018-07-04 13:45:57.056  INFO 13688 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is SHUTTING_DOWN
+2018-07-04 13:45:57.061  INFO 13688 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Shutting down connection manager...
+2018-07-04 13:45:57.063  INFO 13688 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Shutting down node engine...
+2018-07-04 13:45:57.072  INFO 13688 --- [restartedMain] com.hazelcast.instance.NodeExtension     : [127.0.0.1]:13786 [dev] [3.9.1] Destroying node NodeExtension.
+2018-07-04 13:45:57.073  INFO 13688 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast Shutdown is completed in 13 ms.
+2018-07-04 13:45:57.075  INFO 13688 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is SHUTDOWN
+2018-07-04 13:45:57.075  INFO 13688 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Closing Cache Manager
+2018-07-04 13:45:57.142  INFO 13688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2018-07-04 13:45:57.143  WARN 13688 --- [hcm-emp-microservice-Executor-1] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-1 - Connection oracle.jdbc.driver.T4CConnection@52dcfb45 marked as broken because of SQLSTATE(08003), ErrorCode(17008)
+
+java.sql.SQLRecoverableException: Closed Connection
+	at oracle.jdbc.driver.PhysicalConnection.getAutoCommit(PhysicalConnection.java:1828)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.getAutoCommit(HikariProxyConnection.java)
+	at liquibase.database.jvm.JdbcConnection.rollback(JdbcConnection.java:336)
+	at liquibase.database.AbstractJdbcDatabase.rollback(AbstractJdbcDatabase.java:1166)
+	at liquibase.lockservice.StandardLockService.acquireLock(StandardLockService.java:205)
+	at liquibase.lockservice.StandardLockService.waitForLock(StandardLockService.java:170)
+	at liquibase.Liquibase.update(Liquibase.java:196)
+	at liquibase.Liquibase.update(Liquibase.java:192)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.initDb(AsyncSpringLiquibase.java:94)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.lambda$afterPropertiesSet$0(AsyncSpringLiquibase.java:77)
+	at io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor.lambda$createWrappedRunnable$1(ExceptionHandlingAsyncTaskExecutor.java:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018-07-04 13:45:57.143  WARN 13688 --- [hcm-emp-microservice-Executor-1] liquibase                                : Failed to restore the auto commit to true
+2018-07-04 13:45:57.144 ERROR 13688 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Liquibase could not start correctly, your database is NOT ready: java.sql.SQLException: Connection is closed
+
+liquibase.exception.DatabaseException: java.sql.SQLException: Connection is closed
+	at liquibase.database.jvm.JdbcConnection.setAutoCommit(JdbcConnection.java:363)
+	at liquibase.database.AbstractJdbcDatabase.close(AbstractJdbcDatabase.java:1202)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:397)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.initDb(AsyncSpringLiquibase.java:94)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.lambda$afterPropertiesSet$0(AsyncSpringLiquibase.java:77)
+	at io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor.lambda$createWrappedRunnable$1(ExceptionHandlingAsyncTaskExecutor.java:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: Connection is closed
+	at com.zaxxer.hikari.pool.ProxyConnection$ClosedConnection.lambda$getClosedConnection$0(ProxyConnection.java:490)
+	at com.sun.proxy.$Proxy144.setAutoCommit(Unknown Source)
+	at com.zaxxer.hikari.pool.ProxyConnection.setAutoCommit(ProxyConnection.java:395)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.setAutoCommit(HikariProxyConnection.java)
+	at liquibase.database.jvm.JdbcConnection.setAutoCommit(JdbcConnection.java:361)
+	... 8 common frames omitted
+
+2018-07-04 13:45:57.152  WARN 13688 --- [restartedMain] .s.c.a.CommonAnnotationBeanPostProcessor : Invocation of destroy method failed on bean with name 'scopedTarget.eurekaClient': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaInstanceConfigBean': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2018-07-04 13:45:57.200 ERROR 13688 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emEmpAccomplishmentsResource' defined in file [C:\Users\mehme\Documents\info_studio\hcmEmp\target\classes\com\infostudio\ba\web\rest\EmEmpAccomplishmentsResource.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emEmpAccomplishmentsRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Paging query needs to have a Pageable parameter! Offending method public abstract org.springframework.data.domain.Page com.infostudio.ba.repository.EmEmpAccomplishmentsRepository.findByIdEmployeeId(long)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at com.infostudio.ba.HcmEmpMicroserviceApp.main(HcmEmpMicroserviceApp.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emEmpAccomplishmentsRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Paging query needs to have a Pageable parameter! Offending method public abstract org.springframework.data.domain.Page com.infostudio.ba.repository.EmEmpAccomplishmentsRepository.findByIdEmployeeId(long)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 22 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Paging query needs to have a Pageable parameter! Offending method public abstract org.springframework.data.domain.Page com.infostudio.ba.repository.EmEmpAccomplishmentsRepository.findByIdEmployeeId(long)
+	at org.springframework.util.Assert.isTrue(Assert.java:92)
+	at org.springframework.data.repository.query.QueryMethod.<init>(QueryMethod.java:96)
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.<init>(JpaQueryMethod.java:90)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:77)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:449)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:222)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:277)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:263)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:101)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1688)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1626)
+	... 33 common frames omitted
+
+2018-07-04 13:47:23.659  INFO 7736 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : The following profiles are active: swagger,dev
+2018-07-04 13:47:27.351 DEBUG 7736 --- [restartedMain] c.i.ba.config.AsyncConfiguration         : Creating Async Task Executor
+2018-07-04 13:47:28.594 DEBUG 7736 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Registering JVM gauges
+2018-07-04 13:47:28.610 DEBUG 7736 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Monitoring the datasource
+2018-07-04 13:47:28.612 DEBUG 7736 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Initializing Metrics JMX reporting
+2018-07-04 13:47:29.850 DEBUG 7736 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast
+2018-07-04 13:47:29.886 DEBUG 7736 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast clustering for instanceId: hcmEmpMicroservice
+2018-07-04 13:47:29.888 DEBUG 7736 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-07-04 13:47:30.033  INFO 7736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-07-04 13:47:30.557  INFO 7736 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-07-04 13:47:30.558  INFO 7736 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-07-04 13:47:30.838  INFO 7736 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-07-04 13:47:30.839  INFO 7736 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-07-04 13:47:31.231  INFO 7736 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 13:47:31.381  INFO 7736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-04 13:47:31.381  INFO 7736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-04 13:47:31.383  INFO 7736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-04 13:47:31.383  INFO 7736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-04 13:47:31.383  INFO 7736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-04 13:47:31.383  INFO 7736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-07-04 13:47:31.386  INFO 7736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-04 13:47:31.729  INFO 7736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-04 13:47:31.731  INFO 7736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-07-04 13:47:31.736  INFO 7736 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-07-04 13:47:31.750  INFO 7736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1530704851749 with initial instances count: 0
+2018-07-04 13:47:31.935  INFO 7736 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13786, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13786], bind any local is true
+2018-07-04 13:47:31.966  INFO 7736 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13786
+2018-07-04 13:47:31.967  INFO 7736 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-07-04 13:47:31.967  INFO 7736 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-07-04 13:47:32.329  INFO 7736 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13786 [dev] [3.9.1] Backpressure is disabled
+2018-07-04 13:47:33.088  INFO 7736 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Creating TcpIpJoiner
+2018-07-04 13:47:33.622  INFO 7736 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13786 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-07-04 13:47:33.626  INFO 7736 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13786 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-07-04 13:47:33.637  INFO 7736 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTING
+2018-07-04 13:47:33.677  INFO 7736 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Cluster version set to 3.9
+2018-07-04 13:47:33.678  INFO 7736 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13786 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13786 - e8d16171-b186-4495-85b7-ff911fe7b89c this
+]
+
+2018-07-04 13:47:33.718  INFO 7736 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTED
+2018-07-04 13:47:34.993  INFO 7736 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application configuration, using profiles: swagger
+2018-07-04 13:47:34.994 DEBUG 7736 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Initializing Metrics registries
+2018-07-04 13:47:35.004 DEBUG 7736 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Filter
+2018-07-04 13:47:35.007 DEBUG 7736 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Servlet
+2018-07-04 13:47:35.014  INFO 7736 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application fully configured
+2018-07-04 13:47:35.509 DEBUG 7736 --- [restartedMain] c.i.ba.config.DatabaseConfiguration      : Configuring Liquibase
+2018-07-04 13:47:35.539  WARN 7736 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-07-04 13:47:36.835  INFO 7736 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:15a7a31d05b05eb99e68735e046b9bfa - Re-registering apps/HCMEMPMICROSERVICE
+2018-07-04 13:47:36.836  INFO 7736 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:15a7a31d05b05eb99e68735e046b9bfa: registering service...
+2018-07-04 13:47:36.963  INFO 7736 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:15a7a31d05b05eb99e68735e046b9bfa - registration status: 204
+2018-07-04 13:47:38.099  INFO 7736 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-07-04 13:47:38.101  INFO 7736 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [hcmEmpMicroservice].
+2018-07-04 13:47:41.586  WARN 7736 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emEmpAccomplishmentsResource' defined in file [C:\Users\mehme\Documents\info_studio\hcmEmp\target\classes\com\infostudio\ba\web\rest\EmEmpAccomplishmentsResource.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emEmpAccomplishmentsRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Paging query needs to have a Pageable parameter! Offending method public abstract org.springframework.data.domain.Page com.infostudio.ba.repository.EmEmpAccomplishmentsRepository.findByIdEmployeeId(long)
+2018-07-04 13:47:41.589  INFO 7736 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Shutting down HazelcastCacheRegionFactory
+2018-07-04 13:47:41.589  WARN 7736 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : hibernate.cache.hazelcast.shutdown_on_session_factory_close property is set to 'false'. Leaving current HazelcastInstance active! (Warning: Do not disable Hazelcast hazelcast.shutdownhook.enabled property!)
+2018-07-04 13:47:41.592  INFO 7736 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is SHUTTING_DOWN
+2018-07-04 13:47:41.595  INFO 7736 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Shutting down connection manager...
+2018-07-04 13:47:41.598  INFO 7736 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Shutting down node engine...
+2018-07-04 13:47:41.605  INFO 7736 --- [restartedMain] com.hazelcast.instance.NodeExtension     : [127.0.0.1]:13786 [dev] [3.9.1] Destroying node NodeExtension.
+2018-07-04 13:47:41.608  INFO 7736 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast Shutdown is completed in 13 ms.
+2018-07-04 13:47:41.609  INFO 7736 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is SHUTDOWN
+2018-07-04 13:47:41.609  INFO 7736 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Closing Cache Manager
+2018-07-04 13:47:41.731  INFO 7736 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-04 13:47:41.731  INFO 7736 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-04 13:47:41.731  INFO 7736 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-04 13:47:41.732  INFO 7736 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-04 13:47:41.732  INFO 7736 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-04 13:47:41.734  INFO 7736 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-07-04 13:47:41.734  INFO 7736 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-04 13:47:41.865  INFO 7736 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-04 13:47:41.870 ERROR 7736 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Cannot fetch registry from server
+
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'delegatingApplicationListener': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:216)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:235)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:192)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:393)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:347)
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.onCacheRefreshed(CloudEurekaClient.java:98)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:943)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1451)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1418)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018-07-04 13:47:41.958  INFO 7736 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2018-07-04 13:47:41.958  WARN 7736 --- [hcm-emp-microservice-Executor-1] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-1 - Connection oracle.jdbc.driver.T4CConnection@3dba4c09 marked as broken because of SQLSTATE(08003), ErrorCode(17008)
+
+java.sql.SQLRecoverableException: Closed Connection
+	at oracle.jdbc.driver.PhysicalConnection.getAutoCommit(PhysicalConnection.java:1828)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.getAutoCommit(HikariProxyConnection.java)
+	at liquibase.database.jvm.JdbcConnection.rollback(JdbcConnection.java:336)
+	at liquibase.database.AbstractJdbcDatabase.rollback(AbstractJdbcDatabase.java:1166)
+	at liquibase.lockservice.StandardLockService.acquireLock(StandardLockService.java:205)
+	at liquibase.lockservice.StandardLockService.waitForLock(StandardLockService.java:170)
+	at liquibase.Liquibase.update(Liquibase.java:196)
+	at liquibase.Liquibase.update(Liquibase.java:192)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.initDb(AsyncSpringLiquibase.java:94)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.lambda$afterPropertiesSet$0(AsyncSpringLiquibase.java:77)
+	at io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor.lambda$createWrappedRunnable$1(ExceptionHandlingAsyncTaskExecutor.java:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018-07-04 13:47:41.960  WARN 7736 --- [hcm-emp-microservice-Executor-1] liquibase                                : Failed to restore the auto commit to true
+2018-07-04 13:47:41.961 ERROR 7736 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Liquibase could not start correctly, your database is NOT ready: java.sql.SQLException: Connection is closed
+
+liquibase.exception.DatabaseException: java.sql.SQLException: Connection is closed
+	at liquibase.database.jvm.JdbcConnection.setAutoCommit(JdbcConnection.java:363)
+	at liquibase.database.AbstractJdbcDatabase.close(AbstractJdbcDatabase.java:1202)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:397)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.initDb(AsyncSpringLiquibase.java:94)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.lambda$afterPropertiesSet$0(AsyncSpringLiquibase.java:77)
+	at io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor.lambda$createWrappedRunnable$1(ExceptionHandlingAsyncTaskExecutor.java:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: Connection is closed
+	at com.zaxxer.hikari.pool.ProxyConnection$ClosedConnection.lambda$getClosedConnection$0(ProxyConnection.java:490)
+	at com.sun.proxy.$Proxy145.setAutoCommit(Unknown Source)
+	at com.zaxxer.hikari.pool.ProxyConnection.setAutoCommit(ProxyConnection.java:395)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.setAutoCommit(HikariProxyConnection.java)
+	at liquibase.database.jvm.JdbcConnection.setAutoCommit(JdbcConnection.java:361)
+	... 8 common frames omitted
+
+2018-07-04 13:47:41.965  WARN 7736 --- [restartedMain] .s.c.a.CommonAnnotationBeanPostProcessor : Invocation of destroy method failed on bean with name 'scopedTarget.eurekaClient': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaInstanceConfigBean': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2018-07-04 13:47:41.991 ERROR 7736 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emEmpAccomplishmentsResource' defined in file [C:\Users\mehme\Documents\info_studio\hcmEmp\target\classes\com\infostudio\ba\web\rest\EmEmpAccomplishmentsResource.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emEmpAccomplishmentsRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Paging query needs to have a Pageable parameter! Offending method public abstract org.springframework.data.domain.Page com.infostudio.ba.repository.EmEmpAccomplishmentsRepository.findByIdEmployeeId(long)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at com.infostudio.ba.HcmEmpMicroserviceApp.main(HcmEmpMicroserviceApp.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emEmpAccomplishmentsRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Paging query needs to have a Pageable parameter! Offending method public abstract org.springframework.data.domain.Page com.infostudio.ba.repository.EmEmpAccomplishmentsRepository.findByIdEmployeeId(long)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 22 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Paging query needs to have a Pageable parameter! Offending method public abstract org.springframework.data.domain.Page com.infostudio.ba.repository.EmEmpAccomplishmentsRepository.findByIdEmployeeId(long)
+	at org.springframework.util.Assert.isTrue(Assert.java:92)
+	at org.springframework.data.repository.query.QueryMethod.<init>(QueryMethod.java:96)
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.<init>(JpaQueryMethod.java:90)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:77)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:449)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:222)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:277)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:263)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:101)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1688)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1626)
+	... 33 common frames omitted
+
+2018-07-04 13:51:18.592  INFO 13228 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : The following profiles are active: swagger,dev
+2018-07-04 13:51:22.358 DEBUG 13228 --- [restartedMain] c.i.ba.config.AsyncConfiguration         : Creating Async Task Executor
+2018-07-04 13:51:23.636 DEBUG 13228 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Registering JVM gauges
+2018-07-04 13:51:23.657 DEBUG 13228 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Monitoring the datasource
+2018-07-04 13:51:23.661 DEBUG 13228 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Initializing Metrics JMX reporting
+2018-07-04 13:51:25.038 DEBUG 13228 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast
+2018-07-04 13:51:25.078 DEBUG 13228 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast clustering for instanceId: hcmEmpMicroservice
+2018-07-04 13:51:25.081 DEBUG 13228 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-07-04 13:51:25.225  INFO 13228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-07-04 13:51:25.710  INFO 13228 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-07-04 13:51:25.711  INFO 13228 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-07-04 13:51:25.974  INFO 13228 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-07-04 13:51:25.976  INFO 13228 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-07-04 13:51:26.365  INFO 13228 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 13:51:26.512  INFO 13228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-04 13:51:26.513  INFO 13228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-04 13:51:26.517  INFO 13228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-04 13:51:26.518  INFO 13228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-04 13:51:26.519  INFO 13228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-04 13:51:26.520  INFO 13228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-07-04 13:51:26.522  INFO 13228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-04 13:51:26.821  INFO 13228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-04 13:51:26.823  INFO 13228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-07-04 13:51:26.827  INFO 13228 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-07-04 13:51:26.831  INFO 13228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1530705086831 with initial instances count: 0
+2018-07-04 13:51:26.961  INFO 13228 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13786, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13786], bind any local is true
+2018-07-04 13:51:26.985  INFO 13228 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13786
+2018-07-04 13:51:26.987  INFO 13228 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-07-04 13:51:26.988  INFO 13228 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-07-04 13:51:27.272  INFO 13228 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13786 [dev] [3.9.1] Backpressure is disabled
+2018-07-04 13:51:27.806  INFO 13228 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Creating TcpIpJoiner
+2018-07-04 13:51:28.419  INFO 13228 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13786 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-07-04 13:51:28.421  INFO 13228 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13786 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-07-04 13:51:28.431  INFO 13228 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTING
+2018-07-04 13:51:28.461  INFO 13228 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Cluster version set to 3.9
+2018-07-04 13:51:28.462  INFO 13228 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13786 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13786 - 25dc03fd-af12-46e4-bf97-f7f2460b947d this
+]
+
+2018-07-04 13:51:28.495  INFO 13228 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTED
+2018-07-04 13:51:29.706  INFO 13228 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application configuration, using profiles: swagger
+2018-07-04 13:51:29.708 DEBUG 13228 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Initializing Metrics registries
+2018-07-04 13:51:29.718 DEBUG 13228 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Filter
+2018-07-04 13:51:29.721 DEBUG 13228 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Servlet
+2018-07-04 13:51:29.727  INFO 13228 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application fully configured
+2018-07-04 13:51:30.147 DEBUG 13228 --- [restartedMain] c.i.ba.config.DatabaseConfiguration      : Configuring Liquibase
+2018-07-04 13:51:30.168  WARN 13228 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-07-04 13:51:32.269  INFO 13228 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:27eceec525929ba5fdb517719aa6a370 - Re-registering apps/HCMEMPMICROSERVICE
+2018-07-04 13:51:32.291  INFO 13228 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:27eceec525929ba5fdb517719aa6a370: registering service...
+2018-07-04 13:51:32.470  INFO 13228 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:27eceec525929ba5fdb517719aa6a370 - registration status: 204
+2018-07-04 13:51:32.932  INFO 13228 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-07-04 13:51:32.936  INFO 13228 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [hcmEmpMicroservice].
+2018-07-04 13:51:36.401  WARN 13228 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emEmpAccomplishmentsResource' defined in file [C:\Users\mehme\Documents\info_studio\hcmEmp\target\classes\com\infostudio\ba\web\rest\EmEmpAccomplishmentsResource.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emEmpAccomplishmentsRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Paging query needs to have a Pageable parameter! Offending method public abstract org.springframework.data.domain.Page com.infostudio.ba.repository.EmEmpAccomplishmentsRepository.findByIdEmployeeId(long)
+2018-07-04 13:51:36.404  INFO 13228 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Shutting down HazelcastCacheRegionFactory
+2018-07-04 13:51:36.404  WARN 13228 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : hibernate.cache.hazelcast.shutdown_on_session_factory_close property is set to 'false'. Leaving current HazelcastInstance active! (Warning: Do not disable Hazelcast hazelcast.shutdownhook.enabled property!)
+2018-07-04 13:51:36.410  INFO 13228 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is SHUTTING_DOWN
+2018-07-04 13:51:36.416  INFO 13228 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Shutting down connection manager...
+2018-07-04 13:51:36.420  INFO 13228 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Shutting down node engine...
+2018-07-04 13:51:36.433  INFO 13228 --- [restartedMain] com.hazelcast.instance.NodeExtension     : [127.0.0.1]:13786 [dev] [3.9.1] Destroying node NodeExtension.
+2018-07-04 13:51:36.437  INFO 13228 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast Shutdown is completed in 21 ms.
+2018-07-04 13:51:36.440  INFO 13228 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is SHUTDOWN
+2018-07-04 13:51:36.441  INFO 13228 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Closing Cache Manager
+2018-07-04 13:51:36.539  INFO 13228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2018-07-04 13:51:36.545  WARN 13228 --- [hcm-emp-microservice-Executor-1] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-1 - Connection oracle.jdbc.driver.T4CConnection@f02effe marked as broken because of SQLSTATE(08003), ErrorCode(17008)
+
+java.sql.SQLRecoverableException: Closed Connection
+	at oracle.jdbc.driver.PhysicalConnection.getAutoCommit(PhysicalConnection.java:1828)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.getAutoCommit(HikariProxyConnection.java)
+	at liquibase.database.jvm.JdbcConnection.rollback(JdbcConnection.java:336)
+	at liquibase.database.AbstractJdbcDatabase.rollback(AbstractJdbcDatabase.java:1166)
+	at liquibase.lockservice.StandardLockService.acquireLock(StandardLockService.java:205)
+	at liquibase.lockservice.StandardLockService.waitForLock(StandardLockService.java:170)
+	at liquibase.Liquibase.update(Liquibase.java:196)
+	at liquibase.Liquibase.update(Liquibase.java:192)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.initDb(AsyncSpringLiquibase.java:94)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.lambda$afterPropertiesSet$0(AsyncSpringLiquibase.java:77)
+	at io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor.lambda$createWrappedRunnable$1(ExceptionHandlingAsyncTaskExecutor.java:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018-07-04 13:51:36.548  WARN 13228 --- [hcm-emp-microservice-Executor-1] liquibase                                : Failed to restore the auto commit to true
+2018-07-04 13:51:36.550 ERROR 13228 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Liquibase could not start correctly, your database is NOT ready: java.sql.SQLException: Connection is closed
+
+liquibase.exception.DatabaseException: java.sql.SQLException: Connection is closed
+	at liquibase.database.jvm.JdbcConnection.setAutoCommit(JdbcConnection.java:363)
+	at liquibase.database.AbstractJdbcDatabase.close(AbstractJdbcDatabase.java:1202)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:397)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.initDb(AsyncSpringLiquibase.java:94)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.lambda$afterPropertiesSet$0(AsyncSpringLiquibase.java:77)
+	at io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor.lambda$createWrappedRunnable$1(ExceptionHandlingAsyncTaskExecutor.java:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: Connection is closed
+	at com.zaxxer.hikari.pool.ProxyConnection$ClosedConnection.lambda$getClosedConnection$0(ProxyConnection.java:490)
+	at com.sun.proxy.$Proxy145.setAutoCommit(Unknown Source)
+	at com.zaxxer.hikari.pool.ProxyConnection.setAutoCommit(ProxyConnection.java:395)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.setAutoCommit(HikariProxyConnection.java)
+	at liquibase.database.jvm.JdbcConnection.setAutoCommit(JdbcConnection.java:361)
+	... 8 common frames omitted
+
+2018-07-04 13:51:36.551  WARN 13228 --- [restartedMain] .s.c.a.CommonAnnotationBeanPostProcessor : Invocation of destroy method failed on bean with name 'scopedTarget.eurekaClient': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaInstanceConfigBean': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2018-07-04 13:51:36.592 ERROR 13228 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emEmpAccomplishmentsResource' defined in file [C:\Users\mehme\Documents\info_studio\hcmEmp\target\classes\com\infostudio\ba\web\rest\EmEmpAccomplishmentsResource.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emEmpAccomplishmentsRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Paging query needs to have a Pageable parameter! Offending method public abstract org.springframework.data.domain.Page com.infostudio.ba.repository.EmEmpAccomplishmentsRepository.findByIdEmployeeId(long)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at com.infostudio.ba.HcmEmpMicroserviceApp.main(HcmEmpMicroserviceApp.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'emEmpAccomplishmentsRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Paging query needs to have a Pageable parameter! Offending method public abstract org.springframework.data.domain.Page com.infostudio.ba.repository.EmEmpAccomplishmentsRepository.findByIdEmployeeId(long)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 22 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Paging query needs to have a Pageable parameter! Offending method public abstract org.springframework.data.domain.Page com.infostudio.ba.repository.EmEmpAccomplishmentsRepository.findByIdEmployeeId(long)
+	at org.springframework.util.Assert.isTrue(Assert.java:92)
+	at org.springframework.data.repository.query.QueryMethod.<init>(QueryMethod.java:96)
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.<init>(JpaQueryMethod.java:90)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:77)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:449)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:222)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:277)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:263)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:101)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1688)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1626)
+	... 33 common frames omitted
+
+2018-07-04 13:59:13.719  INFO 8904 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : The following profiles are active: swagger,dev
+2018-07-04 13:59:17.665 DEBUG 8904 --- [restartedMain] c.i.ba.config.AsyncConfiguration         : Creating Async Task Executor
+2018-07-04 13:59:18.927 DEBUG 8904 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Registering JVM gauges
+2018-07-04 13:59:18.944 DEBUG 8904 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Monitoring the datasource
+2018-07-04 13:59:18.947 DEBUG 8904 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Initializing Metrics JMX reporting
+2018-07-04 13:59:20.263 DEBUG 8904 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast
+2018-07-04 13:59:20.309 DEBUG 8904 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast clustering for instanceId: hcmEmpMicroservice
+2018-07-04 13:59:20.312 DEBUG 8904 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-07-04 13:59:20.485  INFO 8904 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-07-04 13:59:21.265  INFO 8904 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-07-04 13:59:21.269  INFO 8904 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-07-04 13:59:21.510  INFO 8904 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-07-04 13:59:21.511  INFO 8904 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-07-04 13:59:21.849  INFO 8904 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 13:59:21.990  INFO 8904 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-04 13:59:21.992  INFO 8904 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-04 13:59:21.995  INFO 8904 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-04 13:59:21.996  INFO 8904 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-04 13:59:21.999  INFO 8904 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-04 13:59:22.002  INFO 8904 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-07-04 13:59:22.007  INFO 8904 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-04 13:59:22.310  INFO 8904 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-04 13:59:22.313  INFO 8904 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-07-04 13:59:22.318  INFO 8904 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-07-04 13:59:22.323  INFO 8904 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1530705562322 with initial instances count: 0
+2018-07-04 13:59:22.458  INFO 8904 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13786, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13786], bind any local is true
+2018-07-04 13:59:22.482  INFO 8904 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13786
+2018-07-04 13:59:22.487  INFO 8904 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-07-04 13:59:22.490  INFO 8904 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-07-04 13:59:22.829  INFO 8904 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13786 [dev] [3.9.1] Backpressure is disabled
+2018-07-04 13:59:23.606  INFO 8904 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Creating TcpIpJoiner
+2018-07-04 13:59:24.303  INFO 8904 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13786 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-07-04 13:59:24.306  INFO 8904 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13786 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-07-04 13:59:24.318  INFO 8904 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTING
+2018-07-04 13:59:24.354  INFO 8904 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Cluster version set to 3.9
+2018-07-04 13:59:24.357  INFO 8904 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13786 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13786 - 2ef2ff23-b119-4e5b-9d10-0988dcd238a3 this
+]
+
+2018-07-04 13:59:24.401  INFO 8904 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTED
+2018-07-04 13:59:25.556  INFO 8904 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application configuration, using profiles: swagger
+2018-07-04 13:59:25.559 DEBUG 8904 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Initializing Metrics registries
+2018-07-04 13:59:25.570 DEBUG 8904 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Filter
+2018-07-04 13:59:25.572 DEBUG 8904 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Servlet
+2018-07-04 13:59:25.578  INFO 8904 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application fully configured
+2018-07-04 13:59:25.956 DEBUG 8904 --- [restartedMain] c.i.ba.config.DatabaseConfiguration      : Configuring Liquibase
+2018-07-04 13:59:25.972  WARN 8904 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-07-04 13:59:27.472  INFO 8904 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:447b3a01faeb9f75948bf7fe48bfb6db - Re-registering apps/HCMEMPMICROSERVICE
+2018-07-04 13:59:27.473  INFO 8904 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:447b3a01faeb9f75948bf7fe48bfb6db: registering service...
+2018-07-04 13:59:27.669  INFO 8904 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:447b3a01faeb9f75948bf7fe48bfb6db - registration status: 204
+2018-07-04 13:59:29.505  INFO 8904 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-07-04 13:59:29.510  INFO 8904 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [hcmEmpMicroservice].
+2018-07-04 13:59:32.314  INFO 8904 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-04 13:59:32.317  INFO 8904 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-04 13:59:32.318  INFO 8904 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-04 13:59:32.322  INFO 8904 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-04 13:59:32.323  INFO 8904 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-04 13:59:32.326  INFO 8904 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-07-04 13:59:32.328  INFO 8904 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-04 13:59:32.510  INFO 8904 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-04 13:59:36.441 DEBUG 8904 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Starting HazelcastCacheManager
+2018-07-04 13:59:38.949  WARN 8904 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-07-04 13:59:38.963  WARN 8904 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-07-04 13:59:39.792 DEBUG 8904 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Starting Swagger
+2018-07-04 13:59:39.808 DEBUG 8904 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Started Swagger in 14 ms
+2018-07-04 13:59:42.123  INFO 8904 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1530705582123, current=UP, previous=STARTING]
+2018-07-04 13:59:43.747  INFO 8904 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:447b3a01faeb9f75948bf7fe48bfb6db: registering service...
+2018-07-04 13:59:44.026  INFO 8904 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:447b3a01faeb9f75948bf7fe48bfb6db - Re-registering apps/HCMEMPMICROSERVICE
+2018-07-04 13:59:44.050  INFO 8904 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:447b3a01faeb9f75948bf7fe48bfb6db: registering service...
+2018-07-04 13:59:44.118  INFO 8904 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:447b3a01faeb9f75948bf7fe48bfb6db - registration status: 204
+2018-07-04 13:59:44.313  INFO 8904 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:447b3a01faeb9f75948bf7fe48bfb6db - registration status: 204
+2018-07-04 13:59:44.599  INFO 8904 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : Started HcmEmpMicroserviceApp in 42.151 seconds (JVM running for 43.209)
+2018-07-04 13:59:44.604  INFO 8904 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Application 'hcmEmpMicroservice' is running! Access URLs:
+	Local: 		http://localhost:8085
+	External: 	http://192.168.1.58:8085
+	Profile(s): 	[swagger, dev]
+----------------------------------------------------------
+2018-07-04 13:59:44.608  INFO 8904 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Config Server: 	Connected to the JHipster Registry config server, using https://github.com/jhipster/jhipster-registry-sample-config !
+----------------------------------------------------------
+2018-07-04 14:01:39.254 DEBUG 8904 --- [XNIO-2 task-1] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.getAllEmEmpAccomplishments() with argument[s] = [Page request [number: 0, size 20, sort: null]]
+2018-07-04 14:01:39.263 DEBUG 8904 --- [XNIO-2 task-1] c.i.b.w.r.EmEmpAccomplishmentsResource   : REST request to get a page of EmEmpAccomplishments
+2018-07-04 14:01:39.780  INFO 8904 --- [XNIO-2 task-1] c.h.i.p.impl.PartitionStateManager       : [127.0.0.1]:13786 [dev] [3.9.1] Initializing cluster partition table arrangement...
+2018-07-04 14:01:40.193 DEBUG 8904 --- [XNIO-2 task-1] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.getAllEmEmpAccomplishments() with result = <200 OK,[EmEmpAccomplishmentsDTO{id=2, title='English Language', description='Ucio engleski bla blab lab lbala bla bla blab lab lab lab lab lab lba lbal bal balb al bla ba', organization='null', location='null', association='null', ongoing='F', link='null', dateFrom='2002-02-07', dateTo='2018-02-12', occupation='null', proficiency='b', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=4}, EmEmpAccomplishmentsDTO{id=3, title='FZZZ Project', description='Radio na FZZZ projektu kao praktikant', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='2014-02-01', dateTo='2015-02-01', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=5}, EmEmpAccomplishmentsDTO{id=4, title='Certificate of Excellence 2015', description='Top student 2015', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='2014-02-01', dateTo='2015-02-01', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=3}, EmEmpAccomplishmentsDTO{id=6, title='German Language B2.2', description='Ucio deutschland', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='2013-02-09', dateTo='2017-02-26', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=4}, EmEmpAccomplishmentsDTO{id=31155, title='Publication', description='desc', organization='null', location='null', association='null', ongoing='F', link='test', dateFrom='2018-02-16', dateTo='null', occupation='null', proficiency='null', licenceNumber='null', rating=1, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=6}, EmEmpAccomplishmentsDTO{id=1, title='HCM Project', description='HCM developer', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='2017-02-01', dateTo='null', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=5}, EmEmpAccomplishmentsDTO{id=123607, title='apptest2', description='null', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='null', dateTo='null', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=1}, EmEmpAccomplishmentsDTO{id=27052, title='Bla', description='null', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='null', dateTo='null', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=3}],{X-Total-Count=[8], Link=[</api/em-emp-accomplishments?page=0&size=20>; rel="last",</api/em-emp-accomplishments?page=0&size=20>; rel="first"]}>
+2018-07-04 14:04:22.013  INFO 8904 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 14:04:30.161 ERROR 8904 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Liquibase could not start correctly, your database is NOT ready: Could not acquire change log lock.  Currently locked by 192.168.1.51 (192.168.1.51) since 6/27/18 2:50 PM
+
+liquibase.exception.LockException: Could not acquire change log lock.  Currently locked by 192.168.1.51 (192.168.1.51) since 6/27/18 2:50 PM
+	at liquibase.lockservice.StandardLockService.waitForLock(StandardLockService.java:190)
+	at liquibase.Liquibase.update(Liquibase.java:196)
+	at liquibase.Liquibase.update(Liquibase.java:192)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.initDb(AsyncSpringLiquibase.java:94)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.lambda$afterPropertiesSet$0(AsyncSpringLiquibase.java:77)
+	at io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor.lambda$createWrappedRunnable$1(ExceptionHandlingAsyncTaskExecutor.java:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018-07-04 14:08:13.389  INFO 10100 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : The following profiles are active: swagger,dev
+2018-07-04 14:08:17.388 DEBUG 10100 --- [restartedMain] c.i.ba.config.AsyncConfiguration         : Creating Async Task Executor
+2018-07-04 14:08:18.885 DEBUG 10100 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Registering JVM gauges
+2018-07-04 14:08:18.911 DEBUG 10100 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Monitoring the datasource
+2018-07-04 14:08:18.913 DEBUG 10100 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Initializing Metrics JMX reporting
+2018-07-04 14:08:20.484 DEBUG 10100 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast
+2018-07-04 14:08:20.630 DEBUG 10100 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast clustering for instanceId: hcmEmpMicroservice
+2018-07-04 14:08:20.633 DEBUG 10100 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-07-04 14:08:20.840  INFO 10100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-07-04 14:08:21.764  INFO 10100 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-07-04 14:08:21.766  INFO 10100 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-07-04 14:08:22.494  INFO 10100 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-07-04 14:08:22.496  INFO 10100 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-07-04 14:08:22.861  INFO 10100 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 14:08:23.010  INFO 10100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-04 14:08:23.011  INFO 10100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-04 14:08:23.015  INFO 10100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-04 14:08:23.015  INFO 10100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-04 14:08:23.017  INFO 10100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-04 14:08:23.019  INFO 10100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-07-04 14:08:23.022  INFO 10100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-04 14:08:23.327  INFO 10100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-04 14:08:23.330  INFO 10100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-07-04 14:08:23.334  INFO 10100 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-07-04 14:08:23.340  INFO 10100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1530706103340 with initial instances count: 0
+2018-07-04 14:08:24.362  INFO 10100 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13786, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13786], bind any local is true
+2018-07-04 14:08:24.395  INFO 10100 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13786
+2018-07-04 14:08:24.396  INFO 10100 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-07-04 14:08:24.398  INFO 10100 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-07-04 14:08:25.144  INFO 10100 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13786 [dev] [3.9.1] Backpressure is disabled
+2018-07-04 14:08:26.098  INFO 10100 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Creating TcpIpJoiner
+2018-07-04 14:08:26.882  INFO 10100 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13786 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-07-04 14:08:26.888  INFO 10100 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13786 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-07-04 14:08:26.900  INFO 10100 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTING
+2018-07-04 14:08:27.036  INFO 10100 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Cluster version set to 3.9
+2018-07-04 14:08:27.039  INFO 10100 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13786 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13786 - 3a63b569-7da3-4f49-8bf6-90dfe5fe1c4d this
+]
+
+2018-07-04 14:08:27.083  INFO 10100 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTED
+2018-07-04 14:08:28.429  INFO 10100 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1c43af69842f74195749c47b1b85c317 - Re-registering apps/HCMEMPMICROSERVICE
+2018-07-04 14:08:28.432  INFO 10100 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1c43af69842f74195749c47b1b85c317: registering service...
+2018-07-04 14:08:28.542  INFO 10100 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1c43af69842f74195749c47b1b85c317 - registration status: 204
+2018-07-04 14:08:29.516  INFO 10100 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application configuration, using profiles: swagger
+2018-07-04 14:08:29.518 DEBUG 10100 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Initializing Metrics registries
+2018-07-04 14:08:29.532 DEBUG 10100 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Filter
+2018-07-04 14:08:29.534 DEBUG 10100 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Servlet
+2018-07-04 14:08:29.547  INFO 10100 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application fully configured
+2018-07-04 14:08:30.180 DEBUG 10100 --- [restartedMain] c.i.ba.config.DatabaseConfiguration      : Configuring Liquibase
+2018-07-04 14:08:30.196  WARN 10100 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-07-04 14:08:33.299  INFO 10100 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-07-04 14:08:33.303  INFO 10100 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [hcmEmpMicroservice].
+2018-07-04 14:08:33.332  INFO 10100 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-04 14:08:33.333  INFO 10100 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-04 14:08:33.334  INFO 10100 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-04 14:08:33.337  INFO 10100 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-04 14:08:33.337  INFO 10100 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-04 14:08:33.338  INFO 10100 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-07-04 14:08:33.338  INFO 10100 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-04 14:08:33.528  INFO 10100 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-04 14:08:40.275 DEBUG 10100 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Starting HazelcastCacheManager
+2018-07-04 14:08:42.079  WARN 10100 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-07-04 14:08:42.094  WARN 10100 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-07-04 14:08:42.926 DEBUG 10100 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Starting Swagger
+2018-07-04 14:08:42.940 DEBUG 10100 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Started Swagger in 12 ms
+2018-07-04 14:08:45.543  INFO 10100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1530706125543, current=UP, previous=STARTING]
+2018-07-04 14:08:49.240  INFO 10100 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1c43af69842f74195749c47b1b85c317: registering service...
+2018-07-04 14:08:49.536  INFO 10100 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1c43af69842f74195749c47b1b85c317 - registration status: 204
+2018-07-04 14:08:49.503  INFO 10100 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1c43af69842f74195749c47b1b85c317 - Re-registering apps/HCMEMPMICROSERVICE
+2018-07-04 14:08:49.546  INFO 10100 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1c43af69842f74195749c47b1b85c317: registering service...
+2018-07-04 14:08:49.717  INFO 10100 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : Started HcmEmpMicroserviceApp in 42.64 seconds (JVM running for 43.701)
+2018-07-04 14:08:49.734  INFO 10100 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Application 'hcmEmpMicroservice' is running! Access URLs:
+	Local: 		http://localhost:8085
+	External: 	http://192.168.1.58:8085
+	Profile(s): 	[swagger, dev]
+----------------------------------------------------------
+2018-07-04 14:08:49.737  INFO 10100 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Config Server: 	Connected to the JHipster Registry config server, using https://github.com/jhipster/jhipster-registry-sample-config !
+----------------------------------------------------------
+2018-07-04 14:08:49.779  INFO 10100 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1c43af69842f74195749c47b1b85c317 - registration status: 204
+2018-07-04 14:09:22.532 DEBUG 10100 --- [XNIO-2 task-1] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.getEmEmpAccomplishmentsByEmpId() with argument[s] = [4407]
+2018-07-04 14:09:22.539 DEBUG 10100 --- [XNIO-2 task-1] c.i.b.w.r.EmEmpAccomplishmentsResource   : REST request to get EmEmpAccomplishments by Employee Id : 4407
+2018-07-04 14:09:23.231  INFO 10100 --- [XNIO-2 task-1] c.h.i.p.impl.PartitionStateManager       : [127.0.0.1]:13786 [dev] [3.9.1] Initializing cluster partition table arrangement...
+2018-07-04 14:09:23.394 DEBUG 10100 --- [XNIO-2 task-1] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.getEmEmpAccomplishmentsByEmpId() with result = <200 OK,[EmEmpAccomplishmentsDTO{id=2, title='English Language', description='Ucio engleski bla blab lab lbala bla bla blab lab lab lab lab lab lba lbal bal balb al bla ba', organization='null', location='null', association='null', ongoing='F', link='null', dateFrom='2002-02-07', dateTo='2018-02-12', occupation='null', proficiency='b', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=4}, EmEmpAccomplishmentsDTO{id=3, title='FZZZ Project', description='Radio na FZZZ projektu kao praktikant', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='2014-02-01', dateTo='2015-02-01', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=5}, EmEmpAccomplishmentsDTO{id=4, title='Certificate of Excellence 2015', description='Top student 2015', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='2014-02-01', dateTo='2015-02-01', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=3}, EmEmpAccomplishmentsDTO{id=6, title='German Language B2.2', description='Ucio deutschland', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='2013-02-09', dateTo='2017-02-26', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=4}, EmEmpAccomplishmentsDTO{id=31155, title='Publication', description='desc', organization='null', location='null', association='null', ongoing='F', link='test', dateFrom='2018-02-16', dateTo='null', occupation='null', proficiency='null', licenceNumber='null', rating=1, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=6}, EmEmpAccomplishmentsDTO{id=1, title='HCM Project', description='HCM developer', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='2017-02-01', dateTo='null', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=5}, EmEmpAccomplishmentsDTO{id=27052, title='Bla', description='null', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='null', dateTo='null', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=3}],{}>
+2018-07-04 14:13:00.058  INFO 4796 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : The following profiles are active: swagger,dev
+2018-07-04 14:13:03.956 DEBUG 4796 --- [restartedMain] c.i.ba.config.AsyncConfiguration         : Creating Async Task Executor
+2018-07-04 14:13:05.608 DEBUG 4796 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Registering JVM gauges
+2018-07-04 14:13:05.627 DEBUG 4796 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Monitoring the datasource
+2018-07-04 14:13:05.630 DEBUG 4796 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Initializing Metrics JMX reporting
+2018-07-04 14:13:07.295 DEBUG 4796 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast
+2018-07-04 14:13:07.342 DEBUG 4796 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast clustering for instanceId: hcmEmpMicroservice
+2018-07-04 14:13:07.346 DEBUG 4796 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-07-04 14:13:07.516  INFO 4796 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-07-04 14:13:08.084  INFO 4796 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-07-04 14:13:08.086  INFO 4796 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-07-04 14:13:09.005  INFO 4796 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-07-04 14:13:09.007  INFO 4796 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-07-04 14:13:09.311  INFO 4796 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 14:13:09.447  INFO 4796 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-04 14:13:09.448  INFO 4796 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-04 14:13:09.452  INFO 4796 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-04 14:13:09.452  INFO 4796 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-04 14:13:09.453  INFO 4796 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-04 14:13:09.454  INFO 4796 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-07-04 14:13:09.458  INFO 4796 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-04 14:13:09.749  INFO 4796 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-04 14:13:09.753  INFO 4796 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-07-04 14:13:09.758  INFO 4796 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-07-04 14:13:09.763  INFO 4796 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1530706389763 with initial instances count: 0
+2018-07-04 14:13:09.888  INFO 4796 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13786, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13786], bind any local is true
+2018-07-04 14:13:09.912  INFO 4796 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13786
+2018-07-04 14:13:09.913  INFO 4796 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-07-04 14:13:09.914  INFO 4796 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-07-04 14:13:10.182  INFO 4796 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13786 [dev] [3.9.1] Backpressure is disabled
+2018-07-04 14:13:10.893  INFO 4796 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Creating TcpIpJoiner
+2018-07-04 14:13:11.523  INFO 4796 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13786 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-07-04 14:13:11.995  INFO 4796 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13786 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-07-04 14:13:12.004  INFO 4796 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTING
+2018-07-04 14:13:12.037  INFO 4796 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Cluster version set to 3.9
+2018-07-04 14:13:12.039  INFO 4796 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13786 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13786 - aecce793-ebde-4fe3-99c1-b239a8e0e562 this
+]
+
+2018-07-04 14:13:12.072  INFO 4796 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTED
+2018-07-04 14:13:13.245  INFO 4796 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application configuration, using profiles: swagger
+2018-07-04 14:13:13.246 DEBUG 4796 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Initializing Metrics registries
+2018-07-04 14:13:13.257 DEBUG 4796 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Filter
+2018-07-04 14:13:13.260 DEBUG 4796 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Servlet
+2018-07-04 14:13:13.265  INFO 4796 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application fully configured
+2018-07-04 14:13:13.616 DEBUG 4796 --- [restartedMain] c.i.ba.config.DatabaseConfiguration      : Configuring Liquibase
+2018-07-04 14:13:13.629  WARN 4796 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-07-04 14:13:15.080  INFO 4796 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:33b67f6a8fef8d62bc336dcc8626a786 - Re-registering apps/HCMEMPMICROSERVICE
+2018-07-04 14:13:15.084  INFO 4796 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:33b67f6a8fef8d62bc336dcc8626a786: registering service...
+2018-07-04 14:13:15.331  INFO 4796 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:33b67f6a8fef8d62bc336dcc8626a786 - registration status: 204
+2018-07-04 14:13:16.519  INFO 4796 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-07-04 14:13:16.524  INFO 4796 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [hcmEmpMicroservice].
+2018-07-04 14:13:19.753  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-04 14:13:19.757  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-04 14:13:19.759  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-04 14:13:19.762  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-04 14:13:19.763  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-04 14:13:19.765  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-07-04 14:13:19.768  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-04 14:13:19.955  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-04 14:13:23.453 DEBUG 4796 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Starting HazelcastCacheManager
+2018-07-04 14:13:25.672  WARN 4796 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-07-04 14:13:25.686  WARN 4796 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-07-04 14:13:26.526 DEBUG 4796 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Starting Swagger
+2018-07-04 14:13:26.541 DEBUG 4796 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Started Swagger in 13 ms
+2018-07-04 14:13:28.861  INFO 4796 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1530706408861, current=UP, previous=STARTING]
+2018-07-04 14:13:30.086  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-04 14:13:30.141  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-04 14:13:30.216  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-04 14:13:30.236  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-04 14:13:30.238  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-04 14:13:30.260  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-07-04 14:13:30.263  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-04 14:13:30.468  INFO 4796 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-04 14:13:30.930  INFO 4796 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:33b67f6a8fef8d62bc336dcc8626a786 - Re-registering apps/HCMEMPMICROSERVICE
+2018-07-04 14:13:30.987  INFO 4796 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:33b67f6a8fef8d62bc336dcc8626a786: registering service...
+2018-07-04 14:13:31.152  INFO 4796 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : Started HcmEmpMicroserviceApp in 37.181 seconds (JVM running for 38.193)
+2018-07-04 14:13:31.169  INFO 4796 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Application 'hcmEmpMicroservice' is running! Access URLs:
+	Local: 		http://localhost:8085
+	External: 	http://192.168.1.58:8085
+	Profile(s): 	[swagger, dev]
+----------------------------------------------------------
+2018-07-04 14:13:31.244  INFO 4796 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:33b67f6a8fef8d62bc336dcc8626a786 - registration status: 204
+2018-07-04 14:13:31.251  INFO 4796 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Config Server: 	Connected to the JHipster Registry config server, using https://github.com/jhipster/jhipster-registry-sample-config !
+----------------------------------------------------------
+2018-07-04 14:13:31.331  INFO 4796 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:33b67f6a8fef8d62bc336dcc8626a786: registering service...
+2018-07-04 14:13:31.468  INFO 4796 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:33b67f6a8fef8d62bc336dcc8626a786 - registration status: 204
+2018-07-04 14:13:44.181 DEBUG 4796 --- [XNIO-2 task-1] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpBankAccountsResource.getEmEmpBankAccountsByEmpId() with argument[s] = [4407]
+2018-07-04 14:13:44.188 DEBUG 4796 --- [XNIO-2 task-1] c.i.b.w.rest.EmEmpBankAccountsResource   : REST request to get EmEmpBankAccounts by Employee id : 4407
+2018-07-04 14:13:44.555  INFO 4796 --- [XNIO-2 task-1] c.h.i.p.impl.PartitionStateManager       : [127.0.0.1]:13786 [dev] [3.9.1] Initializing cluster partition table arrangement...
+2018-07-04 14:13:44.658 DEBUG 4796 --- [XNIO-2 task-1] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpBankAccountsResource.getEmEmpBankAccountsByEmpId() with result = <200 OK,[EmEmpBankAccountsDTO{id=38452, accountNumber='321321312', status='null', createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idBank=24851}],{}>
+2018-07-04 14:13:51.855 DEBUG 4796 --- [XNIO-2 task-2] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpBankAccountsResource.getAllEmEmpBankAccounts() with argument[s] = [Page request [number: 0, size 20, sort: null]]
+2018-07-04 14:13:51.860 DEBUG 4796 --- [XNIO-2 task-2] c.i.b.w.rest.EmEmpBankAccountsResource   : REST request to get a page of EmEmpBankAccounts
+2018-07-04 14:13:52.064 DEBUG 4796 --- [XNIO-2 task-2] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpBankAccountsResource.getAllEmEmpBankAccounts() with result = <200 OK,[EmEmpBankAccountsDTO{id=38452, accountNumber='321321312', status='null', createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idBank=24851}, EmEmpBankAccountsDTO{id=43251, accountNumber='32131', status='null', createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idBank=24651}, EmEmpBankAccountsDTO{id=31303, accountNumber='21331321', status='null', createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idBank=24651}],{X-Total-Count=[3], Link=[</api/em-emp-bank-accounts?page=0&size=20>; rel="last",</api/em-emp-bank-accounts?page=0&size=20>; rel="first"]}>
+2018-07-04 14:13:58.862 DEBUG 4796 --- [XNIO-2 task-3] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpBankAccountsResource.getEmEmpBankAccountsByEmpId() with argument[s] = [4407]
+2018-07-04 14:13:58.899 DEBUG 4796 --- [XNIO-2 task-3] c.i.b.w.rest.EmEmpBankAccountsResource   : REST request to get EmEmpBankAccounts by Employee id : 4407
+2018-07-04 14:13:58.959 DEBUG 4796 --- [XNIO-2 task-3] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpBankAccountsResource.getEmEmpBankAccountsByEmpId() with result = <200 OK,[EmEmpBankAccountsDTO{id=38452, accountNumber='321321312', status='null', createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idBank=24851}],{}>

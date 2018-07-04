@@ -121,6 +121,20 @@ public class EmEmpBankAccountsResource {
         EmEmpBankAccountsDTO emEmpBankAccountsDTO = emEmpBankAccountsMapper.toDto(emEmpBankAccounts);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpBankAccountsDTO));
     }
+    /**
+     * GET  /em-emp-bank-accounts/employee/:id
+     *
+     * @param id
+     * @return the ResponseEntity with status 200 (OK) and with body the emEmpBankAccountsDTO, or with status 404 (Not Found)
+     */
+    @GetMapping("/em-emp-bank-accounts/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpBankAccountsDTO>> getEmEmpBankAccountsByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpBankAccounts by Employee id : {}", id);
+        List<EmEmpBankAccounts> emEmpBankAccounts = emEmpBankAccountsRepository.findByIdEmployeeId(id);
+        List<EmEmpBankAccountsDTO> emEmpBankAccountsDTO = emEmpBankAccountsMapper.toDto(emEmpBankAccounts);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpBankAccountsDTO));
+    }
 
     /**
      * DELETE  /em-emp-bank-accounts/:id : delete the "id" emEmpBankAccounts.
