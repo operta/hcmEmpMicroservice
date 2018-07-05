@@ -121,6 +121,15 @@ public class EmEmpCitizenshipsResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpCitizenshipsDTO));
     }
 
+    @GetMapping("/em-emp-citizenships/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpCitizenshipsDTO>> getEmEmpCitizenshipsByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpCitizenships by Employee id: {}", id);
+        List<EmEmpCitizenships> emEmpCitizenships = emEmpCitizenshipsRepository.findByIdEmployeeId(id);
+        List<EmEmpCitizenshipsDTO> emEmpCitizenshipsDTO = emEmpCitizenshipsMapper.toDto(emEmpCitizenships);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpCitizenshipsDTO));
+    }
+
     /**
      * DELETE  /em-emp-citizenships/:id : delete the "id" emEmpCitizenships.
      *

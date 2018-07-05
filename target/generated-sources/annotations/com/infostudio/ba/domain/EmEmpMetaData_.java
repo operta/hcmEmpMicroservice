@@ -8,12 +8,12 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(EmEmpMetaData.class)
 public abstract class EmEmpMetaData_ extends com.infostudio.ba.domain.AbstractAuditingEntity_ {
 
+	public static volatile SingularAttribute<EmEmpMetaData, String> displayValue;
 	public static volatile SingularAttribute<EmEmpMetaData, EmEmployees> idEmployee;
 	public static volatile SingularAttribute<EmEmpMetaData, Double> ordering;
 	public static volatile SingularAttribute<EmEmpMetaData, Long> id;
 	public static volatile SingularAttribute<EmEmpMetaData, String> title;
 	public static volatile SingularAttribute<EmEmpMetaData, String> value;
-	public static volatile SingularAttribute<EmEmpMetaData, String> displayvalue;
 	public static volatile SingularAttribute<EmEmpMetaData, Integer> idMetaData;
 
 }

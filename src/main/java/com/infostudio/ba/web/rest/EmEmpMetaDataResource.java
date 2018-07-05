@@ -121,6 +121,15 @@ public class EmEmpMetaDataResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpMetaDataDTO));
     }
 
+    @GetMapping("/em-emp-meta-data/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpMetaDataDTO>> getEmEmpMetaDataByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpMetaData by Employee id : {}", id);
+        List<EmEmpMetaData> emEmpMetaData = emEmpMetaDataRepository.findByIdEmployeeId(id);
+        List<EmEmpMetaDataDTO> emEmpMetaDataDTO = emEmpMetaDataMapper.toDto(emEmpMetaData);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpMetaDataDTO));
+    }
+
     /**
      * DELETE  /em-emp-meta-data/:id : delete the "id" emEmpMetaData.
      *

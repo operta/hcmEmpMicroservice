@@ -30,8 +30,8 @@ public class EmEmpMetaData extends AbstractAuditingEntity implements Serializabl
     @Column(name = "value")
     private String value;
 
-    @Column(name = "displayvalue")
-    private String displayvalue;
+    @Column(name = "display_value")
+    private String displayValue;
 
     @Column(name = "ordering")
     private Double ordering;
@@ -97,16 +97,16 @@ public class EmEmpMetaData extends AbstractAuditingEntity implements Serializabl
     }
 
     public String getDisplayvalue() {
-        return displayvalue;
+        return displayValue;
     }
 
     public EmEmpMetaData displayvalue(String displayvalue) {
-        this.displayvalue = displayvalue;
+        this.displayValue = displayvalue;
         return this;
     }
 
     public void setDisplayvalue(String displayvalue) {
-        this.displayvalue = displayvalue;
+        this.displayValue = displayvalue;
     }
 
     public Double getOrdering() {
@@ -150,7 +150,7 @@ public class EmEmpMetaData extends AbstractAuditingEntity implements Serializabl
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", value='" + value + '\'' +
-                ", displayvalue='" + displayvalue + '\'' +
+                ", displayvalue='" + displayValue + '\'' +
                 ", ordering=" + ordering +
                 ", idEmployee=" + idEmployee +
                 ", idMetaData=" + idMetaData +

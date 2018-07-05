@@ -121,6 +121,15 @@ public class EmEmpPreviousJobsResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpPreviousJobsDTO));
     }
 
+    @GetMapping("/em-emp-previous-jobs/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpPreviousJobsDTO>> getEmEmpPreviousJobsByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpPreviousJobs by Employee Id : {}", id);
+        List<EmEmpPreviousJobs> emEmpPreviousJobs = emEmpPreviousJobsRepository.findByIdEmployeeId(id);
+        List<EmEmpPreviousJobsDTO> emEmpPreviousJobsDTO = emEmpPreviousJobsMapper.toDto(emEmpPreviousJobs);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpPreviousJobsDTO));
+    }
+
     /**
      * DELETE  /em-emp-previous-jobs/:id : delete the "id" emEmpPreviousJobs.
      *

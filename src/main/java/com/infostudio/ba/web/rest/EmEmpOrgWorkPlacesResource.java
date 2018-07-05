@@ -122,6 +122,24 @@ public class EmEmpOrgWorkPlacesResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpOrgWorkPlacesDTO));
     }
 
+    @GetMapping("/em-emp-org-work-places/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpOrgWorkPlacesDTO>> getEmEmpOrgWorkPlacesByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpOrgWorkPlaces by Employee id : {}", id);
+        List<EmEmpOrgWorkPlaces> emEmpOrgWorkPlaces = emEmpOrgWorkPlacesRepository.findByIdEmployeeId(id);
+        List<EmEmpOrgWorkPlacesDTO> emEmpOrgWorkPlacesDTO = emEmpOrgWorkPlacesMapper.toDto(emEmpOrgWorkPlaces);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpOrgWorkPlacesDTO));
+    }
+
+    @GetMapping("/em-emp-org-work-places/last/employee/{id}")
+    @Timed
+    public ResponseEntity<EmEmpOrgWorkPlacesDTO> getLastEmEmpOrgWorkPlacesByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpOrgWorkPlaces by Employee id : {}", id);
+        EmEmpOrgWorkPlaces emEmpOrgWorkPlaces = emEmpOrgWorkPlacesRepository.findLastOrgWorkPlace(id);
+        EmEmpOrgWorkPlacesDTO emEmpOrgWorkPlacesDTO = emEmpOrgWorkPlacesMapper.toDto(emEmpOrgWorkPlaces);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpOrgWorkPlacesDTO));
+    }
+
     /**
      * DELETE  /em-emp-org-work-places/:id : delete the "id" emEmpOrgWorkPlaces.
      *

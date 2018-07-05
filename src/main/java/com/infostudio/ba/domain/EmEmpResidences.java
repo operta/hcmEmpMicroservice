@@ -6,7 +6,6 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -31,11 +30,89 @@ public class EmEmpResidences extends AbstractAuditingEntity implements Serializa
     @Column(name = "date_from")
     private LocalDate dateFrom;
 
-    @Column(name = "dato_to")
-    private LocalDate datoTo;
+    @Column(name = "date_to")
+    private LocalDate dateTo;
 
     @Column(name = "address_work")
     private String addressWork;
+
+    @OneToOne
+    @JoinColumn(name = "id_employee")
+    private EmEmployees idEmployee;
+
+    @JoinColumn(name = "id_country")
+    private Integer idCountry;
+
+    @JoinColumn(name = "id_region")
+    private Integer idRegion;
+
+    @JoinColumn(name = "id_city")
+    private Integer idCity;
+
+    @JoinColumn(name = "id_country_work")
+    private Integer idCountryWork;
+
+    @JoinColumn(name = "id_region_work")
+    private Integer idRegionWork;
+
+    @JoinColumn(name = "id_city_work")
+    private Integer idCityWork;
+
+    public Integer getIdCountryWork() {
+        return idCountryWork;
+    }
+
+    public void setIdCountryWork(Integer idCountryWork) {
+        this.idCountryWork = idCountryWork;
+    }
+
+    public Integer getIdRegionWork() {
+        return idRegionWork;
+    }
+
+    public void setIdRegionWork(Integer idRegionWork) {
+        this.idRegionWork = idRegionWork;
+    }
+
+    public Integer getIdCityWork() {
+        return idCityWork;
+    }
+
+    public void setIdCityWork(Integer idCityWork) {
+        this.idCityWork = idCityWork;
+    }
+
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
+    }
+
+    public Integer getIdCountry() {
+        return idCountry;
+    }
+
+    public void setIdCountry(Integer idCountry) {
+        this.idCountry = idCountry;
+    }
+
+    public Integer getIdRegion() {
+        return idRegion;
+    }
+
+    public void setIdRegion(Integer idRegion) {
+        this.idRegion = idRegion;
+    }
+
+    public Integer getIdCity() {
+        return idCity;
+    }
+
+    public void setIdCity(Integer idCity) {
+        this.idCity = idCity;
+    }
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -72,17 +149,17 @@ public class EmEmpResidences extends AbstractAuditingEntity implements Serializa
         this.dateFrom = dateFrom;
     }
 
-    public LocalDate getDatoTo() {
-        return datoTo;
+    public LocalDate getDateTo() {
+        return dateTo;
     }
 
     public EmEmpResidences datoTo(LocalDate datoTo) {
-        this.datoTo = datoTo;
+        this.dateTo = datoTo;
         return this;
     }
 
-    public void setDatoTo(LocalDate datoTo) {
-        this.datoTo = datoTo;
+    public void setDateTo(LocalDate dateTo) {
+        this.dateTo = dateTo;
     }
 
     public String getAddressWork() {
@@ -126,7 +203,7 @@ public class EmEmpResidences extends AbstractAuditingEntity implements Serializa
             "id=" + getId() +
             ", address='" + getAddress() + "'" +
             ", dateFrom='" + getDateFrom() + "'" +
-            ", datoTo='" + getDatoTo() + "'" +
+            ", dateTo='" + getDateTo() + "'" +
             ", addressWork='" + getAddressWork() + "'" +
             "}";
     }

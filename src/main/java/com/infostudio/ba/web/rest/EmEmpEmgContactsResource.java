@@ -121,6 +121,15 @@ public class EmEmpEmgContactsResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpEmgContactsDTO));
     }
 
+    @GetMapping("/em-emp-emg-contacts/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpEmgContactsDTO>> getEmEmpEmgContactsByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpEmgContacts : {}", id);
+        List<EmEmpEmgContacts> emEmpEmgContacts = emEmpEmgContactsRepository.findByIdEmployeeId(id);
+        List<EmEmpEmgContactsDTO> emEmpEmgContactsDTO = emEmpEmgContactsMapper.toDto(emEmpEmgContacts);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpEmgContactsDTO));
+    }
+
     /**
      * DELETE  /em-emp-emg-contacts/:id : delete the "id" emEmpEmgContacts.
      *

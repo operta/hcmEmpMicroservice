@@ -121,6 +121,15 @@ public class EmEmpDisabilitiesResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpDisabilitiesDTO));
     }
 
+    @GetMapping("/em-emp-disabilities/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpDisabilitiesDTO>> getEmEmpDisabilitiesByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpDisabilities by Employee id : {}", id);
+        List<EmEmpDisabilities> emEmpDisabilities = emEmpDisabilitiesRepository.findByIdEmployeeId(id);
+        List<EmEmpDisabilitiesDTO> emEmpDisabilitiesDTO = emEmpDisabilitiesMapper.toDto(emEmpDisabilities);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpDisabilitiesDTO));
+    }
+
     /**
      * DELETE  /em-emp-disabilities/:id : delete the "id" emEmpDisabilities.
      *

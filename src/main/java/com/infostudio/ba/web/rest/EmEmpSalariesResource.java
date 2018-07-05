@@ -122,6 +122,15 @@ public class EmEmpSalariesResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpSalariesDTO));
     }
 
+    @GetMapping("/em-emp-salaries/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpSalariesDTO>> getEmEmpSalariesByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpSalaries by Employee Id : {}", id);
+        List<EmEmpSalaries> emEmpSalaries = emEmpSalariesRepository.findByIdEmployeeId(id);
+        List<EmEmpSalariesDTO> emEmpSalariesDTO = emEmpSalariesMapper.toDto(emEmpSalaries);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpSalariesDTO));
+    }
+
     /**
      * DELETE  /em-emp-salaries/:id : delete the "id" emEmpSalaries.
      *

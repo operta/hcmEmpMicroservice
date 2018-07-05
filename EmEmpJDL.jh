@@ -217,7 +217,7 @@ entity EmEmpResidences {
 	id Integer required
     address String
     dateFrom LocalDate
-    datoTo LocalDate
+    dateTo LocalDate
     addressWork String
     createdBy String
     createdAt Instant

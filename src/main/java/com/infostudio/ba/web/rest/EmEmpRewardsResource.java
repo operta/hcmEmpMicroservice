@@ -121,6 +121,15 @@ public class EmEmpRewardsResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpRewardsDTO));
     }
 
+    @GetMapping("/em-emp-rewards/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpRewardsDTO>> getEmEmpRewardsByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpRewards by Employee Id : {}", id);
+        List<EmEmpRewards> emEmpRewards = emEmpRewardsRepository.findByIdEmployeeId(id);
+        List<EmEmpRewardsDTO> emEmpRewardsDTO = emEmpRewardsMapper.toDto(emEmpRewards);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpRewardsDTO));
+    }
+
     /**
      * DELETE  /em-emp-rewards/:id : delete the "id" emEmpRewards.
      *

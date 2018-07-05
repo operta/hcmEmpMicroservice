@@ -121,6 +121,15 @@ public class EmPenaltiesResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emPenaltiesDTO));
     }
 
+    @GetMapping("/em-penalties/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmPenaltiesDTO>> getEmPenaltiesByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmPenalties by Employee Id: {}", id);
+        List<EmPenalties> emPenalties = emPenaltiesRepository.findByIdEmployeeId(id);
+        List<EmPenaltiesDTO> emPenaltiesDTO = emPenaltiesMapper.toDto(emPenalties);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emPenaltiesDTO));
+    }
+
     /**
      * DELETE  /em-penalties/:id : delete the "id" emPenalties.
      *

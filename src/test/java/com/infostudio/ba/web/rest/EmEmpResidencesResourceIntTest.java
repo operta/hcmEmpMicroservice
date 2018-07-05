@@ -143,7 +143,7 @@ public class EmEmpResidencesResourceIntTest {
         EmEmpResidences testEmEmpResidences = emEmpResidencesList.get(emEmpResidencesList.size() - 1);
         assertThat(testEmEmpResidences.getAddress()).isEqualTo(DEFAULT_ADDRESS);
         assertThat(testEmEmpResidences.getDateFrom()).isEqualTo(DEFAULT_DATE_FROM);
-        assertThat(testEmEmpResidences.getDatoTo()).isEqualTo(DEFAULT_DATO_TO);
+        assertThat(testEmEmpResidences.getDateTo()).isEqualTo(DEFAULT_DATO_TO);
         assertThat(testEmEmpResidences.getAddressWork()).isEqualTo(DEFAULT_ADDRESS_WORK);
         assertThat(testEmEmpResidences.getCreatedBy()).isEqualTo(DEFAULT_CREATED_BY);
         assertThat(testEmEmpResidences.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
@@ -254,7 +254,7 @@ public class EmEmpResidencesResourceIntTest {
         EmEmpResidences testEmEmpResidences = emEmpResidencesList.get(emEmpResidencesList.size() - 1);
         assertThat(testEmEmpResidences.getAddress()).isEqualTo(UPDATED_ADDRESS);
         assertThat(testEmEmpResidences.getDateFrom()).isEqualTo(UPDATED_DATE_FROM);
-        assertThat(testEmEmpResidences.getDatoTo()).isEqualTo(UPDATED_DATO_TO);
+        assertThat(testEmEmpResidences.getDateTo()).isEqualTo(UPDATED_DATO_TO);
         assertThat(testEmEmpResidences.getAddressWork()).isEqualTo(UPDATED_ADDRESS_WORK);
         assertThat(testEmEmpResidences.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
         assertThat(testEmEmpResidences.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);

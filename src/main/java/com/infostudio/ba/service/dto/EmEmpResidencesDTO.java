@@ -1,6 +1,8 @@
 package com.infostudio.ba.service.dto;
 
 
+import com.infostudio.ba.domain.EmEmployees;
+
 import java.time.Instant;
 import java.time.LocalDate;
 import java.io.Serializable;
@@ -17,7 +19,7 @@ public class EmEmpResidencesDTO implements Serializable {
 
     private LocalDate dateFrom;
 
-    private LocalDate datoTo;
+    private LocalDate dateTo;
 
     private String addressWork;
 
@@ -29,8 +31,78 @@ public class EmEmpResidencesDTO implements Serializable {
 
     private Instant updatedAt;
 
+    private EmEmployees idEmployee;
+
+    private Integer idCountry;
+
+    private Integer idRegion;
+
+    private Integer idCity;
+
+    private Integer idCountryWork;
+
+    private Integer idRegionWork;
+
+    private Integer idCityWork;
+
+    public Integer getIdCountryWork() {
+        return idCountryWork;
+    }
+
+    public void setIdCountryWork(Integer idCountryWork) {
+        this.idCountryWork = idCountryWork;
+    }
+
+    public Integer getIdRegionWork() {
+        return idRegionWork;
+    }
+
+    public void setIdRegionWork(Integer idRegionWork) {
+        this.idRegionWork = idRegionWork;
+    }
+
+    public Integer getIdCityWork() {
+        return idCityWork;
+    }
+
+    public void setIdCityWork(Integer idCityWork) {
+        this.idCityWork = idCityWork;
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
+    }
+
+    public Integer getIdCountry() {
+        return idCountry;
+    }
+
+    public void setIdCountry(Integer idCountry) {
+        this.idCountry = idCountry;
+    }
+
+    public Integer getIdRegion() {
+        return idRegion;
+    }
+
+    public void setIdRegion(Integer idRegion) {
+        this.idRegion = idRegion;
+    }
+
+    public Integer getIdCity() {
+        return idCity;
+    }
+
+    public void setIdCity(Integer idCity) {
+        this.idCity = idCity;
     }
 
     public void setId(Long id) {
@@ -53,12 +125,12 @@ public class EmEmpResidencesDTO implements Serializable {
         this.dateFrom = dateFrom;
     }
 
-    public LocalDate getDatoTo() {
-        return datoTo;
+    public LocalDate getDateTo() {
+        return dateTo;
     }
 
-    public void setDatoTo(LocalDate datoTo) {
-        this.datoTo = datoTo;
+    public void setDateTo(LocalDate dateTo) {
+        this.dateTo = dateTo;
     }
 
     public String getAddressWork() {
@@ -128,7 +200,7 @@ public class EmEmpResidencesDTO implements Serializable {
             "id=" + getId() +
             ", address='" + getAddress() + "'" +
             ", dateFrom='" + getDateFrom() + "'" +
-            ", datoTo='" + getDatoTo() + "'" +
+            ", dateTo='" + getDateTo() + "'" +
             ", addressWork='" + getAddressWork() + "'" +
             ", createdBy='" + getCreatedBy() + "'" +
             ", createdAt='" + getCreatedAt() + "'" +
