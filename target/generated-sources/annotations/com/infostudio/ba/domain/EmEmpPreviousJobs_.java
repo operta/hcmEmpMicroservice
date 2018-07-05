@@ -13,6 +13,7 @@ public abstract class EmEmpPreviousJobs_ extends com.infostudio.ba.domain.Abstra
 	public static volatile SingularAttribute<EmEmpPreviousJobs, Integer> lengthOfServiceYears;
 	public static volatile SingularAttribute<EmEmpPreviousJobs, Integer> lengthOfServiceMonths;
 	public static volatile SingularAttribute<EmEmpPreviousJobs, String> reasonOfLeaving;
+	public static volatile SingularAttribute<EmEmpPreviousJobs, EmEmployees> idEmployee;
 	public static volatile SingularAttribute<EmEmpPreviousJobs, Integer> lengthOfServiceDays;
 	public static volatile SingularAttribute<EmEmpPreviousJobs, LocalDate> dateTo;
 	public static volatile SingularAttribute<EmEmpPreviousJobs, String> company;

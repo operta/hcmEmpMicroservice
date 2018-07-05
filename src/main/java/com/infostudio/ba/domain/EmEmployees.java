@@ -102,6 +102,28 @@ public class EmEmployees extends AbstractAuditingEntity implements Serializable 
     @JoinColumn(name = "id_status")
     private EmStatuses idStatus;
 
+    @Column(name = "image_blob_content_type")
+    private String imageBlobContentType;
+
+    @Column(name = "image_blob")
+    private byte[] imageBlob;
+
+    public String getImageBlobContentType() {
+        return imageBlobContentType;
+    }
+
+    public void setImageBlobContentType(String imageBlobContentType) {
+        this.imageBlobContentType = imageBlobContentType;
+    }
+
+    public byte[] getImageBlob() {
+        return imageBlob;
+    }
+
+    public void setImageBlob(byte[] imageBlob) {
+        this.imageBlob = imageBlob;
+    }
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;

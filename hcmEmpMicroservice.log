@@ -828,3 +828,428 @@ Members {size:1, ver:1} [
 2018-07-04 14:13:58.862 DEBUG 4796 --- [XNIO-2 task-3] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpBankAccountsResource.getEmEmpBankAccountsByEmpId() with argument[s] = [4407]
 2018-07-04 14:13:58.899 DEBUG 4796 --- [XNIO-2 task-3] c.i.b.w.rest.EmEmpBankAccountsResource   : REST request to get EmEmpBankAccounts by Employee id : 4407
 2018-07-04 14:13:58.959 DEBUG 4796 --- [XNIO-2 task-3] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpBankAccountsResource.getEmEmpBankAccountsByEmpId() with result = <200 OK,[EmEmpBankAccountsDTO{id=38452, accountNumber='321321312', status='null', createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idBank=24851}],{}>
+2018-07-04 14:18:09.466  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 14:18:17.816 ERROR 4796 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Liquibase could not start correctly, your database is NOT ready: Could not acquire change log lock.  Currently locked by 192.168.1.51 (192.168.1.51) since 6/27/18 2:50 PM
+
+liquibase.exception.LockException: Could not acquire change log lock.  Currently locked by 192.168.1.51 (192.168.1.51) since 6/27/18 2:50 PM
+	at liquibase.lockservice.StandardLockService.waitForLock(StandardLockService.java:190)
+	at liquibase.Liquibase.update(Liquibase.java:196)
+	at liquibase.Liquibase.update(Liquibase.java:192)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.initDb(AsyncSpringLiquibase.java:94)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.lambda$afterPropertiesSet$0(AsyncSpringLiquibase.java:77)
+	at io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor.lambda$createWrappedRunnable$1(ExceptionHandlingAsyncTaskExecutor.java:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018-07-04 14:20:47.808 DEBUG 4796 --- [XNIO-2 task-4] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.getEmEmpAccomplishmentsByEmpId() with argument[s] = [4407]
+2018-07-04 14:20:47.819 DEBUG 4796 --- [XNIO-2 task-4] c.i.b.w.r.EmEmpAccomplishmentsResource   : REST request to get EmEmpAccomplishments by Employee Id : 4407
+2018-07-04 14:20:47.884 DEBUG 4796 --- [XNIO-2 task-4] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.getEmEmpAccomplishmentsByEmpId() with result = <200 OK,[EmEmpAccomplishmentsDTO{id=2, title='English Language', description='Ucio engleski bla blab lab lbala bla bla blab lab lab lab lab lab lba lbal bal balb al bla ba', organization='null', location='null', association='null', ongoing='F', link='null', dateFrom='2002-02-07', dateTo='2018-02-12', occupation='null', proficiency='b', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=4}, EmEmpAccomplishmentsDTO{id=3, title='FZZZ Project', description='Radio na FZZZ projektu kao praktikant', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='2014-02-01', dateTo='2015-02-01', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=5}, EmEmpAccomplishmentsDTO{id=4, title='Certificate of Excellence 2015', description='Top student 2015', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='2014-02-01', dateTo='2015-02-01', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=3}, EmEmpAccomplishmentsDTO{id=6, title='German Language B2.2', description='Ucio deutschland', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='2013-02-09', dateTo='2017-02-26', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=4}, EmEmpAccomplishmentsDTO{id=31155, title='Publication', description='desc', organization='null', location='null', association='null', ongoing='F', link='test', dateFrom='2018-02-16', dateTo='null', occupation='null', proficiency='null', licenceNumber='null', rating=1, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=6}, EmEmpAccomplishmentsDTO{id=1, title='HCM Project', description='HCM developer', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='2017-02-01', dateTo='null', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=5}, EmEmpAccomplishmentsDTO{id=27052, title='Bla', description='null', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='null', dateTo='null', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=3}],{}>
+2018-07-04 14:23:09.469  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 14:28:09.472  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 14:33:04.604  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 14:38:04.605  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 14:43:04.608  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 14:48:04.610  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 14:53:04.613  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 14:58:04.615  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 15:03:04.618  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 15:08:04.619  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 15:13:04.623  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 15:16:09.977 DEBUG 4796 --- [XNIO-2 task-5] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpOrgWorkPlacesResource.getAllEmEmpOrgWorkPlaces() with argument[s] = [Page request [number: 0, size 20, sort: null]]
+2018-07-04 15:16:10.159 DEBUG 4796 --- [XNIO-2 task-5] c.i.b.w.rest.EmEmpOrgWorkPlacesResource  : REST request to get a page of EmEmpOrgWorkPlaces
+2018-07-04 15:16:10.552 DEBUG 4796 --- [XNIO-2 task-5] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpOrgWorkPlacesResource.getAllEmEmpOrgWorkPlaces() with result = <200 OK,[EmEmpOrgWorkPlacesDTO{id=32202, dateFrom='2018-02-22', dateTo='2018-02-27', workHistoryCoefficient=3, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idOrgWorkPlace=17151}, EmEmpOrgWorkPlacesDTO{id=32203, dateFrom='2018-02-23', dateTo='2018-02-28', workHistoryCoefficient=5, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idOrgWorkPlace=32251}, EmEmpOrgWorkPlacesDTO{id=32205, dateFrom='2018-02-28', dateTo='null', workHistoryCoefficient=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idOrgWorkPlace=32251}, EmEmpOrgWorkPlacesDTO{id=17205, dateFrom='2018-02-01', dateTo='2018-03-01', workHistoryCoefficient=2, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idOrgWorkPlace=17251}, EmEmpOrgWorkPlacesDTO{id=17206, dateFrom='2018-02-06', dateTo='2018-02-24', workHistoryCoefficient=1, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idOrgWorkPlace=17251}, EmEmpOrgWorkPlacesDTO{id=43151, dateFrom='2018-03-16', dateTo='2018-03-23', workHistoryCoefficient=2, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idOrgWorkPlace=32251}, EmEmpOrgWorkPlacesDTO{id=32201, dateFrom='2018-02-23', dateTo='2018-02-23', workHistoryCoefficient=1, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idOrgWorkPlace=17151}, EmEmpOrgWorkPlacesDTO{id=32204, dateFrom='2018-02-08', dateTo='2018-02-28', workHistoryCoefficient=5, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idOrgWorkPlace=32251}],{X-Total-Count=[8], Link=[</api/em-emp-org-work-places?page=0&size=20>; rel="last",</api/em-emp-org-work-places?page=0&size=20>; rel="first"]}>
+2018-07-04 15:18:04.624  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 15:23:04.626  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 15:28:04.634  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 15:33:04.640  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 15:38:04.646  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 15:43:04.650  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 15:48:04.653  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 15:53:04.657  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 15:58:04.662  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 16:03:04.665  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 16:08:04.669  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 16:11:29.709  WARN 4796 --- [DiscoveryClient-InstanceInfoReplicator-0] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@5b58c04d (IO Error: Invalid Operation, NOT Connected)
+2018-07-04 16:11:34.712  WARN 4796 --- [DiscoveryClient-InstanceInfoReplicator-0] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection oracle.jdbc.driver.T4CConnection@70be10f1 (IO Error: Invalid Operation, NOT Connected)
+2018-07-04 16:12:02.830  WARN 4796 --- [hz.hcmEmpMicroservice.InvocationMonitorThread] c.h.s.i.o.impl.InvocationMonitor         : [127.0.0.1]:13786 [dev] [3.9.1] MonitorInvocationsTask delayed 23148 ms
+2018-07-04 16:12:02.832  WARN 4796 --- [hz.hcmEmpMicroservice.InvocationMonitorThread] c.h.s.i.o.impl.InvocationMonitor         : [127.0.0.1]:13786 [dev] [3.9.1] BroadcastOperationControlTask delayed 26178 ms
+2018-07-04 16:12:02.834  WARN 4796 --- [DiscoveryClient-InstanceInfoReplicator-0] o.s.b.a.h.DataSourceHealthIndicator      : Health check failed
+
+org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 38209ms.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:342)
+	at org.springframework.boot.actuate.health.DataSourceHealthIndicator.getProduct(DataSourceHealthIndicator.java:123)
+	at org.springframework.boot.actuate.health.DataSourceHealthIndicator.doDataSourceHealthCheck(DataSourceHealthIndicator.java:105)
+	at org.springframework.boot.actuate.health.DataSourceHealthIndicator.doHealthCheck(DataSourceHealthIndicator.java:100)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:43)
+	at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:68)
+	at org.springframework.cloud.netflix.eureka.EurekaHealthCheckHandler.getHealthStatus(EurekaHealthCheckHandler.java:103)
+	at org.springframework.cloud.netflix.eureka.EurekaHealthCheckHandler.getStatus(EurekaHealthCheckHandler.java:99)
+	at com.netflix.discovery.DiscoveryClient.refreshInstanceInfo(DiscoveryClient.java:1362)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:100)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 38209ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:666)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:182)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:147)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77)
+	... 17 common frames omitted
+Caused by: java.sql.SQLRecoverableException: IO Error: Invalid Operation, NOT Connected
+	at oracle.jdbc.driver.T4CConnection.doSetNetworkTimeout(T4CConnection.java:6971)
+	at oracle.jdbc.driver.PhysicalConnection.setNetworkTimeout(PhysicalConnection.java:9069)
+	at com.zaxxer.hikari.pool.PoolBase.setNetworkTimeout(PoolBase.java:551)
+	at com.zaxxer.hikari.pool.PoolBase.isConnectionAlive(PoolBase.java:172)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:171)
+	... 21 common frames omitted
+Caused by: oracle.net.ns.NetException: Invalid Operation, NOT Connected
+	at oracle.net.nt.TcpNTAdapter.setOption(TcpNTAdapter.java:313)
+	at oracle.net.ns.NSProtocol.setOption(NSProtocol.java:479)
+	at oracle.net.ns.NSProtocol.setSocketReadTimeout(NSProtocol.java:726)
+	at oracle.jdbc.driver.T4CConnection.doSetNetworkTimeout(T4CConnection.java:6968)
+	... 25 common frames omitted
+
+2018-07-04 16:12:03.490  WARN 4796 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s152ms216µs137ns).
+2018-07-04 16:12:03.597  WARN 4796 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1530713523597, current=DOWN, previous=UP]
+2018-07-04 16:12:03.600  INFO 4796 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:33b67f6a8fef8d62bc336dcc8626a786: registering service...
+2018-07-04 16:12:04.318  INFO 4796 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:33b67f6a8fef8d62bc336dcc8626a786 - registration status: 204
+2018-07-04 16:12:04.372  WARN 4796 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1530713524372, current=UP, previous=DOWN]
+2018-07-04 16:12:04.385  INFO 4796 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:33b67f6a8fef8d62bc336dcc8626a786: registering service...
+2018-07-04 16:12:04.472  INFO 4796 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:33b67f6a8fef8d62bc336dcc8626a786 - registration status: 204
+2018-07-04 16:13:27.820  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 16:18:27.822  INFO 4796 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-04 16:22:22.479  INFO 4796 --- [hz.ShutdownThread] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Running shutdown hook... Current state: ACTIVE
+2018-07-05 11:13:45.811  INFO 7612 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : The following profiles are active: swagger,dev
+2018-07-05 11:13:50.505 DEBUG 7612 --- [restartedMain] c.i.ba.config.AsyncConfiguration         : Creating Async Task Executor
+2018-07-05 11:13:51.969 DEBUG 7612 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Registering JVM gauges
+2018-07-05 11:13:51.994 DEBUG 7612 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Monitoring the datasource
+2018-07-05 11:13:52.000 DEBUG 7612 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Initializing Metrics JMX reporting
+2018-07-05 11:13:53.937 DEBUG 7612 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast
+2018-07-05 11:13:53.992 DEBUG 7612 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast clustering for instanceId: hcmEmpMicroservice
+2018-07-05 11:13:53.997 DEBUG 7612 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-07-05 11:13:54.152  INFO 7612 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-07-05 11:13:55.264  INFO 7612 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-07-05 11:13:55.266  INFO 7612 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-07-05 11:13:55.552  INFO 7612 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-07-05 11:13:55.556  INFO 7612 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-07-05 11:13:55.946  INFO 7612 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-05 11:13:56.167  INFO 7612 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-05 11:13:56.168  INFO 7612 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-05 11:13:56.172  INFO 7612 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-05 11:13:56.177  INFO 7612 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-05 11:13:56.191  INFO 7612 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-05 11:13:56.193  INFO 7612 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-07-05 11:13:56.195  INFO 7612 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-05 11:13:56.566  INFO 7612 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-05 11:13:56.569  INFO 7612 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-07-05 11:13:56.575  INFO 7612 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-07-05 11:13:56.583  INFO 7612 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1530782036583 with initial instances count: 0
+2018-07-05 11:13:56.770  INFO 7612 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13786, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13786], bind any local is true
+2018-07-05 11:13:56.798  INFO 7612 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13786
+2018-07-05 11:13:56.801  INFO 7612 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-07-05 11:13:56.803  INFO 7612 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-07-05 11:13:57.207  INFO 7612 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13786 [dev] [3.9.1] Backpressure is disabled
+2018-07-05 11:13:58.045  INFO 7612 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Creating TcpIpJoiner
+2018-07-05 11:13:58.786  INFO 7612 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13786 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-07-05 11:13:58.800  INFO 7612 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13786 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-07-05 11:13:58.818  INFO 7612 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTING
+2018-07-05 11:13:58.886  INFO 7612 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Cluster version set to 3.9
+2018-07-05 11:13:58.890  INFO 7612 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13786 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13786 - 85bf80ff-2eb5-4297-9333-9b8c11ec2ad1 this
+]
+
+2018-07-05 11:13:58.999  INFO 7612 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTED
+2018-07-05 11:14:01.713  INFO 7612 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:4528b83df2294d42a17613f66f1317c8 - Re-registering apps/HCMEMPMICROSERVICE
+2018-07-05 11:14:01.715  INFO 7612 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:4528b83df2294d42a17613f66f1317c8: registering service...
+2018-07-05 11:14:01.824  INFO 7612 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:4528b83df2294d42a17613f66f1317c8 - registration status: 204
+2018-07-05 11:14:05.121  INFO 7612 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application configuration, using profiles: swagger
+2018-07-05 11:14:05.123 DEBUG 7612 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Initializing Metrics registries
+2018-07-05 11:14:05.134 DEBUG 7612 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Filter
+2018-07-05 11:14:05.135 DEBUG 7612 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Servlet
+2018-07-05 11:14:05.144  INFO 7612 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application fully configured
+2018-07-05 11:14:06.571  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-05 11:14:06.572  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-05 11:14:06.575  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-05 11:14:06.577  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-05 11:14:06.577  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-05 11:14:06.579  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-07-05 11:14:06.579  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-05 11:14:06.671  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-05 11:14:07.298 DEBUG 7612 --- [restartedMain] c.i.ba.config.DatabaseConfiguration      : Configuring Liquibase
+2018-07-05 11:14:07.328  WARN 7612 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-07-05 11:14:10.278  INFO 7612 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-07-05 11:14:10.284  INFO 7612 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [hcmEmpMicroservice].
+2018-07-05 11:14:16.717  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-05 11:14:16.720  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-05 11:14:16.720  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-05 11:14:16.724  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-05 11:14:16.724  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-05 11:14:16.724  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-07-05 11:14:16.725  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-05 11:14:16.843  INFO 7612 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-05 11:14:20.522  WARN 7612 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/C:/Users/mehme/.m2/repository/io/springfox/springfox-spring-web/2.8.0/springfox-spring-web-2.8.0.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/mehme/.m2/repository/io/springfox/springfox-spring-web/2.8.0/springfox-spring-web-2.8.0.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'emEmpDocumentsResource' method 
+public org.springframework.http.ResponseEntity<java.util.List<com.infostudio.ba.service.dto.EmEmpDocumentsDTO>> com.infostudio.ba.web.rest.EmEmpDocumentsResource.getEmEmpDocumentsByEmpId(java.lang.Long)
+to {[/api/em-emp-documents/{id}],methods=[GET]}: There is already 'emEmpDocumentsResource' bean method
+public org.springframework.http.ResponseEntity<com.infostudio.ba.service.dto.EmEmpDocumentsDTO> com.infostudio.ba.web.rest.EmEmpDocumentsResource.getEmEmpDocuments(java.lang.Long) mapped.
+2018-07-05 11:14:20.550  INFO 7612 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Shutting down HazelcastCacheRegionFactory
+2018-07-05 11:14:20.553  WARN 7612 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : hibernate.cache.hazelcast.shutdown_on_session_factory_close property is set to 'false'. Leaving current HazelcastInstance active! (Warning: Do not disable Hazelcast hazelcast.shutdownhook.enabled property!)
+2018-07-05 11:14:20.560  INFO 7612 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is SHUTTING_DOWN
+2018-07-05 11:14:20.565  INFO 7612 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Shutting down connection manager...
+2018-07-05 11:14:20.568  INFO 7612 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Shutting down node engine...
+2018-07-05 11:14:20.852  INFO 7612 --- [restartedMain] com.hazelcast.instance.NodeExtension     : [127.0.0.1]:13786 [dev] [3.9.1] Destroying node NodeExtension.
+2018-07-05 11:14:20.859  INFO 7612 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast Shutdown is completed in 294 ms.
+2018-07-05 11:14:20.865  INFO 7612 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is SHUTDOWN
+2018-07-05 11:14:20.868  INFO 7612 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Closing Cache Manager
+2018-07-05 11:14:20.948  INFO 7612 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2018-07-05 11:14:20.962  WARN 7612 --- [restartedMain] .s.c.a.CommonAnnotationBeanPostProcessor : Invocation of destroy method failed on bean with name 'scopedTarget.eurekaClient': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaInstanceConfigBean': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2018-07-05 11:14:21.809  WARN 7612 --- [hcm-emp-microservice-Executor-1] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-1 - Connection oracle.jdbc.driver.T4CConnection@5f1ce279 marked as broken because of SQLSTATE(08003), ErrorCode(17008)
+
+java.sql.SQLRecoverableException: Closed Connection
+	at oracle.jdbc.driver.PhysicalConnection.getAutoCommit(PhysicalConnection.java:1828)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.getAutoCommit(HikariProxyConnection.java)
+	at liquibase.database.jvm.JdbcConnection.rollback(JdbcConnection.java:336)
+	at liquibase.database.AbstractJdbcDatabase.rollback(AbstractJdbcDatabase.java:1166)
+	at liquibase.lockservice.StandardLockService.acquireLock(StandardLockService.java:205)
+	at liquibase.lockservice.StandardLockService.waitForLock(StandardLockService.java:170)
+	at liquibase.Liquibase.update(Liquibase.java:196)
+	at liquibase.Liquibase.update(Liquibase.java:192)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.initDb(AsyncSpringLiquibase.java:94)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.lambda$afterPropertiesSet$0(AsyncSpringLiquibase.java:77)
+	at io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor.lambda$createWrappedRunnable$1(ExceptionHandlingAsyncTaskExecutor.java:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018-07-05 11:14:21.811  WARN 7612 --- [hcm-emp-microservice-Executor-1] liquibase                                : Failed to restore the auto commit to true
+2018-07-05 11:14:21.815 ERROR 7612 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Liquibase could not start correctly, your database is NOT ready: java.sql.SQLException: Connection is closed
+
+liquibase.exception.DatabaseException: java.sql.SQLException: Connection is closed
+	at liquibase.database.jvm.JdbcConnection.setAutoCommit(JdbcConnection.java:363)
+	at liquibase.database.AbstractJdbcDatabase.close(AbstractJdbcDatabase.java:1202)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:397)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.initDb(AsyncSpringLiquibase.java:94)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.lambda$afterPropertiesSet$0(AsyncSpringLiquibase.java:77)
+	at io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor.lambda$createWrappedRunnable$1(ExceptionHandlingAsyncTaskExecutor.java:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: Connection is closed
+	at com.zaxxer.hikari.pool.ProxyConnection$ClosedConnection.lambda$getClosedConnection$0(ProxyConnection.java:490)
+	at com.sun.proxy.$Proxy144.setAutoCommit(Unknown Source)
+	at com.zaxxer.hikari.pool.ProxyConnection.setAutoCommit(ProxyConnection.java:395)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.setAutoCommit(HikariProxyConnection.java)
+	at liquibase.database.jvm.JdbcConnection.setAutoCommit(JdbcConnection.java:361)
+	... 8 common frames omitted
+
+2018-07-05 11:14:21.817 ERROR 7612 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/C:/Users/mehme/.m2/repository/io/springfox/springfox-spring-web/2.8.0/springfox-spring-web-2.8.0.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/mehme/.m2/repository/io/springfox/springfox-spring-web/2.8.0/springfox-spring-web-2.8.0.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'emEmpDocumentsResource' method 
+public org.springframework.http.ResponseEntity<java.util.List<com.infostudio.ba.service.dto.EmEmpDocumentsDTO>> com.infostudio.ba.web.rest.EmEmpDocumentsResource.getEmEmpDocumentsByEmpId(java.lang.Long)
+to {[/api/em-emp-documents/{id}],methods=[GET]}: There is already 'emEmpDocumentsResource' bean method
+public org.springframework.http.ResponseEntity<com.infostudio.ba.service.dto.EmEmpDocumentsDTO> com.infostudio.ba.web.rest.EmEmpDocumentsResource.getEmEmpDocuments(java.lang.Long) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at com.infostudio.ba.HcmEmpMicroserviceApp.main(HcmEmpMicroserviceApp.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/mehme/.m2/repository/io/springfox/springfox-spring-web/2.8.0/springfox-spring-web-2.8.0.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'emEmpDocumentsResource' method 
+public org.springframework.http.ResponseEntity<java.util.List<com.infostudio.ba.service.dto.EmEmpDocumentsDTO>> com.infostudio.ba.web.rest.EmEmpDocumentsResource.getEmEmpDocumentsByEmpId(java.lang.Long)
+to {[/api/em-emp-documents/{id}],methods=[GET]}: There is already 'emEmpDocumentsResource' bean method
+public org.springframework.http.ResponseEntity<com.infostudio.ba.service.dto.EmEmpDocumentsDTO> com.infostudio.ba.web.rest.EmEmpDocumentsResource.getEmEmpDocuments(java.lang.Long) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1316)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1180)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1096)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'emEmpDocumentsResource' method 
+public org.springframework.http.ResponseEntity<java.util.List<com.infostudio.ba.service.dto.EmEmpDocumentsDTO>> com.infostudio.ba.web.rest.EmEmpDocumentsResource.getEmEmpDocumentsByEmpId(java.lang.Long)
+to {[/api/em-emp-documents/{id}],methods=[GET]}: There is already 'emEmpDocumentsResource' bean method
+public org.springframework.http.ResponseEntity<com.infostudio.ba.service.dto.EmEmpDocumentsDTO> com.infostudio.ba.web.rest.EmEmpDocumentsResource.getEmEmpDocuments(java.lang.Long) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1316)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1180)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1096)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 39 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'emEmpDocumentsResource' method 
+public org.springframework.http.ResponseEntity<java.util.List<com.infostudio.ba.service.dto.EmEmpDocumentsDTO>> com.infostudio.ba.web.rest.EmEmpDocumentsResource.getEmEmpDocumentsByEmpId(java.lang.Long)
+to {[/api/em-emp-documents/{id}],methods=[GET]}: There is already 'emEmpDocumentsResource' bean method
+public org.springframework.http.ResponseEntity<com.infostudio.ba.service.dto.EmEmpDocumentsDTO> com.infostudio.ba.web.rest.EmEmpDocumentsResource.getEmEmpDocuments(java.lang.Long) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:576)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:540)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:264)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:250)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:214)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1688)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1626)
+	... 53 common frames omitted
+
+2018-07-05 11:17:11.859  INFO 8248 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : The following profiles are active: swagger,dev
+2018-07-05 11:17:15.605 DEBUG 8248 --- [restartedMain] c.i.ba.config.AsyncConfiguration         : Creating Async Task Executor
+2018-07-05 11:17:16.771 DEBUG 8248 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Registering JVM gauges
+2018-07-05 11:17:16.801 DEBUG 8248 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Monitoring the datasource
+2018-07-05 11:17:16.802 DEBUG 8248 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Initializing Metrics JMX reporting
+2018-07-05 11:17:18.207 DEBUG 8248 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast
+2018-07-05 11:17:18.259 DEBUG 8248 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast clustering for instanceId: hcmEmpMicroservice
+2018-07-05 11:17:18.261 DEBUG 8248 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-07-05 11:17:18.420  INFO 8248 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-07-05 11:17:18.856  INFO 8248 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-07-05 11:17:18.856  INFO 8248 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-07-05 11:17:19.046  INFO 8248 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-07-05 11:17:19.049  INFO 8248 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-07-05 11:17:19.394  INFO 8248 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-05 11:17:19.523  INFO 8248 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-05 11:17:19.524  INFO 8248 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-05 11:17:19.527  INFO 8248 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-05 11:17:19.528  INFO 8248 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-05 11:17:19.528  INFO 8248 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-05 11:17:19.529  INFO 8248 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-07-05 11:17:19.531  INFO 8248 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-05 11:17:19.822  INFO 8248 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-05 11:17:19.824  INFO 8248 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-07-05 11:17:19.830  INFO 8248 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-07-05 11:17:19.835  INFO 8248 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1530782239834 with initial instances count: 0
+2018-07-05 11:17:19.969  INFO 8248 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13786, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13786], bind any local is true
+2018-07-05 11:17:19.992  INFO 8248 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13786
+2018-07-05 11:17:19.994  INFO 8248 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-07-05 11:17:19.996  INFO 8248 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-07-05 11:17:20.319  INFO 8248 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13786 [dev] [3.9.1] Backpressure is disabled
+2018-07-05 11:17:21.195  INFO 8248 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Creating TcpIpJoiner
+2018-07-05 11:17:21.848  INFO 8248 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13786 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-07-05 11:17:21.852  INFO 8248 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13786 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-07-05 11:17:21.867  INFO 8248 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTING
+2018-07-05 11:17:21.909  INFO 8248 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Cluster version set to 3.9
+2018-07-05 11:17:21.913  INFO 8248 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13786 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13786 - 1e6a85a3-e333-461e-93bf-2960c8d57289 this
+]
+
+2018-07-05 11:17:21.957  INFO 8248 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTED
+2018-07-05 11:17:23.124  INFO 8248 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application configuration, using profiles: swagger
+2018-07-05 11:17:23.125 DEBUG 8248 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Initializing Metrics registries
+2018-07-05 11:17:23.134 DEBUG 8248 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Filter
+2018-07-05 11:17:23.137 DEBUG 8248 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Servlet
+2018-07-05 11:17:23.143  INFO 8248 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application fully configured
+2018-07-05 11:17:23.482 DEBUG 8248 --- [restartedMain] c.i.ba.config.DatabaseConfiguration      : Configuring Liquibase
+2018-07-05 11:17:23.500  WARN 8248 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-07-05 11:17:25.138  INFO 8248 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1591cfa650da8c5002603c47b19a23eb - Re-registering apps/HCMEMPMICROSERVICE
+2018-07-05 11:17:25.141  INFO 8248 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1591cfa650da8c5002603c47b19a23eb: registering service...
+2018-07-05 11:17:25.310  INFO 8248 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1591cfa650da8c5002603c47b19a23eb - registration status: 204
+2018-07-05 11:17:25.933  INFO 8248 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-07-05 11:17:25.939  INFO 8248 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [hcmEmpMicroservice].
+2018-07-05 11:17:29.826  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-05 11:17:29.896  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-05 11:17:29.897  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-05 11:17:29.901  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-05 11:17:29.902  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-05 11:17:29.903  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-07-05 11:17:29.904  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-05 11:17:30.058  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-05 11:17:32.744 DEBUG 8248 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Starting HazelcastCacheManager
+2018-07-05 11:17:35.140  WARN 8248 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-07-05 11:17:35.153  WARN 8248 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-07-05 11:17:36.110 DEBUG 8248 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Starting Swagger
+2018-07-05 11:17:36.125 DEBUG 8248 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Started Swagger in 11 ms
+2018-07-05 11:17:38.521  INFO 8248 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1530782258521, current=UP, previous=STARTING]
+2018-07-05 11:17:40.215  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-07-05 11:17:40.233  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-07-05 11:17:40.257  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-07-05 11:17:40.266  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-07-05 11:17:40.270  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-07-05 11:17:40.275  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-07-05 11:17:40.320  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-07-05 11:17:40.376  INFO 8248 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1591cfa650da8c5002603c47b19a23eb: registering service...
+2018-07-05 11:17:40.678  INFO 8248 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:1591cfa650da8c5002603c47b19a23eb - registration status: 204
+2018-07-05 11:17:40.624  INFO 8248 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-07-05 11:17:40.991  INFO 8248 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : Started HcmEmpMicroserviceApp in 34.908 seconds (JVM running for 36.122)
+2018-07-05 11:17:40.994  INFO 8248 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Application 'hcmEmpMicroservice' is running! Access URLs:
+	Local: 		http://localhost:8085
+	External: 	http://192.168.1.58:8085
+	Profile(s): 	[swagger, dev]
+----------------------------------------------------------
+2018-07-05 11:17:40.995  INFO 8248 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Config Server: 	Connected to the JHipster Registry config server, using https://github.com/jhipster/jhipster-registry-sample-config !
+----------------------------------------------------------
+2018-07-05 11:18:16.670  WARN 8248 --- [XNIO-2 task-1] o.z.p.spring.web.advice.AdviceTrait      : Method Not Allowed: Request method 'POST' not supported
+2018-07-05 11:18:18.182  WARN 8248 --- [XNIO-2 task-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2018-07-05 11:18:24.109 DEBUG 8248 --- [XNIO-2 task-2] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmployeesResource.getEmEmployeesByUserId() with argument[s] = [1]
+2018-07-05 11:18:24.119 DEBUG 8248 --- [XNIO-2 task-2] c.i.ba.web.rest.EmEmployeesResource      : REST request to get EmEmployees by user id : 1
+2018-07-05 11:18:24.489 DEBUG 8248 --- [XNIO-2 task-2] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmployeesResource.getEmEmployeesByUserId() with result = <404 Not Found,{}>
+2018-07-05 11:18:39.505 DEBUG 8248 --- [XNIO-2 task-3] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmployeesResource.getAllEmEmployees() with argument[s] = [Page request [number: 0, size 20, sort: null]]
+2018-07-05 11:18:39.508 DEBUG 8248 --- [XNIO-2 task-3] c.i.ba.web.rest.EmEmployeesResource      : REST request to get a page of EmEmployees
+2018-07-05 11:18:40.148  INFO 8248 --- [XNIO-2 task-3] c.h.i.p.impl.PartitionStateManager       : [127.0.0.1]:13786 [dev] [3.9.1] Initializing cluster partition table arrangement...
+2018-07-05 11:18:40.423 DEBUG 8248 --- [XNIO-2 task-3] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmployeesResource.getAllEmEmployees() with result = <200 OK,[EmEmployeesDTO{id=4407, code='1', name='Dzan', idUser=4, middleName='null', surname='Operta', maidenName='null', disabilityDegree=null, ethnicGroup='null', gender='Male', residentialSituation='null', maritalStatus='Married', bloodGroup='null', dateOfBirth=1994-02-03, hireDate=2017-06-16, ssn='23445213', taxNumber='8798787779', imagePath='null', imageBlobContentType='image/png', imageBlob=[B@5033ed27, phoneNumber='+3876223990', email='d.operta@infostudio.ba', personalPhoneNumber='+3876223452', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=1, idQualification=3, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=32151, code='JD', name='John', idUser=32101, middleName='null', surname='Doe', maidenName='null', disabilityDegree=null, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-25, ssn='321321', taxNumber='3213213', imagePath='null', imageBlobContentType='image/png', imageBlob=[B@323d9d2d, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32005, idQualification=4, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36001, code='tb', name='Mujo', idUser=null, middleName='null', surname='Mujic', maidenName='null', disabilityDegree=null, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2008-01-31, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='image/png', imageBlob=[B@5007d3d6, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=31751, idQualification=4, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36004, code='tt2', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-09, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='image/png', imageBlob=[B@52ee1a0d, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36010, code='tt8', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-10, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36005, code='tt3', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-08, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='image/png', imageBlob=[B@1d7b8fa2, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36006, code='tt4', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-09, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='image/png', imageBlob=[B@43f1add5, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36007, code='tt5', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-10, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36008, code='tt6', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-10, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36009, code='tt7', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-10, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36011, code='tt9', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-10, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36012, code='tt10', name='Test123', idUser=null, middleName='null', surname='Testic', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-08, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36013, code='tt11', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-10, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36014, code='tt12', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-10, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36015, code='tt13', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-10, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36016, code='tt14', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-10, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36017, code='tt15', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-10, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36018, code='tt16', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-10, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=36019, code='tt17', name='Test', idUser=null, middleName='null', surname='Test', maidenName='null', disabilityDegree=0, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-02-10, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='null', imageBlob=null, phoneNumber='null', email='null', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32002, idQualification=1, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}, EmEmployeesDTO{id=18951, code='1337', name='Dino', idUser=11051, middleName='null', surname='Begoli', maidenName='null', disabilityDegree=9, ethnicGroup='null', gender='Male', residentialSituation='null', maritalStatus='Unmarried', bloodGroup='null', dateOfBirth=2007-12-27, hireDate=2018-01-27, ssn='1231', taxNumber='231312', imagePath='null', imageBlobContentType='image/png', imageBlob=[B@2d065f1e, phoneNumber='2242131', email='dino.begoli@infostudio.ba', personalPhoneNumber='23112', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=17302, idQualification=3, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'}],{X-Total-Count=[28], Link=[</api/em-employees?page=1&size=20>; rel="next",</api/em-employees?page=1&size=20>; rel="last",</api/em-employees?page=0&size=20>; rel="first"]}>
+2018-07-05 11:18:44.852 DEBUG 8248 --- [XNIO-2 task-4] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmployeesResource.getEmEmployees() with argument[s] = [4]
+2018-07-05 11:18:44.876 DEBUG 8248 --- [XNIO-2 task-4] c.i.ba.web.rest.EmEmployeesResource      : REST request to get EmEmployees : 4
+2018-07-05 11:18:44.932 DEBUG 8248 --- [XNIO-2 task-4] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmployeesResource.getEmEmployees() with result = <404 Not Found,{}>
+2018-07-05 11:18:47.335 DEBUG 8248 --- [XNIO-2 task-5] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmployeesResource.getEmEmployeesByUserId() with argument[s] = [4]
+2018-07-05 11:18:47.347 DEBUG 8248 --- [XNIO-2 task-5] c.i.ba.web.rest.EmEmployeesResource      : REST request to get EmEmployees by user id : 4
+2018-07-05 11:18:47.406 DEBUG 8248 --- [XNIO-2 task-5] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmployeesResource.getEmEmployeesByUserId() with result = <200 OK,EmEmployeesDTO{id=4407, code='1', name='Dzan', idUser=4, middleName='null', surname='Operta', maidenName='null', disabilityDegree=null, ethnicGroup='null', gender='Male', residentialSituation='null', maritalStatus='Married', bloodGroup='null', dateOfBirth=1994-02-03, hireDate=2017-06-16, ssn='23445213', taxNumber='8798787779', imagePath='null', imageBlobContentType='image/png', imageBlob=[B@64500d3b, phoneNumber='+3876223990', email='d.operta@infostudio.ba', personalPhoneNumber='+3876223452', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=1, idQualification=3, idEmploymentTypeId=4501, idEmploymentTypeName='Full-time', idStatusId=4451, idStatusName='status'},{}>
+2018-07-05 11:19:04.916 DEBUG 8248 --- [XNIO-2 task-6] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmployeesResource.getEmEmployeesByUserId() with argument[s] = [2]
+2018-07-05 11:19:04.916 DEBUG 8248 --- [XNIO-2 task-6] c.i.ba.web.rest.EmEmployeesResource      : REST request to get EmEmployees by user id : 2
+2018-07-05 11:19:04.947 DEBUG 8248 --- [XNIO-2 task-6] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmployeesResource.getEmEmployeesByUserId() with result = <404 Not Found,{}>
+2018-07-05 11:19:43.217 DEBUG 8248 --- [XNIO-2 task-7] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmployeesResource.getEmEmployeesByUserId() with argument[s] = [3]
+2018-07-05 11:19:43.219 DEBUG 8248 --- [XNIO-2 task-7] c.i.ba.web.rest.EmEmployeesResource      : REST request to get EmEmployees by user id : 3
+2018-07-05 11:19:43.300 DEBUG 8248 --- [XNIO-2 task-7] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmployeesResource.getEmEmployeesByUserId() with result = <200 OK,EmEmployeesDTO{id=32154, code='ZM', name='Zerina', idUser=3, middleName='null', surname='Mandzo', maidenName='null', disabilityDegree=null, ethnicGroup='null', gender='null', residentialSituation='null', maritalStatus='null', bloodGroup='null', dateOfBirth=null, hireDate=2018-01-30, ssn='null', taxNumber='null', imagePath='null', imageBlobContentType='image/png', imageBlob=[B@51f9c412, phoneNumber='2132', email='231', personalPhoneNumber='null', createdBy='null', createdAt=null, updatedBy='null', updatedAt=null, idLegalEntity=32008, idQualification=5, idEmploymentTypeId=17001, idEmploymentTypeName='Part-time', idStatusId=4451, idStatusName='status'},{}>

@@ -122,6 +122,22 @@ public class EmEmpFamiliesResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpFamiliesDTO));
     }
 
+
+    /**
+     * GET  /em-emp-families/employee/:id
+     *
+     * @param id
+     * @return the ResponseEntity with status 200 (OK) and with body the emEmpFamiliesDTO, or with status 404 (Not Found)
+     */
+    @GetMapping("/em-emp-families/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpFamiliesDTO>> getEmEmpFamiliesByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpFamilies by Employee id : {}", id);
+        List<EmEmpFamilies> emEmpFamilies = emEmpFamiliesRepository.findByIdEmployeeId(id);
+        List<EmEmpFamiliesDTO> emEmpFamiliesDTO = emEmpFamiliesMapper.toDto(emEmpFamilies);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpFamiliesDTO));
+    }
+
     /**
      * DELETE  /em-emp-families/:id : delete the "id" emEmpFamilies.
      *

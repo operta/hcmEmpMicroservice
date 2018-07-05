@@ -30,6 +30,18 @@ public class EmEmpDisabilities extends AbstractAuditingEntity implements Seriali
     @Column(name = "percentage")
     private Double percentage;
 
+    @OneToOne
+    @JoinColumn(name = "id_employee")
+    private EmEmployees idEmployee;
+
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
+    }
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;

@@ -123,6 +123,21 @@ public class EmEmpIdentificationsResource {
     }
 
     /**
+     * GET  /em-emp-identifications/employee/:id
+     *
+     * @param id
+     * @return the ResponseEntity with status 200 (OK) and with body the emEmpIdentificationsDTO, or with status 404 (Not Found)
+     */
+    @GetMapping("/em-emp-identifications/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpIdentificationsDTO>> getEmEmpIdentificationsByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpIdentifications by Employee Id : {}", id);
+        List<EmEmpIdentifications> emEmpIdentifications = emEmpIdentificationsRepository.findByIdEmployeeId(id);
+        List<EmEmpIdentificationsDTO> emEmpIdentificationsDTO = emEmpIdentificationsMapper.toDto(emEmpIdentifications);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpIdentificationsDTO));
+    }
+
+    /**
      * DELETE  /em-emp-identifications/:id : delete the "id" emEmpIdentifications.
      *
      * @param id the id of the emEmpIdentificationsDTO to delete

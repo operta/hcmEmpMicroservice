@@ -1,6 +1,8 @@
 package com.infostudio.ba.service.dto;
 
 
+import com.infostudio.ba.domain.EmEmployees;
+
 import java.time.Instant;
 import java.io.Serializable;
 import java.util.Objects;
@@ -23,6 +25,16 @@ public class EmEmpDisabilitiesDTO implements Serializable {
     private String updatedBy;
 
     private Instant updatedAt;
+
+    private EmEmployees idEmployee;
+
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
+    }
 
     public Long getId() {
         return id;
@@ -101,16 +113,20 @@ public class EmEmpDisabilitiesDTO implements Serializable {
         return Objects.hashCode(getId());
     }
 
+
     @Override
     public String toString() {
         return "EmEmpDisabilitiesDTO{" +
-            "id=" + getId() +
-            ", description='" + getDescription() + "'" +
-            ", percentage=" + getPercentage() +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
-            "}";
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", percentage=" + percentage +
+                ", createdBy='" + createdBy + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedBy='" + updatedBy + '\'' +
+                ", updatedAt=" + updatedAt +
+                ", idEmployee=" + idEmployee +
+                '}';
     }
+
+
 }

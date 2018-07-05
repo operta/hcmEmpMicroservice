@@ -8,7 +8,9 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(EmEmpCitizenships.class)
 public abstract class EmEmpCitizenships_ extends com.infostudio.ba.domain.AbstractAuditingEntity_ {
 
+	public static volatile SingularAttribute<EmEmpCitizenships, EmEmployees> idEmployee;
 	public static volatile SingularAttribute<EmEmpCitizenships, Long> id;
+	public static volatile SingularAttribute<EmEmpCitizenships, Integer> idCountry;
 
 }
 

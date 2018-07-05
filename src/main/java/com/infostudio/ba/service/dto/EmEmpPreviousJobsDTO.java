@@ -1,6 +1,8 @@
 package com.infostudio.ba.service.dto;
 
 
+import com.infostudio.ba.domain.EmEmployees;
+
 import java.time.Instant;
 import java.time.LocalDate;
 import java.io.Serializable;
@@ -39,8 +41,18 @@ public class EmEmpPreviousJobsDTO implements Serializable {
 
     private Instant updatedAt;
 
+    private EmEmployees idEmployee;
+
     public Long getId() {
         return id;
+    }
+
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
     }
 
     public void setId(Long id) {
@@ -175,20 +187,21 @@ public class EmEmpPreviousJobsDTO implements Serializable {
     @Override
     public String toString() {
         return "EmEmpPreviousJobsDTO{" +
-            "id=" + getId() +
-            ", company='" + getCompany() + "'" +
-            ", position='" + getPosition() + "'" +
-            ", dateFrom='" + getDateFrom() + "'" +
-            ", dateTo='" + getDateTo() + "'" +
-            ", reasonOfLeaving='" + getReasonOfLeaving() + "'" +
-            ", managerPosition='" + getManagerPosition() + "'" +
-            ", lengthOfServiceYears=" + getLengthOfServiceYears() +
-            ", lengthOfServiceMonths=" + getLengthOfServiceMonths() +
-            ", lengthOfServiceDays=" + getLengthOfServiceDays() +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
-            "}";
+                "id=" + id +
+                ", company='" + company + '\'' +
+                ", position='" + position + '\'' +
+                ", dateFrom=" + dateFrom +
+                ", dateTo=" + dateTo +
+                ", reasonOfLeaving='" + reasonOfLeaving + '\'' +
+                ", managerPosition='" + managerPosition + '\'' +
+                ", lengthOfServiceYears=" + lengthOfServiceYears +
+                ", lengthOfServiceMonths=" + lengthOfServiceMonths +
+                ", lengthOfServiceDays=" + lengthOfServiceDays +
+                ", createdBy='" + createdBy + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedBy='" + updatedBy + '\'' +
+                ", updatedAt=" + updatedAt +
+                ", idEmployee=" + idEmployee +
+                '}';
     }
 }

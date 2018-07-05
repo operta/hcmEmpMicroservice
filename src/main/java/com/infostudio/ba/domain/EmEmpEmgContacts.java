@@ -36,6 +36,15 @@ public class EmEmpEmgContacts extends AbstractAuditingEntity implements Serializ
     @Column(name = "email")
     private String email;
 
+    @OneToOne
+    @JoinColumn(name = "id_employee")
+    private EmEmployees idEmployee;
+
+
+    @OneToOne
+    @JoinColumn(name = "id_contact_type")
+    private EmContractTypes idContactType;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -43,6 +52,22 @@ public class EmEmpEmgContacts extends AbstractAuditingEntity implements Serializ
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
+    }
+
+    public EmContractTypes getIdContactType() {
+        return idContactType;
+    }
+
+    public void setIdContactType(EmContractTypes idContactType) {
+        this.idContactType = idContactType;
     }
 
     public String getFirstName() {

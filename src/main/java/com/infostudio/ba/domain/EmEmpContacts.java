@@ -30,6 +30,31 @@ public class EmEmpContacts extends AbstractAuditingEntity implements Serializabl
     @Column(name = "description")
     private String description;
 
+    @OneToOne
+    @JoinColumn(name = "id_employee")
+    private EmEmployees idEmployee;
+
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
+    }
+
+    public EmContractTypes getIdContactType() {
+        return idContactType;
+    }
+
+    public void setIdContactType(EmContractTypes idContactType) {
+        this.idContactType = idContactType;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "id_contact_type")
+    private EmContractTypes idContactType;
+
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;

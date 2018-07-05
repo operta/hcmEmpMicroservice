@@ -1,6 +1,9 @@
 package com.infostudio.ba.service.dto;
 
 
+import com.infostudio.ba.domain.EmContractTypes;
+import com.infostudio.ba.domain.EmEmployees;
+
 import java.time.Instant;
 import java.io.Serializable;
 import java.util.Objects;
@@ -27,6 +30,26 @@ public class EmEmpEmgContactsDTO implements Serializable {
     private String phoneNumber;
 
     private String email;
+
+    private EmEmployees idEmployee;
+
+    private EmContractTypes idContactType;
+
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
+    }
+
+    public EmContractTypes getIdContactType() {
+        return idContactType;
+    }
+
+    public void setIdContactType(EmContractTypes idContactType) {
+        this.idContactType = idContactType;
+    }
 
     public Long getId() {
         return id;
@@ -124,15 +147,17 @@ public class EmEmpEmgContactsDTO implements Serializable {
     @Override
     public String toString() {
         return "EmEmpEmgContactsDTO{" +
-            "id=" + getId() +
-            ", firstName='" + getFirstName() + "'" +
-            ", lastName='" + getLastName() + "'" +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
-            ", phoneNumber='" + getPhoneNumber() + "'" +
-            ", email='" + getEmail() + "'" +
-            "}";
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", createdBy='" + createdBy + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedBy='" + updatedBy + '\'' +
+                ", updatedAt=" + updatedAt +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", idEmployee=" + idEmployee +
+                ", idContactType=" + idContactType +
+                '}';
     }
 }

@@ -1,6 +1,8 @@
 package com.infostudio.ba.service.dto;
 
 
+import com.infostudio.ba.domain.EmEmployees;
+
 import java.time.Instant;
 import java.io.Serializable;
 import java.util.Objects;
@@ -24,12 +26,22 @@ public class EmEmpContactsDTO implements Serializable {
 
     private Instant updatedAt;
 
+    private EmEmployees idEmployee;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
     }
 
     public String getContact() {
@@ -104,13 +116,15 @@ public class EmEmpContactsDTO implements Serializable {
     @Override
     public String toString() {
         return "EmEmpContactsDTO{" +
-            "id=" + getId() +
-            ", contact='" + getContact() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
-            "}";
+                "id=" + id +
+                ", contact='" + contact + '\'' +
+                ", description='" + description + '\'' +
+                ", createdBy='" + createdBy + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedBy='" + updatedBy + '\'' +
+                ", updatedAt=" + updatedAt +
+                ", idEmployee=" + idEmployee +
+                '}';
     }
+
 }

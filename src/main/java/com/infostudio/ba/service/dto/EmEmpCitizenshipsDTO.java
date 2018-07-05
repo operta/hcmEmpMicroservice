@@ -1,6 +1,8 @@
 package com.infostudio.ba.service.dto;
 
 
+import com.infostudio.ba.domain.EmEmployees;
+
 import java.time.Instant;
 import java.io.Serializable;
 import java.util.Objects;
@@ -11,6 +13,10 @@ import java.util.Objects;
 public class EmEmpCitizenshipsDTO implements Serializable {
 
     private Long id;
+
+    private EmEmployees idEmployee;
+
+    private Integer idCountry;
 
     private String createdBy;
 
@@ -60,6 +66,22 @@ public class EmEmpCitizenshipsDTO implements Serializable {
         this.updatedAt = updatedAt;
     }
 
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
+    }
+
+    public Integer getIdCountry() {
+        return idCountry;
+    }
+
+    public void setIdCountry(Integer idCountry) {
+        this.idCountry = idCountry;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -84,11 +106,13 @@ public class EmEmpCitizenshipsDTO implements Serializable {
     @Override
     public String toString() {
         return "EmEmpCitizenshipsDTO{" +
-            "id=" + getId() +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
-            "}";
+                "id=" + id +
+                ", idEmployee=" + idEmployee +
+                ", idCountry=" + idCountry +
+                ", createdBy='" + createdBy + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedBy='" + updatedBy + '\'' +
+                ", updatedAt=" + updatedAt +
+                '}';
     }
 }

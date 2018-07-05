@@ -123,6 +123,21 @@ public class EmEmpBorrowingsResource {
     }
 
     /**
+     * GET  /em-emp-borrowings/employee/:id.
+     *
+     * @param id
+     * @return the ResponseEntity with status 200 (OK) and with body the emEmpBorrowingsDTO, or with status 404 (Not Found)
+     */
+    @GetMapping("/em-emp-borrowings/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpBorrowingsDTO>> getEmEmpBorrowingsByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpBorrowings by Employee Id : {}", id);
+        List<EmEmpBorrowings> emEmpBorrowings = emEmpBorrowingsRepository.findByIdEmployeeId(id);
+        List<EmEmpBorrowingsDTO> emEmpBorrowingsDTO = emEmpBorrowingsMapper.toDto(emEmpBorrowings);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpBorrowingsDTO));
+    }
+
+    /**
      * DELETE  /em-emp-borrowings/:id : delete the "id" emEmpBorrowings.
      *
      * @param id the id of the emEmpBorrowingsDTO to delete

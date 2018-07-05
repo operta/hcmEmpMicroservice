@@ -20,6 +20,7 @@ public abstract class EmEmployees_ extends com.infostudio.ba.domain.AbstractAudi
 	public static volatile SingularAttribute<EmEmployees, String> bloodGroup;
 	public static volatile SingularAttribute<EmEmployees, String> residentialSituation;
 	public static volatile SingularAttribute<EmEmployees, String> surname;
+	public static volatile SingularAttribute<EmEmployees, String> imageBlobContentType;
 	public static volatile SingularAttribute<EmEmployees, Long> id;
 	public static volatile SingularAttribute<EmEmployees, String> email;
 	public static volatile SingularAttribute<EmEmployees, Integer> idLegalEntity;
@@ -31,6 +32,7 @@ public abstract class EmEmployees_ extends com.infostudio.ba.domain.AbstractAudi
 	public static volatile SingularAttribute<EmEmployees, EmEmpTypes> idEmploymentType;
 	public static volatile SingularAttribute<EmEmployees, Integer> disabilityDegree;
 	public static volatile SingularAttribute<EmEmployees, String> name;
+	public static volatile SingularAttribute<EmEmployees, byte[]> imageBlob;
 	public static volatile SingularAttribute<EmEmployees, String> middleName;
 	public static volatile SingularAttribute<EmEmployees, String> ethnicGroup;
 	public static volatile SingularAttribute<EmEmployees, String> maritalStatus;

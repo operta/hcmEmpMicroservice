@@ -122,6 +122,21 @@ public class EmEmpInjuriesResource {
     }
 
     /**
+     * GET  /em-emp-injuries/:id
+     *
+     * @param id
+     * @return the ResponseEntity with status 200 (OK) and with body the emEmpInjuriesDTO, or with status 404 (Not Found)
+     */
+    @GetMapping("/em-emp-injuries/employee/{id}")
+    @Timed
+    public ResponseEntity<List<EmEmpInjuriesDTO>> getEmEmpInjuriesByEmpId(@PathVariable Long id) {
+        log.debug("REST request to get EmEmpInjuries by Employee : {}", id);
+        List<EmEmpInjuries> emEmpInjuries = emEmpInjuriesRepository.findByIdEmployeeId(id);
+        List<EmEmpInjuriesDTO> emEmpInjuriesDTO = emEmpInjuriesMapper.toDto(emEmpInjuries);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpInjuriesDTO));
+    }
+
+    /**
      * DELETE  /em-emp-injuries/:id : delete the "id" emEmpInjuries.
      *
      * @param id the id of the emEmpInjuriesDTO to delete

@@ -52,6 +52,10 @@ public class EmEmployeesDTO implements Serializable {
 
     private String imagePath;
 
+    private String imageBlobContentType;
+
+    private byte[] imageBlob;
+
     private String phoneNumber;
 
     private String email;
@@ -326,6 +330,22 @@ public class EmEmployeesDTO implements Serializable {
         this.idStatusName = emStatusesName;
     }
 
+    public String getImageBlobContentType() {
+        return imageBlobContentType;
+    }
+
+    public void setImageBlobContentType(String imageBlobContentType) {
+        this.imageBlobContentType = imageBlobContentType;
+    }
+
+    public byte[] getImageBlob() {
+        return imageBlob;
+    }
+
+    public void setImageBlob(byte[] imageBlob) {
+        this.imageBlob = imageBlob;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -350,33 +370,39 @@ public class EmEmployeesDTO implements Serializable {
     @Override
     public String toString() {
         return "EmEmployeesDTO{" +
-            "id=" + getId() +
-            ", code='" + getCode() + "'" +
-            ", name='" + getName() + "'" +
-            ", idUser=" + getIdUser() +
-            ", middleName='" + getMiddleName() + "'" +
-            ", surname='" + getSurname() + "'" +
-            ", maidenName='" + getMaidenName() + "'" +
-            ", disabilityDegree=" + getDisabilityDegree() +
-            ", ethnicGroup='" + getEthnicGroup() + "'" +
-            ", gender='" + getGender() + "'" +
-            ", residentialSituation='" + getResidentialSituation() + "'" +
-            ", maritalStatus='" + getMaritalStatus() + "'" +
-            ", bloodGroup='" + getBloodGroup() + "'" +
-            ", dateOfBirth='" + getDateOfBirth() + "'" +
-            ", hireDate='" + getHireDate() + "'" +
-            ", ssn='" + getSsn() + "'" +
-            ", taxNumber='" + getTaxNumber() + "'" +
-            ", imagePath='" + getImagePath() + "'" +
-            ", phoneNumber='" + getPhoneNumber() + "'" +
-            ", email='" + getEmail() + "'" +
-            ", personalPhoneNumber='" + getPersonalPhoneNumber() + "'" +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
-            ", idLegalEntity=" + getIdLegalEntity() +
-            ", idQualification=" + getIdQualification() +
-            "}";
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", idUser=" + idUser +
+                ", middleName='" + middleName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", maidenName='" + maidenName + '\'' +
+                ", disabilityDegree=" + disabilityDegree +
+                ", ethnicGroup='" + ethnicGroup + '\'' +
+                ", gender='" + gender + '\'' +
+                ", residentialSituation='" + residentialSituation + '\'' +
+                ", maritalStatus='" + maritalStatus + '\'' +
+                ", bloodGroup='" + bloodGroup + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", hireDate=" + hireDate +
+                ", ssn='" + ssn + '\'' +
+                ", taxNumber='" + taxNumber + '\'' +
+                ", imagePath='" + imagePath + '\'' +
+                ", imageBlobContentType='" + imageBlobContentType + '\'' +
+                ", imageBlob=" + imageBlob +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", personalPhoneNumber='" + personalPhoneNumber + '\'' +
+                ", createdBy='" + createdBy + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedBy='" + updatedBy + '\'' +
+                ", updatedAt=" + updatedAt +
+                ", idLegalEntity=" + idLegalEntity +
+                ", idQualification=" + idQualification +
+                ", idEmploymentTypeId=" + idEmploymentTypeId +
+                ", idEmploymentTypeName='" + idEmploymentTypeName + '\'' +
+                ", idStatusId=" + idStatusId +
+                ", idStatusName='" + idStatusName + '\'' +
+                '}';
     }
 }

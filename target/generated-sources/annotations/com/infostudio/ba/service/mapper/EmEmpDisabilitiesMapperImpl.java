@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2018-07-04T14:12:41+0200",
+    date = "2018-07-05T11:16:55+0200",
     comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_172 (Oracle Corporation)"
 )
 @Component
@@ -27,6 +27,7 @@ public class EmEmpDisabilitiesMapperImpl implements EmEmpDisabilitiesMapper {
         emEmpDisabilities.setCreatedAt( dto.getCreatedAt() );
         emEmpDisabilities.setUpdatedBy( dto.getUpdatedBy() );
         emEmpDisabilities.setUpdatedAt( dto.getUpdatedAt() );
+        emEmpDisabilities.setIdEmployee( dto.getIdEmployee() );
         emEmpDisabilities.setId( dto.getId() );
         emEmpDisabilities.setDescription( dto.getDescription() );
         emEmpDisabilities.setPercentage( dto.getPercentage() );
@@ -42,6 +43,7 @@ public class EmEmpDisabilitiesMapperImpl implements EmEmpDisabilitiesMapper {
 
         EmEmpDisabilitiesDTO emEmpDisabilitiesDTO = new EmEmpDisabilitiesDTO();
 
+        emEmpDisabilitiesDTO.setIdEmployee( entity.getIdEmployee() );
         emEmpDisabilitiesDTO.setId( entity.getId() );
         emEmpDisabilitiesDTO.setDescription( entity.getDescription() );
         emEmpDisabilitiesDTO.setPercentage( entity.getPercentage() );

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2018-07-04T14:12:41+0200",
+    date = "2018-07-05T11:16:55+0200",
     comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_172 (Oracle Corporation)"
 )
 @Component
@@ -27,6 +27,7 @@ public class EmEmpPreviousJobsMapperImpl implements EmEmpPreviousJobsMapper {
         emEmpPreviousJobs.setCreatedAt( dto.getCreatedAt() );
         emEmpPreviousJobs.setUpdatedBy( dto.getUpdatedBy() );
         emEmpPreviousJobs.setUpdatedAt( dto.getUpdatedAt() );
+        emEmpPreviousJobs.setIdEmployee( dto.getIdEmployee() );
         emEmpPreviousJobs.setId( dto.getId() );
         emEmpPreviousJobs.setCompany( dto.getCompany() );
         emEmpPreviousJobs.setPosition( dto.getPosition() );
@@ -49,6 +50,7 @@ public class EmEmpPreviousJobsMapperImpl implements EmEmpPreviousJobsMapper {
 
         EmEmpPreviousJobsDTO emEmpPreviousJobsDTO = new EmEmpPreviousJobsDTO();
 
+        emEmpPreviousJobsDTO.setIdEmployee( entity.getIdEmployee() );
         emEmpPreviousJobsDTO.setId( entity.getId() );
         emEmpPreviousJobsDTO.setCompany( entity.getCompany() );
         emEmpPreviousJobsDTO.setPosition( entity.getPosition() );

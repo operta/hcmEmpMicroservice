@@ -5,6 +5,7 @@ import com.infostudio.ba.domain.EmEmployees;
 import com.infostudio.ba.domain.EmStatuses;
 import com.infostudio.ba.service.dto.EmEmployeesDTO;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2018-07-04T14:12:39+0200",
+    date = "2018-07-05T11:16:54+0200",
     comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_172 (Oracle Corporation)"
 )
 @Component
@@ -102,6 +103,11 @@ public class EmEmployeesMapperImpl implements EmEmployeesMapper {
         emEmployeesDTO.setUpdatedAt( emEmployees.getUpdatedAt() );
         emEmployeesDTO.setIdLegalEntity( emEmployees.getIdLegalEntity() );
         emEmployeesDTO.setIdQualification( emEmployees.getIdQualification() );
+        emEmployeesDTO.setImageBlobContentType( emEmployees.getImageBlobContentType() );
+        byte[] imageBlob = emEmployees.getImageBlob();
+        if ( imageBlob != null ) {
+            emEmployeesDTO.setImageBlob( Arrays.copyOf( imageBlob, imageBlob.length ) );
+        }
 
         return emEmployeesDTO;
     }
@@ -120,6 +126,11 @@ public class EmEmployeesMapperImpl implements EmEmployeesMapper {
         emEmployees.setCreatedAt( emEmployeesDTO.getCreatedAt() );
         emEmployees.setUpdatedBy( emEmployeesDTO.getUpdatedBy() );
         emEmployees.setUpdatedAt( emEmployeesDTO.getUpdatedAt() );
+        emEmployees.setImageBlobContentType( emEmployeesDTO.getImageBlobContentType() );
+        byte[] imageBlob = emEmployeesDTO.getImageBlob();
+        if ( imageBlob != null ) {
+            emEmployees.setImageBlob( Arrays.copyOf( imageBlob, imageBlob.length ) );
+        }
         emEmployees.setId( emEmployeesDTO.getId() );
         emEmployees.setCode( emEmployeesDTO.getCode() );
         emEmployees.setName( emEmployeesDTO.getName() );

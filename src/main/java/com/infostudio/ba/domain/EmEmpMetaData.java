@@ -36,7 +36,32 @@ public class EmEmpMetaData extends AbstractAuditingEntity implements Serializabl
     @Column(name = "ordering")
     private Double ordering;
 
+    @OneToOne
+    @JoinColumn(name = "id_employee")
+    private EmEmployees idEmployee;
+
+    @JoinColumn(name = "id_meta_data")
+    private Integer idMetaData;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
+
+
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
+    }
+
+    public Integer getIdMetaData() {
+        return idMetaData;
+    }
+
+    public void setIdMetaData(Integer idMetaData) {
+        this.idMetaData = idMetaData;
+    }
+
     public Long getId() {
         return id;
     }
@@ -122,11 +147,13 @@ public class EmEmpMetaData extends AbstractAuditingEntity implements Serializabl
     @Override
     public String toString() {
         return "EmEmpMetaData{" +
-            "id=" + getId() +
-            ", title='" + getTitle() + "'" +
-            ", value='" + getValue() + "'" +
-            ", displayvalue='" + getDisplayvalue() + "'" +
-            ", ordering=" + getOrdering() +
-            "}";
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", value='" + value + '\'' +
+                ", displayvalue='" + displayvalue + '\'' +
+                ", ordering=" + ordering +
+                ", idEmployee=" + idEmployee +
+                ", idMetaData=" + idMetaData +
+                '}';
     }
 }

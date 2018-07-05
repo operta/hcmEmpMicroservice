@@ -52,6 +52,18 @@ public class EmEmpPreviousJobs extends AbstractAuditingEntity implements Seriali
     @Column(name = "length_of_service_days")
     private Integer lengthOfServiceDays;
 
+    @OneToOne
+    @JoinColumn(name = "id_employee")
+    private EmEmployees idEmployee;
+
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
+    }
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -203,16 +215,17 @@ public class EmEmpPreviousJobs extends AbstractAuditingEntity implements Seriali
     @Override
     public String toString() {
         return "EmEmpPreviousJobs{" +
-            "id=" + getId() +
-            ", company='" + getCompany() + "'" +
-            ", position='" + getPosition() + "'" +
-            ", dateFrom='" + getDateFrom() + "'" +
-            ", dateTo='" + getDateTo() + "'" +
-            ", reasonOfLeaving='" + getReasonOfLeaving() + "'" +
-            ", managerPosition='" + getManagerPosition() + "'" +
-            ", lengthOfServiceYears=" + getLengthOfServiceYears() +
-            ", lengthOfServiceMonths=" + getLengthOfServiceMonths() +
-            ", lengthOfServiceDays=" + getLengthOfServiceDays() +
-            "}";
+                "id=" + id +
+                ", company='" + company + '\'' +
+                ", position='" + position + '\'' +
+                ", dateFrom=" + dateFrom +
+                ", dateTo=" + dateTo +
+                ", reasonOfLeaving='" + reasonOfLeaving + '\'' +
+                ", managerPosition='" + managerPosition + '\'' +
+                ", lengthOfServiceYears=" + lengthOfServiceYears +
+                ", lengthOfServiceMonths=" + lengthOfServiceMonths +
+                ", lengthOfServiceDays=" + lengthOfServiceDays +
+                ", idEmployee=" + idEmployee +
+                '}';
     }
 }

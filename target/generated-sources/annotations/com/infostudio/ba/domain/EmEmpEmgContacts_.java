@@ -10,7 +10,9 @@ public abstract class EmEmpEmgContacts_ extends com.infostudio.ba.domain.Abstrac
 
 	public static volatile SingularAttribute<EmEmpEmgContacts, String> firstName;
 	public static volatile SingularAttribute<EmEmpEmgContacts, String> lastName;
+	public static volatile SingularAttribute<EmEmpEmgContacts, EmEmployees> idEmployee;
 	public static volatile SingularAttribute<EmEmpEmgContacts, String> phoneNumber;
+	public static volatile SingularAttribute<EmEmpEmgContacts, EmContractTypes> idContactType;
 	public static volatile SingularAttribute<EmEmpEmgContacts, Long> id;
 	public static volatile SingularAttribute<EmEmpEmgContacts, String> email;
 

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.*;
 
+import java.util.List;
+
 
 /**
  * Spring Data JPA repository for the EmEmpInjuries entity.
@@ -12,5 +14,5 @@ import org.springframework.data.jpa.repository.*;
 @SuppressWarnings("unused")
 @Repository
 public interface EmEmpInjuriesRepository extends JpaRepository<EmEmpInjuries, Long> {
-
+    List<EmEmpInjuries> findByIdEmployeeId(long id);
 }

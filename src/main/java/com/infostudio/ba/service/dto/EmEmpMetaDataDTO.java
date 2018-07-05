@@ -1,6 +1,8 @@
 package com.infostudio.ba.service.dto;
 
 
+import com.infostudio.ba.domain.EmEmployees;
+
 import java.time.Instant;
 import java.io.Serializable;
 import java.util.Objects;
@@ -27,6 +29,26 @@ public class EmEmpMetaDataDTO implements Serializable {
     private String updatedBy;
 
     private Instant updatedAt;
+
+    private Integer idMetaData;
+
+    private EmEmployees idEmployee;
+
+    public Integer getIdMetaData() {
+        return idMetaData;
+    }
+
+    public void setIdMetaData(Integer idMetaData) {
+        this.idMetaData = idMetaData;
+    }
+
+    public EmEmployees getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(EmEmployees idEmployee) {
+        this.idEmployee = idEmployee;
+    }
 
     public Long getId() {
         return id;
@@ -124,15 +146,17 @@ public class EmEmpMetaDataDTO implements Serializable {
     @Override
     public String toString() {
         return "EmEmpMetaDataDTO{" +
-            "id=" + getId() +
-            ", title='" + getTitle() + "'" +
-            ", value='" + getValue() + "'" +
-            ", displayvalue='" + getDisplayvalue() + "'" +
-            ", ordering=" + getOrdering() +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedBy='" + getUpdatedBy() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
-            "}";
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", value='" + value + '\'' +
+                ", displayvalue='" + displayvalue + '\'' +
+                ", ordering=" + ordering +
+                ", createdBy='" + createdBy + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedBy='" + updatedBy + '\'' +
+                ", updatedAt=" + updatedAt +
+                ", idMetaData=" + idMetaData +
+                ", idEmployee=" + idEmployee +
+                '}';
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2018-07-04T14:12:41+0200",
+    date = "2018-07-05T11:16:55+0200",
     comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_172 (Oracle Corporation)"
 )
 @Component
@@ -28,6 +28,8 @@ public class EmEmpEmgContactsMapperImpl implements EmEmpEmgContactsMapper {
         emEmpEmgContacts.setUpdatedBy( dto.getUpdatedBy() );
         emEmpEmgContacts.setUpdatedAt( dto.getUpdatedAt() );
         emEmpEmgContacts.setId( dto.getId() );
+        emEmpEmgContacts.setIdEmployee( dto.getIdEmployee() );
+        emEmpEmgContacts.setIdContactType( dto.getIdContactType() );
         emEmpEmgContacts.setFirstName( dto.getFirstName() );
         emEmpEmgContacts.setLastName( dto.getLastName() );
         emEmpEmgContacts.setPhoneNumber( dto.getPhoneNumber() );
@@ -44,6 +46,8 @@ public class EmEmpEmgContactsMapperImpl implements EmEmpEmgContactsMapper {
 
         EmEmpEmgContactsDTO emEmpEmgContactsDTO = new EmEmpEmgContactsDTO();
 
+        emEmpEmgContactsDTO.setIdEmployee( entity.getIdEmployee() );
+        emEmpEmgContactsDTO.setIdContactType( entity.getIdContactType() );
         emEmpEmgContactsDTO.setId( entity.getId() );
         emEmpEmgContactsDTO.setFirstName( entity.getFirstName() );
         emEmpEmgContactsDTO.setLastName( entity.getLastName() );
