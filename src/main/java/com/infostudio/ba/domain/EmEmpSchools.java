@@ -43,6 +43,10 @@ public class EmEmpSchools extends AbstractAuditingEntity implements Serializable
     @Column(name = "description")
     private String description;
 
+
+    @Column(name = "id_school")
+    private Integer idSchool;
+
     @Column(name = "id_qualification")
     private Integer idQualification;
 
@@ -135,6 +139,19 @@ public class EmEmpSchools extends AbstractAuditingEntity implements Serializable
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getIdSchool() {
+        return idSchool;
+    }
+
+    public EmEmpSchools idSchool(Integer idQualification) {
+        this.idSchool = idQualification;
+        return this;
+    }
+
+    public void setIdSchool(Integer idQualification) {
+        this.idSchool = idQualification;
     }
 
     public Integer getIdQualification() {

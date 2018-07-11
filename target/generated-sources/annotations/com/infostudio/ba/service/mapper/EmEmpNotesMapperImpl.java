@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2018-07-05T15:00:57+0200",
-    comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_172 (Oracle Corporation)"
+    date = "2018-07-11T12:04:15+0200",
+    comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_101 (Oracle Corporation)"
 )
 @Component
 public class EmEmpNotesMapperImpl implements EmEmpNotesMapper {

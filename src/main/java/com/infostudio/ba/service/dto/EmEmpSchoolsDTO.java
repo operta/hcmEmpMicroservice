@@ -35,6 +35,8 @@ public class EmEmpSchoolsDTO implements Serializable {
 
     private Instant updatedAt;
 
+    private Integer idSchool;
+
     private Integer idQualification;
 
     private Long idEmployeeId;
@@ -125,6 +127,14 @@ public class EmEmpSchoolsDTO implements Serializable {
 
     public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Integer getIdSchool() {
+        return idSchool;
+    }
+
+    public void setIdSchool(Integer idQualification) {
+        this.idSchool = idQualification;
     }
 
     public Integer getIdQualification() {

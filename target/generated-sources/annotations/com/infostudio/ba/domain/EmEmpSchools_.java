@@ -18,6 +18,7 @@ public abstract class EmEmpSchools_ extends com.infostudio.ba.domain.AbstractAud
 	public static volatile SingularAttribute<EmEmpSchools, Long> id;
 	public static volatile SingularAttribute<EmEmpSchools, Integer> idQualification;
 	public static volatile SingularAttribute<EmEmpSchools, LocalDate> dateFrom;
+	public static volatile SingularAttribute<EmEmpSchools, Integer> idSchool;
 
 }
 
