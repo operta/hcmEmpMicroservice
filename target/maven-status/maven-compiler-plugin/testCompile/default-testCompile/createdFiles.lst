@@ -1,6 +1,0 @@
-com\infostudio\ba\web\rest\TestUtil.class
-com\infostudio\ba\web\rest\errors\ExceptionTranslatorTestController.class
-com\infostudio\ba\web\rest\errors\ExceptionTranslatorIntTest.class
-com\infostudio\ba\web\rest\errors\ExceptionTranslatorTestController$TestDTO.class
-com\infostudio\ba\web\rest\errors\ExceptionTranslatorTestController$TestResponseStatusException.class
-com\infostudio\ba\web\rest\TestUtil$ZonedDateTimeMatcher.class

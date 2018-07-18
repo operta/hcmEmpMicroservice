@@ -140,6 +140,15 @@ public class EmEmpOrgWorkPlacesResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpOrgWorkPlacesDTO));
     }
 
+    @GetMapping("/em-emp-org-work-places/last")
+    @Timed
+    public ResponseEntity<List<EmEmpOrgWorkPlacesDTO>> getLastEmEmpOrgWorkPlacesForAll() {
+        log.debug("REST request to get Last EmEmpOrgWorkPlaces");
+        List<EmEmpOrgWorkPlaces> emEmpOrgWorkPlaces = emEmpOrgWorkPlacesRepository.findLastOrgWorkPlaces();
+        List<EmEmpOrgWorkPlacesDTO> emEmpOrgWorkPlacesDTO = emEmpOrgWorkPlacesMapper.toDto(emEmpOrgWorkPlaces);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpOrgWorkPlacesDTO));
+    }
+
     /**
      * DELETE  /em-emp-org-work-places/:id : delete the "id" emEmpOrgWorkPlaces.
      *
