@@ -22,4 +22,6 @@ public interface EmEmpOrgWorkPlacesRepository extends JpaRepository<EmEmpOrgWork
 
     @Query("SELECT em FROM EmEmpOrgWorkPlaces em WHERE em.dateTo=(SELECT MAX(e.dateTo) FROM EmEmpOrgWorkPlaces e WHERE e.idEmployee=em.idEmployee)")
     List<EmEmpOrgWorkPlaces> findLastOrgWorkPlaces();
+
+    List<EmEmpOrgWorkPlaces> findAllById(Long id);
 }

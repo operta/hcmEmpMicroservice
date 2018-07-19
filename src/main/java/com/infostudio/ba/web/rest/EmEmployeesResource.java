@@ -1,8 +1,10 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.EmEmpOrgWorkPlaces;
 import com.infostudio.ba.domain.EmEmployees;
 
+import com.infostudio.ba.repository.EmEmpOrgWorkPlacesRepository;
 import com.infostudio.ba.repository.EmEmployeesRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
@@ -13,6 +15,7 @@ import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -23,8 +26,8 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import java.util.List;
-import java.util.Optional;
+import java.time.LocalDate;
+import java.util.*;
 
 /**
  * REST controller for managing EmEmployees.
@@ -39,11 +42,15 @@ public class EmEmployeesResource {
 
     private final EmEmployeesRepository emEmployeesRepository;
 
+    private final EmEmpOrgWorkPlacesRepository emEmpOrgWorkPlacesRepository;
+
     private final EmEmployeesMapper emEmployeesMapper;
 
-    public EmEmployeesResource(EmEmployeesRepository emEmployeesRepository, EmEmployeesMapper emEmployeesMapper) {
+    public EmEmployeesResource(EmEmployeesRepository emEmployeesRepository, EmEmployeesMapper emEmployeesMapper,
+                               EmEmpOrgWorkPlacesRepository emEmpOrgWorkPlacesRepository) {
         this.emEmployeesRepository = emEmployeesRepository;
         this.emEmployeesMapper = emEmployeesMapper;
+        this.emEmpOrgWorkPlacesRepository = emEmpOrgWorkPlacesRepository;
     }
 
     /**
@@ -59,6 +66,13 @@ public class EmEmployeesResource {
         log.debug("REST request to save EmEmployees : {}", emEmployeesDTO);
         if (emEmployeesDTO.getId() != null) {
             throw new BadRequestAlertException("A new emEmployees cannot already have an ID", ENTITY_NAME, "idexists");
+        }
+        if(emEmployeesDTO.getIdUser() == null){
+            throw new BadRequestAlertException("An employee must have a user account associated with him", ENTITY_NAME, "idexists");
+        }
+        EmEmployees possibleEmployee = emEmployeesRepository.findByIdUser(emEmployeesDTO.getIdUser());
+        if(possibleEmployee != null){
+            throw new BadRequestAlertException("A user can only have one employee associated with him", ENTITY_NAME, "idexists");
         }
         EmEmployees emEmployees = emEmployeesMapper.toEntity(emEmployeesDTO);
         emEmployees = emEmployeesRepository.save(emEmployees);
@@ -100,9 +114,39 @@ public class EmEmployeesResource {
      */
     @GetMapping("/em-employees")
     @Timed
-    public ResponseEntity<List<EmEmployeesDTO>> getAllEmEmployees(Pageable pageable) {
+    public ResponseEntity<List<EmEmployeesDTO>> getAllEmEmployees(
+            @RequestParam(value = "fromDate", required = false) LocalDate fromDate,
+            @RequestParam(value = "toDate", required = false) LocalDate toDate,
+            @RequestParam(value = "name", required = false) String name,
+            @RequestParam(value ="surname", required = false) String surname,
+            @RequestParam(value = "qualificationId", required = false) Integer qualificationId,
+            Pageable pageable) {
         log.debug("REST request to get a page of EmEmployees");
-        Page<EmEmployees> page = emEmployeesRepository.findAll(pageable);
+        Set<EmEmployees> allEmps = new HashSet<>(emEmployeesRepository.findAll());
+        if(fromDate != null){
+            Set<EmEmployees> empsFromDate = new HashSet<>(emEmployeesRepository.findAllByHireDateGreaterThanEqual(fromDate));
+            allEmps.retainAll(empsFromDate);
+        }
+        if(toDate != null){
+            Set<EmEmployees> empsToDate = new HashSet<>(emEmployeesRepository.findAllByHireDateLessThanEqual(toDate));
+            allEmps.retainAll(empsToDate);
+        }
+        if(name != null){
+            Set<EmEmployees> empsByName = new HashSet<>(emEmployeesRepository.findAllByNameContains(name));
+            allEmps.retainAll(empsByName);
+        }
+        if(surname != null){
+            Set<EmEmployees> empsBySurname = new HashSet<>(emEmployeesRepository.findAllBySurnameContains(surname));
+            allEmps.retainAll(empsBySurname);
+        }
+        if(qualificationId != null){
+            Set<EmEmployees> empsByQualification = new HashSet<>(emEmployeesRepository.findAllByIdQualification(qualificationId));
+            allEmps.retainAll(empsByQualification);
+        }
+        List<EmEmployees> emEmployees = new ArrayList<>(allEmps);
+        int start = pageable.getOffset();
+        int end = (start + pageable.getPageSize()) > allEmps.size() ? allEmps.size() : (start + pageable.getPageSize());
+        Page<EmEmployees> page = new PageImpl<>(emEmployees.subList(start, end), pageable, emEmployees.size());
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/em-employees");
         return new ResponseEntity<>(emEmployeesMapper.toDto(page.getContent()), headers, HttpStatus.OK);
     }
