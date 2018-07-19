@@ -33,7 +33,7 @@ public class EmEmpEmgContactsDTO implements Serializable {
 
     private EmEmployees idEmployee;
 
-    private EmContractTypes idContactType;
+    private Integer idContactType;
 
     public EmEmployees getIdEmployee() {
         return idEmployee;
@@ -43,11 +43,11 @@ public class EmEmpEmgContactsDTO implements Serializable {
         this.idEmployee = idEmployee;
     }
 
-    public EmContractTypes getIdContactType() {
+    public Integer getIdContactType() {
         return idContactType;
     }
 
-    public void setIdContactType(EmContractTypes idContactType) {
+    public void setIdContactType(Integer idContactType) {
         this.idContactType = idContactType;
     }
 
