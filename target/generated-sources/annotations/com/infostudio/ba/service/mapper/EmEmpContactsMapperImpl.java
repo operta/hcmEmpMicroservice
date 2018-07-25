@@ -9,8 +9,13 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2018-07-25T10:22:56+0200",
+<<<<<<< HEAD
+    date = "2018-07-19T16:28:02+0200",
+    comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_101 (Oracle Corporation)"
+=======
+    date = "2018-07-19T15:37:19+0200",
     comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_171 (Oracle Corporation)"
+>>>>>>> f9664b011a7907993688b6ff5051d22033a64ca3
 )
 @Component
 public class EmEmpContactsMapperImpl implements EmEmpContactsMapper {
