@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "idEmployee",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "finished",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180725112511",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "em_emp_tasks",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "hcmEmpMicroservice"
+}
