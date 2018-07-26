@@ -13119,3 +13119,4 @@ com.infostudio.ba.web.rest.errors.BadRequestAlertException: A user can only have
 2018-07-26 14:26:17.117  WARN 1633 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m3s16ms).
 2018-07-26 14:27:07.403  INFO 1633 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2018-07-26 14:32:07.598  INFO 1633 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-07-26 14:37:07.663  INFO 1633 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
