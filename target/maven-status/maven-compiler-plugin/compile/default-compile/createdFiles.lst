@@ -1,7 +1,0 @@
-com\infostudio\ba\service\mapper\EmEmpTasksMapperImpl.class
-com\infostudio\ba\domain\EmEmpTasks_.class
-com\infostudio\ba\service\mapper\EmEmpTasksMapper.class
-com\infostudio\ba\service\dto\EmEmpTasksDTO.class
-com\infostudio\ba\web\rest\EmEmpTasksResource.class
-com\infostudio\ba\domain\EmEmpTasks.class
-com\infostudio\ba\repository\EmEmpTasksRepository.class

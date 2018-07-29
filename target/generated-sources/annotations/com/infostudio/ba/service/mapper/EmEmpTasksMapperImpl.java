@@ -9,77 +9,77 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2018-07-26T14:38:32+0200",
+    date = "2018-07-27T16:21:03+0200",
     comments = "version: 1.2.0.Final, compiler: Eclipse JDT (IDE) 1.3.200.v20180612-0641, environment: Java 1.8.0_151 (Oracle Corporation)"
 )
 @Component
 public class EmEmpTasksMapperImpl implements EmEmpTasksMapper {
 
     @Override
-    public EmEmpTasksDTO toDto(EmEmpTasks arg0) {
-        if ( arg0 == null ) {
+    public EmEmpTasks toEntity(EmEmpTasksDTO dto) {
+        if ( dto == null ) {
+            return null;
+        }
+
+        EmEmpTasks emEmpTasks = new EmEmpTasks();
+
+        emEmpTasks.setCreatedBy( dto.getCreatedBy() );
+        emEmpTasks.setCreatedAt( dto.getCreatedAt() );
+        emEmpTasks.setUpdatedBy( dto.getUpdatedBy() );
+        emEmpTasks.setUpdatedAt( dto.getUpdatedAt() );
+        emEmpTasks.setId( dto.getId() );
+        emEmpTasks.setIdEmployee( dto.getIdEmployee() );
+        emEmpTasks.setFinished( dto.getFinished() );
+        emEmpTasks.setName( dto.getName() );
+        emEmpTasks.setDescription( dto.getDescription() );
+
+        return emEmpTasks;
+    }
+
+    @Override
+    public EmEmpTasksDTO toDto(EmEmpTasks entity) {
+        if ( entity == null ) {
             return null;
         }
 
         EmEmpTasksDTO emEmpTasksDTO = new EmEmpTasksDTO();
 
-        emEmpTasksDTO.setCreatedBy( arg0.getCreatedBy() );
-        emEmpTasksDTO.setCreatedAt( arg0.getCreatedAt() );
-        emEmpTasksDTO.setUpdatedAt( arg0.getUpdatedAt() );
-        emEmpTasksDTO.setUpdatedBy( arg0.getUpdatedBy() );
-        emEmpTasksDTO.setId( arg0.getId() );
-        emEmpTasksDTO.setIdEmployee( arg0.getIdEmployee() );
-        emEmpTasksDTO.setFinished( arg0.getFinished() );
-        emEmpTasksDTO.setName( arg0.getName() );
-        emEmpTasksDTO.setDescription( arg0.getDescription() );
+        emEmpTasksDTO.setCreatedBy( entity.getCreatedBy() );
+        emEmpTasksDTO.setCreatedAt( entity.getCreatedAt() );
+        emEmpTasksDTO.setUpdatedAt( entity.getUpdatedAt() );
+        emEmpTasksDTO.setUpdatedBy( entity.getUpdatedBy() );
+        emEmpTasksDTO.setId( entity.getId() );
+        emEmpTasksDTO.setIdEmployee( entity.getIdEmployee() );
+        emEmpTasksDTO.setFinished( entity.getFinished() );
+        emEmpTasksDTO.setName( entity.getName() );
+        emEmpTasksDTO.setDescription( entity.getDescription() );
 
         return emEmpTasksDTO;
     }
 
     @Override
-    public List<EmEmpTasksDTO> toDto(List<EmEmpTasks> arg0) {
-        if ( arg0 == null ) {
+    public List<EmEmpTasks> toEntity(List<EmEmpTasksDTO> dtoList) {
+        if ( dtoList == null ) {
             return null;
         }
 
-        List<EmEmpTasksDTO> list = new ArrayList<EmEmpTasksDTO>( arg0.size() );
-        for ( EmEmpTasks emEmpTasks : arg0 ) {
-            list.add( toDto( emEmpTasks ) );
+        List<EmEmpTasks> list = new ArrayList<EmEmpTasks>( dtoList.size() );
+        for ( EmEmpTasksDTO emEmpTasksDTO : dtoList ) {
+            list.add( toEntity( emEmpTasksDTO ) );
         }
 
         return list;
     }
 
     @Override
-    public EmEmpTasks toEntity(EmEmpTasksDTO arg0) {
-        if ( arg0 == null ) {
+    public List<EmEmpTasksDTO> toDto(List<EmEmpTasks> entityList) {
+        if ( entityList == null ) {
             return null;
         }
 
-        EmEmpTasks emEmpTasks = new EmEmpTasks();
-
-        emEmpTasks.setCreatedAt( arg0.getCreatedAt() );
-        emEmpTasks.setCreatedBy( arg0.getCreatedBy() );
-        emEmpTasks.setUpdatedAt( arg0.getUpdatedAt() );
-        emEmpTasks.setUpdatedBy( arg0.getUpdatedBy() );
-        emEmpTasks.setId( arg0.getId() );
-        emEmpTasks.setIdEmployee( arg0.getIdEmployee() );
-        emEmpTasks.setFinished( arg0.getFinished() );
-        emEmpTasks.setName( arg0.getName() );
-        emEmpTasks.setDescription( arg0.getDescription() );
-
-        return emEmpTasks;
-    }
-
-    @Override
-    public List<EmEmpTasks> toEntity(List<EmEmpTasksDTO> arg0) {
-        if ( arg0 == null ) {
-            return null;
-        }
-
-        List<EmEmpTasks> list = new ArrayList<EmEmpTasks>( arg0.size() );
-        for ( EmEmpTasksDTO emEmpTasksDTO : arg0 ) {
-            list.add( toEntity( emEmpTasksDTO ) );
+        List<EmEmpTasksDTO> list = new ArrayList<EmEmpTasksDTO>( entityList.size() );
+        for ( EmEmpTasks emEmpTasks : entityList ) {
+            list.add( toDto( emEmpTasks ) );
         }
 
         return list;
