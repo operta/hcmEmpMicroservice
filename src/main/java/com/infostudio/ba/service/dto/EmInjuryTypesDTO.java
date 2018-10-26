@@ -1,6 +1,5 @@
 package com.infostudio.ba.service.dto;
 
-
 import java.time.Instant;
 import javax.validation.constraints.*;
 import java.io.Serializable;
@@ -13,7 +12,6 @@ public class EmInjuryTypesDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
     private String code;
 
     @NotNull

@@ -1,6 +1,5 @@
 package com.infostudio.ba.service.dto;
 
-
 import java.time.Instant;
 import java.time.LocalDate;
 import javax.validation.constraints.*;
@@ -16,7 +15,6 @@ public class EmEmployeesDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
     private String code;
 
     @NotNull

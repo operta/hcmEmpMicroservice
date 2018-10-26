@@ -12,5 +12,6 @@ import org.springframework.data.jpa.repository.*;
 @SuppressWarnings("unused")
 @Repository
 public interface EmInjuryTypesRepository extends JpaRepository<EmInjuryTypes, Long> {
+    EmInjuryTypes findByCode(String code);
 
 }

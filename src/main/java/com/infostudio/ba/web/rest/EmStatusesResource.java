@@ -1,5 +1,7 @@
 package com.infostudio.ba.web.rest;
 
+import org.apache.commons.lang.RandomStringUtils;
+
 import com.codahale.metrics.annotation.Timed;
 import com.infostudio.ba.domain.EmStatuses;
 
@@ -60,6 +62,11 @@ public class EmStatusesResource {
         if (emStatusesDTO.getId() != null) {
             throw new BadRequestAlertException("A new emStatuses cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        String newCode = RandomStringUtils.randomAlphanumeric(7).toUpperCase();
+        while(emStatusesRepository.findByCode(newCode) != null){
+            newCode = RandomStringUtils.randomAlphanumeric(7).toUpperCase();
+        }
+        emStatusesDTO.setCode(newCode);
         EmStatuses emStatuses = emStatusesMapper.toEntity(emStatusesDTO);
         emStatuses = emStatusesRepository.save(emStatuses);
         EmStatusesDTO result = emStatusesMapper.toDto(emStatuses);

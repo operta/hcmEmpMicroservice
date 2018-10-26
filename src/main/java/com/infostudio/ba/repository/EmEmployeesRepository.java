@@ -16,6 +16,7 @@ import java.util.List;
 @SuppressWarnings("unused")
 @Repository
 public interface EmEmployeesRepository extends JpaRepository<EmEmployees, Long> {
+    EmEmployees findByCode(String code);
 
     EmEmployees findByIdUser(Integer id);
 

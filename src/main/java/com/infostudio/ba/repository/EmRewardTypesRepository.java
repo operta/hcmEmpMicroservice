@@ -12,5 +12,6 @@ import org.springframework.data.jpa.repository.*;
 @SuppressWarnings("unused")
 @Repository
 public interface EmRewardTypesRepository extends JpaRepository<EmRewardTypes, Long> {
+    EmRewardTypes findByCode(String code);
 
 }

@@ -12,5 +12,6 @@ import org.springframework.data.jpa.repository.*;
 @SuppressWarnings("unused")
 @Repository
 public interface EmStatusesRepository extends JpaRepository<EmStatuses, Long> {
+    EmStatuses findByCode(String code);
 
 }

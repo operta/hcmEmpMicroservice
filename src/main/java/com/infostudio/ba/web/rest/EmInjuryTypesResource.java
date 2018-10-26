@@ -1,5 +1,7 @@
 package com.infostudio.ba.web.rest;
 
+import org.apache.commons.lang.RandomStringUtils;
+
 import com.codahale.metrics.annotation.Timed;
 import com.infostudio.ba.domain.EmInjuryTypes;
 
@@ -60,6 +62,11 @@ public class EmInjuryTypesResource {
         if (emInjuryTypesDTO.getId() != null) {
             throw new BadRequestAlertException("A new emInjuryTypes cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        String newCode = RandomStringUtils.randomAlphanumeric(7).toUpperCase();
+        while(emInjuryTypesRepository.findByCode(newCode) != null){
+            newCode = RandomStringUtils.randomAlphanumeric(7).toUpperCase();
+        }
+        emInjuryTypesDTO.setCode(newCode);
         EmInjuryTypes emInjuryTypes = emInjuryTypesMapper.toEntity(emInjuryTypesDTO);
         emInjuryTypes = emInjuryTypesRepository.save(emInjuryTypes);
         EmInjuryTypesDTO result = emInjuryTypesMapper.toDto(emInjuryTypes);

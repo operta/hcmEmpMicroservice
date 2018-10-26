@@ -1,5 +1,7 @@
 package com.infostudio.ba.web.rest;
 
+import org.apache.commons.lang.RandomStringUtils;
+
 import com.codahale.metrics.annotation.Timed;
 import com.infostudio.ba.domain.EmEmpOrgWorkPlaces;
 import com.infostudio.ba.domain.EmEmployees;
@@ -67,6 +69,11 @@ public class EmEmployeesResource {
         if (emEmployeesDTO.getId() != null) {
             throw new BadRequestAlertException("A new emEmployees cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        String newCode = RandomStringUtils.randomAlphanumeric(7).toUpperCase();
+        while(emEmployeesRepository.findByCode(newCode) != null){
+            newCode = RandomStringUtils.randomAlphanumeric(7).toUpperCase();
+        }
+        emEmployeesDTO.setCode(newCode);
         if(emEmployeesDTO.getIdUser() == null){
             throw new BadRequestAlertException("An employee must have a user account associated with him", ENTITY_NAME, "idexists");
         }

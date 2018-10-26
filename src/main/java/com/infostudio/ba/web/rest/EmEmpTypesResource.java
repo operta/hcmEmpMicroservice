@@ -1,5 +1,7 @@
 package com.infostudio.ba.web.rest;
 
+import org.apache.commons.lang.RandomStringUtils;
+
 import com.codahale.metrics.annotation.Timed;
 import com.infostudio.ba.domain.EmEmpTypes;
 
@@ -60,6 +62,11 @@ public class EmEmpTypesResource {
         if (emEmpTypesDTO.getId() != null) {
             throw new BadRequestAlertException("A new emEmpTypes cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        String newCode = RandomStringUtils.randomAlphanumeric(7).toUpperCase();
+        while(emEmpTypesRepository.findByCode(newCode) != null){
+            newCode = RandomStringUtils.randomAlphanumeric(7).toUpperCase();
+        }
+        emEmpTypesDTO.setCode(newCode);
         EmEmpTypes emEmpTypes = emEmpTypesMapper.toEntity(emEmpTypesDTO);
         emEmpTypes = emEmpTypesRepository.save(emEmpTypes);
         EmEmpTypesDTO result = emEmpTypesMapper.toDto(emEmpTypes);

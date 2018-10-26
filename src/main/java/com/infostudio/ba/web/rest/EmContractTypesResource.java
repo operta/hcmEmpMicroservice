@@ -1,5 +1,7 @@
 package com.infostudio.ba.web.rest;
 
+import org.apache.commons.lang.RandomStringUtils;
+
 import com.codahale.metrics.annotation.Timed;
 import com.infostudio.ba.domain.EmContractTypes;
 
@@ -60,6 +62,11 @@ public class EmContractTypesResource {
         if (emContractTypesDTO.getId() != null) {
             throw new BadRequestAlertException("A new emContractTypes cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        String newCode = RandomStringUtils.randomAlphanumeric(7).toUpperCase();
+        while(emContractTypesRepository.findByCode(newCode) != null){
+            newCode = RandomStringUtils.randomAlphanumeric(7).toUpperCase();
+        }
+        emContractTypesDTO.setCode(newCode);
         EmContractTypes emContractTypes = emContractTypesMapper.toEntity(emContractTypesDTO);
         emContractTypes = emContractTypesRepository.save(emContractTypes);
         EmContractTypesDTO result = emContractTypesMapper.toDto(emContractTypes);

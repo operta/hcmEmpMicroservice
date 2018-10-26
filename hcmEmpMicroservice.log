@@ -9364,3 +9364,252 @@ Caused by: oracle.jdbc.OracleDatabaseException: ORA-00001: unique constraint (HC
 2018-07-27 18:13:24.093  INFO 4582 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2018-07-27 18:18:24.110  INFO 4582 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2018-07-27 18:23:24.125  INFO 4582 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-10-25 17:55:27.911  INFO 21414 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : The following profiles are active: swagger,dev
+2018-10-25 17:55:29.490 DEBUG 21414 --- [restartedMain] c.i.ba.config.AsyncConfiguration         : Creating Async Task Executor
+2018-10-25 17:55:30.085 DEBUG 21414 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Registering JVM gauges
+2018-10-25 17:55:30.091 DEBUG 21414 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Monitoring the datasource
+2018-10-25 17:55:30.092 DEBUG 21414 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Initializing Metrics JMX reporting
+2018-10-25 17:55:30.896 DEBUG 21414 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast
+2018-10-25 17:55:30.922 DEBUG 21414 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast clustering for instanceId: hcmEmpMicroservice
+2018-10-25 17:55:30.923 DEBUG 21414 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-10-25 17:55:31.009  INFO 21414 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-10-25 17:55:31.139  INFO 21414 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-10-25 17:55:31.139  INFO 21414 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-10-25 17:55:31.271  INFO 21414 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-10-25 17:55:31.271  INFO 21414 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-10-25 17:55:31.610  INFO 21414 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-10-25 17:55:31.637  INFO 21414 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-10-25 17:55:31.638  INFO 21414 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-10-25 17:55:31.638  INFO 21414 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-10-25 17:55:31.638  INFO 21414 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-10-25 17:55:31.638  INFO 21414 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-10-25 17:55:31.638  INFO 21414 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-10-25 17:55:31.638  INFO 21414 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-10-25 17:55:31.884  INFO 21414 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-10-25 17:55:31.887  INFO 21414 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-10-25 17:55:31.894  INFO 21414 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-10-25 17:55:31.899  INFO 21414 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1540482931899 with initial instances count: 0
+2018-10-25 17:55:32.000  INFO 21414 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13786, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13786], bind any local is true
+2018-10-25 17:55:32.007  INFO 21414 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13786
+2018-10-25 17:55:32.007  INFO 21414 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-10-25 17:55:32.007  INFO 21414 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-10-25 17:55:32.233  INFO 21414 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13786 [dev] [3.9.1] Backpressure is disabled
+2018-10-25 17:55:32.614  INFO 21414 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Creating TcpIpJoiner
+2018-10-25 17:55:32.693  INFO 21414 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13786 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-10-25 17:55:32.695  INFO 21414 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13786 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-10-25 17:55:32.703  INFO 21414 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTING
+2018-10-25 17:55:32.714  INFO 21414 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Cluster version set to 3.9
+2018-10-25 17:55:32.714  INFO 21414 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13786 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13786 - 424e31b6-8023-412f-ae45-858b24f4abdb this
+]
+
+2018-10-25 17:55:32.728  INFO 21414 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTED
+2018-10-25 17:55:33.426  INFO 21414 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application configuration, using profiles: swagger
+2018-10-25 17:55:33.427 DEBUG 21414 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Initializing Metrics registries
+2018-10-25 17:55:33.428 DEBUG 21414 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Filter
+2018-10-25 17:55:33.429 DEBUG 21414 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Servlet
+2018-10-25 17:55:33.432  INFO 21414 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application fully configured
+2018-10-25 17:55:33.629 DEBUG 21414 --- [restartedMain] c.i.ba.config.DatabaseConfiguration      : Configuring Liquibase
+2018-10-25 17:55:33.645  WARN 21414 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-10-25 17:55:35.083  INFO 21414 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-10-25 17:55:35.084  INFO 21414 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [hcmEmpMicroservice].
+2018-10-25 17:55:37.010  INFO 21414 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:6a4dab686f7be4966cf53c0c21850c8e - Re-registering apps/HCMEMPMICROSERVICE
+2018-10-25 17:55:37.010  INFO 21414 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:6a4dab686f7be4966cf53c0c21850c8e: registering service...
+2018-10-25 17:55:37.143  INFO 21414 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:6a4dab686f7be4966cf53c0c21850c8e - registration status: 204
+2018-10-25 17:55:39.928 DEBUG 21414 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Starting HazelcastCacheManager
+2018-10-25 17:55:41.260  WARN 21414 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-10-25 17:55:41.267  WARN 21414 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-10-25 17:55:41.821 DEBUG 21414 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Starting Swagger
+2018-10-25 17:55:41.825 DEBUG 21414 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Started Swagger in 4 ms
+2018-10-25 17:55:41.887  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-10-25 17:55:41.887  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-10-25 17:55:41.887  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-10-25 17:55:41.887  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-10-25 17:55:41.887  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-10-25 17:55:41.887  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-10-25 17:55:41.887  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-10-25 17:55:41.970  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-10-25 17:55:43.555  INFO 21414 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1540482943555, current=UP, previous=STARTING]
+2018-10-25 17:55:43.777  INFO 21414 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:6a4dab686f7be4966cf53c0c21850c8e: registering service...
+2018-10-25 17:55:43.902  INFO 21414 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:6a4dab686f7be4966cf53c0c21850c8e - registration status: 204
+2018-10-25 17:55:44.467  INFO 21414 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : Started HcmEmpMicroserviceApp in 21.146 seconds (JVM running for 22.655)
+2018-10-25 17:55:44.468  INFO 21414 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Application 'hcmEmpMicroservice' is running! Access URLs:
+	Local: 		http://localhost:8085
+	External: 	http://0.0.0.192:8085
+	Profile(s): 	[swagger, dev]
+----------------------------------------------------------
+2018-10-25 17:55:44.468  INFO 21414 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Config Server: 	Connected to the JHipster Registry config server!
+----------------------------------------------------------
+2018-10-25 17:55:52.037  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-10-25 17:55:52.038  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-10-25 17:55:52.038  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-10-25 17:55:52.038  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-10-25 17:55:52.038  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-10-25 17:55:52.038  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-10-25 17:55:52.039  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-10-25 17:55:52.159  INFO 21414 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-10-26 08:55:37.304  INFO 4649 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : The following profiles are active: swagger,dev
+2018-10-26 08:55:39.797 DEBUG 4649 --- [restartedMain] c.i.ba.config.AsyncConfiguration         : Creating Async Task Executor
+2018-10-26 08:55:40.511 DEBUG 4649 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Registering JVM gauges
+2018-10-26 08:55:40.519 DEBUG 4649 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Monitoring the datasource
+2018-10-26 08:55:40.519 DEBUG 4649 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Initializing Metrics JMX reporting
+2018-10-26 08:55:41.352 DEBUG 4649 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast
+2018-10-26 08:55:41.378 DEBUG 4649 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast clustering for instanceId: hcmEmpMicroservice
+2018-10-26 08:55:41.379 DEBUG 4649 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-10-26 08:55:41.489  INFO 4649 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-10-26 08:55:41.678  INFO 4649 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-10-26 08:55:41.678  INFO 4649 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-10-26 08:55:41.851  INFO 4649 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-10-26 08:55:41.851  INFO 4649 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-10-26 08:55:42.093  INFO 4649 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-10-26 08:55:42.120  INFO 4649 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-10-26 08:55:42.121  INFO 4649 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-10-26 08:55:42.121  INFO 4649 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-10-26 08:55:42.121  INFO 4649 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-10-26 08:55:42.121  INFO 4649 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-10-26 08:55:42.121  INFO 4649 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-10-26 08:55:42.121  INFO 4649 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-10-26 08:55:42.368  INFO 4649 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-10-26 08:55:42.370  INFO 4649 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-10-26 08:55:42.373  INFO 4649 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-10-26 08:55:42.377  INFO 4649 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1540536942377 with initial instances count: 0
+2018-10-26 08:55:42.475  INFO 4649 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13786, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13786], bind any local is true
+2018-10-26 08:55:42.495  INFO 4649 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13786
+2018-10-26 08:55:42.496  INFO 4649 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-10-26 08:55:42.496  INFO 4649 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-10-26 08:55:42.688  INFO 4649 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13786 [dev] [3.9.1] Backpressure is disabled
+2018-10-26 08:55:43.155  INFO 4649 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Creating TcpIpJoiner
+2018-10-26 08:55:43.561  INFO 4649 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13786 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-10-26 08:55:43.588  INFO 4649 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13786 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-10-26 08:55:43.595  INFO 4649 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTING
+2018-10-26 08:55:43.631  INFO 4649 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Cluster version set to 3.9
+2018-10-26 08:55:43.632  INFO 4649 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13786 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13786 - 29d756d6-bab2-45f1-b503-38afc4b93aff this
+]
+
+2018-10-26 08:55:43.659  INFO 4649 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTED
+2018-10-26 08:55:44.370  INFO 4649 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application configuration, using profiles: swagger
+2018-10-26 08:55:44.370 DEBUG 4649 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Initializing Metrics registries
+2018-10-26 08:55:44.374 DEBUG 4649 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Filter
+2018-10-26 08:55:44.375 DEBUG 4649 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Servlet
+2018-10-26 08:55:44.378  INFO 4649 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application fully configured
+2018-10-26 08:55:44.603 DEBUG 4649 --- [restartedMain] c.i.ba.config.DatabaseConfiguration      : Configuring Liquibase
+2018-10-26 08:55:44.613  WARN 4649 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-10-26 08:55:46.346  INFO 4649 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-10-26 08:55:46.348  INFO 4649 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [hcmEmpMicroservice].
+2018-10-26 08:55:47.545  INFO 4649 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:f20143f5b77489145df59d4c1535f903 - Re-registering apps/HCMEMPMICROSERVICE
+2018-10-26 08:55:47.546  INFO 4649 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:f20143f5b77489145df59d4c1535f903: registering service...
+2018-10-26 08:55:47.741  INFO 4649 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:f20143f5b77489145df59d4c1535f903 - registration status: 204
+2018-10-26 08:55:52.370  INFO 4649 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-10-26 08:55:52.371  INFO 4649 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-10-26 08:55:52.371  INFO 4649 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-10-26 08:55:52.373  INFO 4649 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-10-26 08:55:52.374  INFO 4649 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-10-26 08:55:52.374  INFO 4649 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-10-26 08:55:52.375  INFO 4649 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-10-26 08:55:52.479  INFO 4649 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-10-26 08:55:52.607 DEBUG 4649 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Starting HazelcastCacheManager
+2018-10-26 08:55:54.267  WARN 4649 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-10-26 08:55:54.278  WARN 4649 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-10-26 08:55:55.082 DEBUG 4649 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Starting Swagger
+2018-10-26 08:55:55.090 DEBUG 4649 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Started Swagger in 8 ms
+2018-10-26 08:55:56.763  INFO 4649 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1540536956763, current=UP, previous=STARTING]
+2018-10-26 08:55:57.366  INFO 4649 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:f20143f5b77489145df59d4c1535f903: registering service...
+2018-10-26 08:55:57.497  INFO 4649 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:f20143f5b77489145df59d4c1535f903 - registration status: 204
+2018-10-26 08:55:58.344  INFO 4649 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : Started HcmEmpMicroserviceApp in 24.065 seconds (JVM running for 24.554)
+2018-10-26 08:55:58.344  INFO 4649 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Application 'hcmEmpMicroservice' is running! Access URLs:
+	Local: 		http://localhost:8085
+	External: 	http://0.0.0.192:8085
+	Profile(s): 	[swagger, dev]
+----------------------------------------------------------
+2018-10-26 08:55:58.345  INFO 4649 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Config Server: 	Connected to the JHipster Registry config server!
+----------------------------------------------------------
+2018-10-26 09:36:01.784  INFO 6877 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : The following profiles are active: swagger,dev
+2018-10-26 09:36:11.291 DEBUG 6877 --- [restartedMain] c.i.ba.config.AsyncConfiguration         : Creating Async Task Executor
+2018-10-26 09:36:14.276 DEBUG 6877 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Registering JVM gauges
+2018-10-26 09:36:14.330 DEBUG 6877 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Monitoring the datasource
+2018-10-26 09:36:14.337 DEBUG 6877 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Initializing Metrics JMX reporting
+2018-10-26 09:36:18.455 DEBUG 6877 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast
+2018-10-26 09:36:18.535 DEBUG 6877 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast clustering for instanceId: hcmEmpMicroservice
+2018-10-26 09:36:18.540 DEBUG 6877 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-10-26 09:36:18.988  INFO 6877 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-10-26 09:36:19.756  INFO 6877 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-10-26 09:36:19.756  INFO 6877 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-10-26 09:36:20.271  INFO 6877 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-10-26 09:36:20.272  INFO 6877 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-10-26 09:36:21.182  INFO 6877 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-10-26 09:36:21.287  INFO 6877 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-10-26 09:36:21.288  INFO 6877 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-10-26 09:36:21.290  INFO 6877 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-10-26 09:36:21.291  INFO 6877 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-10-26 09:36:21.291  INFO 6877 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-10-26 09:36:21.292  INFO 6877 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-10-26 09:36:21.297  INFO 6877 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-10-26 09:36:22.142  INFO 6877 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-10-26 09:36:22.156  INFO 6877 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-10-26 09:36:22.175  INFO 6877 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-10-26 09:36:22.202  INFO 6877 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1540539382202 with initial instances count: 2
+2018-10-26 09:36:22.550  INFO 6877 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13786, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13786], bind any local is true
+2018-10-26 09:36:22.602  INFO 6877 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13786
+2018-10-26 09:36:22.602  INFO 6877 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-10-26 09:36:22.603  INFO 6877 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-10-26 09:36:23.358  INFO 6877 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13786 [dev] [3.9.1] Backpressure is disabled
+2018-10-26 09:36:25.186  INFO 6877 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Creating TcpIpJoiner
+2018-10-26 09:36:26.465  INFO 6877 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13786 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-10-26 09:36:26.542  INFO 6877 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13786 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-10-26 09:36:26.553  INFO 6877 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTING
+2018-10-26 09:36:26.703  INFO 6877 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Cluster version set to 3.9
+2018-10-26 09:36:26.704  INFO 6877 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13786 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13786 - beb20863-c551-4bf1-97d4-20528c25bf70 this
+]
+
+2018-10-26 09:36:26.790  INFO 6877 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTED
+2018-10-26 09:36:27.582  INFO 6877 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cb85402df5acf246edee7cdfc25e823a - Re-registering apps/HCMEMPMICROSERVICE
+2018-10-26 09:36:27.584  INFO 6877 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cb85402df5acf246edee7cdfc25e823a: registering service...
+2018-10-26 09:36:27.992  INFO 6877 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cb85402df5acf246edee7cdfc25e823a - registration status: 204
+2018-10-26 09:36:30.084  INFO 6877 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application configuration, using profiles: swagger
+2018-10-26 09:36:30.085 DEBUG 6877 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Initializing Metrics registries
+2018-10-26 09:36:30.090 DEBUG 6877 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Filter
+2018-10-26 09:36:30.098 DEBUG 6877 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Servlet
+2018-10-26 09:36:30.105  INFO 6877 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application fully configured
+2018-10-26 09:36:31.008 DEBUG 6877 --- [restartedMain] c.i.ba.config.DatabaseConfiguration      : Configuring Liquibase
+2018-10-26 09:36:31.076  WARN 6877 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-10-26 09:36:35.927  INFO 6877 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-10-26 09:36:35.938  INFO 6877 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [hcmEmpMicroservice].
+2018-10-26 09:36:50.889 DEBUG 6877 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Starting HazelcastCacheManager
+2018-10-26 09:36:54.167  WARN 6877 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-10-26 09:36:54.197  WARN 6877 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-10-26 09:36:55.631 DEBUG 6877 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Starting Swagger
+2018-10-26 09:36:55.641 DEBUG 6877 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Started Swagger in 9 ms
+2018-10-26 09:36:59.027  INFO 6877 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1540539419027, current=UP, previous=STARTING]
+2018-10-26 09:36:59.820  INFO 6877 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cb85402df5acf246edee7cdfc25e823a: registering service...
+2018-10-26 09:36:59.951  INFO 6877 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cb85402df5acf246edee7cdfc25e823a - Re-registering apps/HCMEMPMICROSERVICE
+2018-10-26 09:36:59.952  INFO 6877 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cb85402df5acf246edee7cdfc25e823a: registering service...
+2018-10-26 09:37:00.028  INFO 6877 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cb85402df5acf246edee7cdfc25e823a - registration status: 204
+2018-10-26 09:37:00.117  INFO 6877 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cb85402df5acf246edee7cdfc25e823a - registration status: 204
+2018-10-26 09:37:01.183  INFO 6877 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : Started HcmEmpMicroserviceApp in 73.713 seconds (JVM running for 77.524)
+2018-10-26 09:37:01.183  INFO 6877 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Application 'hcmEmpMicroservice' is running! Access URLs:
+	Local: 		http://localhost:8085
+	External: 	http://0.0.0.192:8085
+	Profile(s): 	[swagger, dev]
+----------------------------------------------------------
+2018-10-26 09:37:01.184  INFO 6877 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Config Server: 	Connected to the JHipster Registry config server!
+----------------------------------------------------------
