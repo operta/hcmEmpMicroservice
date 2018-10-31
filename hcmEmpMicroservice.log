@@ -16181,3 +16181,4 @@ liquibase.exception.LockException: Could not acquire change log lock.  Currently
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
 
+2018-10-31 16:54:55.169  INFO 8399 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
