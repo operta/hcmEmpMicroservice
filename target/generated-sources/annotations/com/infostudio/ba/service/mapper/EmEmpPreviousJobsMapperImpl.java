@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2018-10-26T09:35:29+0200",
-    comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_181 (Oracle Corporation)"
+    date = "2018-10-31T16:40:35+0100",
+    comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_151 (Oracle Corporation)"
 )
 @Component
 public class EmEmpPreviousJobsMapperImpl implements EmEmpPreviousJobsMapper {
