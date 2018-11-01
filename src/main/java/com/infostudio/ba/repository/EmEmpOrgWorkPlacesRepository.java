@@ -17,10 +17,10 @@ import java.util.List;
 public interface EmEmpOrgWorkPlacesRepository extends JpaRepository<EmEmpOrgWorkPlaces, Long> {
     List<EmEmpOrgWorkPlaces> findByIdEmployeeId(Long id);
 
-    @Query("SELECT em FROM EmEmpOrgWorkPlaces em WHERE em.dateTo=(SELECT MAX(e.dateTo) FROM EmEmpOrgWorkPlaces e WHERE e.idEmployee.id=?1) AND em.idEmployee.id=?1 AND ROWNUM=1")
+    @Query("SELECT em FROM EmEmpOrgWorkPlaces em WHERE em.dateFrom=(SELECT MAX(e.dateFrom) FROM EmEmpOrgWorkPlaces e WHERE e.idEmployee.id=?1) AND em.idEmployee.id=?1 AND ROWNUM=1")
     EmEmpOrgWorkPlaces findLastOrgWorkPlace(Long employeeId);
 
-    @Query("SELECT em FROM EmEmpOrgWorkPlaces em WHERE em.dateTo=(SELECT MAX(e.dateTo) FROM EmEmpOrgWorkPlaces e WHERE e.idEmployee=em.idEmployee)")
+    @Query("SELECT em FROM EmEmpOrgWorkPlaces em WHERE em.dateFrom=(SELECT MAX(e.dateFrom) FROM EmEmpOrgWorkPlaces e WHERE e.idEmployee=em.idEmployee)")
     List<EmEmpOrgWorkPlaces> findLastOrgWorkPlaces();
 
     List<EmEmpOrgWorkPlaces> findAllById(Long id);
