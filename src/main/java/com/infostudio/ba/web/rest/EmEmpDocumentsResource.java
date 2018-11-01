@@ -4,6 +4,7 @@ import com.codahale.metrics.annotation.Timed;
 import com.infostudio.ba.domain.EmEmpDocuments;
 
 import com.infostudio.ba.repository.EmEmpDocumentsRepository;
+import com.infostudio.ba.service.CoreMicroserviceProxy;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
@@ -12,6 +13,7 @@ import com.infostudio.ba.service.mapper.EmEmpDocumentsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -34,6 +36,9 @@ import java.util.Optional;
 public class EmEmpDocumentsResource {
 
     private final Logger log = LoggerFactory.getLogger(EmEmpDocumentsResource.class);
+
+    @Autowired
+    CoreMicroserviceProxy coreMicroserviceProxy;
 
     private static final String ENTITY_NAME = "emEmpDocuments";
 
@@ -100,7 +105,8 @@ public class EmEmpDocumentsResource {
      */
     @GetMapping("/em-emp-documents")
     @Timed
-    public ResponseEntity<List<EmEmpDocumentsDTO>> getAllEmEmpDocuments(Pageable pageable) {
+    public ResponseEntity<List<EmEmpDocumentsDTO>> getAllEmEmpDocuments(Pageable pageable,
+                                                                        @RequestHeader("Authorization") String auth) {
         log.debug("REST request to get a page of EmEmpDocuments");
         Page<EmEmpDocuments> page = emEmpDocumentsRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/em-emp-documents");
@@ -145,9 +151,12 @@ public class EmEmpDocumentsResource {
      */
     @DeleteMapping("/em-emp-documents/{id}")
     @Timed
-    public ResponseEntity<Void> deleteEmEmpDocuments(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteEmEmpDocuments(@PathVariable Long id,
+                                                     @RequestHeader("Authorization") String auth) {
         log.debug("REST request to delete EmEmpDocuments : {}", id);
+        EmEmpDocuments empDocuments = emEmpDocumentsRepository.findOne(id);
         emEmpDocumentsRepository.delete(id);
+        coreMicroserviceProxy.deleteDmDocumentLink((long)empDocuments.getIdDocumentLink(), auth);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

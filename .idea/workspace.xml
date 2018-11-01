@@ -2,463 +2,173 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98cdf9cf-e227-4cc8-b627-59a9fda21ee2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/ApplicationWebXml.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/ApplicationWebXml.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/HcmEmpMicroserviceApp.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/HcmEmpMicroserviceApp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/aop/logging/LoggingAspect.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/aop/logging/LoggingAspect.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/ApplicationProperties.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/ApplicationProperties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/AsyncConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/AsyncConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/CacheConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/CacheConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/CloudDatabaseConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/CloudDatabaseConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/Constants.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/DatabaseConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/DatabaseConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/DateTimeFormatConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/DateTimeFormatConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/DefaultProfileUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/DefaultProfileUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/JacksonConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/JacksonConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/LocaleConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/LocaleConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/LoggingAspectConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/LoggingAspectConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/LoggingConfiguration$LogbackLoggerContextListener.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/LoggingConfiguration$LogbackLoggerContextListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/LoggingConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/LoggingConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/MetricsConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/MetricsConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/MicroserviceSecurityConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/MicroserviceSecurityConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/ThymeleafConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/ThymeleafConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/WebConfigurer.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/WebConfigurer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/audit/AuditEventConverter.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/config/audit/AuditEventConverter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/AbstractAuditingEntity.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/AbstractAuditingEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/AbstractAuditingEntity_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/AbstractAuditingEntity_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmBorrowingTypes.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmBorrowingTypes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmBorrowingTypes_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmBorrowingTypes_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmContractTypes.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmContractTypes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmContractTypes_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmContractTypes_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpAccomplishments.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpAccomplishments.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpAccomplishments_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpAccomplishments_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpBankAccounts.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpBankAccounts.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpBankAccounts_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpBankAccounts_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpBorrowings.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpBorrowings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpBorrowings_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpBorrowings_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpCitizenships.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpCitizenships.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpCitizenships_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpCitizenships_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpContacts.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpContacts.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpContacts_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpContacts_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpDisabilities.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpDisabilities.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpDisabilities_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpDisabilities_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpDocuments.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpDocuments.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpDocuments_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpDocuments_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpEmgContacts.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpEmgContacts.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpEmgContacts_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpEmgContacts_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpFamilies.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpFamilies.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpFamilies_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpFamilies_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpIdentifications.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpIdentifications.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpIdentifications_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpIdentifications_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpInjuries.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpInjuries.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpInjuries_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpInjuries_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpMetaData.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpMetaData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpMetaData_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpMetaData_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpNotes.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpNotes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpNotes_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpNotes_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpOrgWorkPlaces.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpOrgWorkPlaces.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpOrgWorkPlaces_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpOrgWorkPlaces_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpPreviousJobs.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpPreviousJobs.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpPreviousJobs_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpPreviousJobs_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpResidences.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpResidences.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpResidences_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpResidences_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpRewards.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpRewards.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpRewards_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpRewards_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpSalaries.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpSalaries.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpSalaries_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpSalaries_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpSchools.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpSchools.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpSchools_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpSchools_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpSkills.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpSkills.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpSkills_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpSkills_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpTasks.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpTasks.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpTasks_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpTasks_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpTypes.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpTypes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpTypes_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmpTypes_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmployees.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmployees.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmployees_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmEmployees_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmInjuryTypes.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmInjuryTypes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmInjuryTypes_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmInjuryTypes_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmPenalties.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmPenalties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmPenalties_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmPenalties_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmRewardTypes.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmRewardTypes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmRewardTypes_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmRewardTypes_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmStatuses.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmStatuses.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmStatuses_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/EmStatuses_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/PersistentAuditEvent.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/PersistentAuditEvent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/PersistentAuditEvent_.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/domain/PersistentAuditEvent_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmBorrowingTypesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmBorrowingTypesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmContractTypesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmContractTypesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpAccomplishmentsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpAccomplishmentsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpBankAccountsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpBankAccountsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpBorrowingsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpBorrowingsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpCitizenshipsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpCitizenshipsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpContactsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpContactsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpDisabilitiesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpDisabilitiesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpDocumentsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpDocumentsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpEmgContactsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpEmgContactsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpFamiliesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpFamiliesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpIdentificationsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpIdentificationsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpInjuriesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpInjuriesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpMetaDataRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpMetaDataRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpNotesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpNotesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpOrgWorkPlacesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpOrgWorkPlacesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpPreviousJobsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpPreviousJobsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpResidencesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpResidencesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpRewardsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpRewardsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpSalariesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpSalariesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpSchoolsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpSchoolsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpSkillsRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpSkillsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpTasksRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpTasksRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpTypesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmpTypesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmployeesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmEmployeesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmInjuryTypesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmInjuryTypesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmPenaltiesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmPenaltiesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmRewardTypesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmRewardTypesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmStatusesRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/repository/EmStatusesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/security/AuthoritiesConstants.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/security/AuthoritiesConstants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/security/SecurityUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/security/SecurityUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/security/SpringSecurityAuditorAware.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/security/SpringSecurityAuditorAware.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/security/jwt/JWTConfigurer.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/security/jwt/JWTConfigurer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/security/jwt/JWTFilter.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/security/jwt/JWTFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/security/jwt/TokenProvider.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/security/jwt/TokenProvider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmBorrowingTypesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmBorrowingTypesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmContractTypesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmContractTypesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpAccomplishmentsDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpAccomplishmentsDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpBankAccountsDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpBankAccountsDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpBorrowingsDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpBorrowingsDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpCitizenshipsDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpCitizenshipsDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpContactsDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpContactsDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpDisabilitiesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpDisabilitiesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpDocumentsDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpDocumentsDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpEmgContactsDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpEmgContactsDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpFamiliesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpFamiliesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpIdentificationsDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpIdentificationsDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpInjuriesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpInjuriesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpMetaDataDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpMetaDataDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpNotesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpNotesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpOrgWorkPlacesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpOrgWorkPlacesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpPreviousJobsDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpPreviousJobsDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpResidencesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpResidencesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpRewardsDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpRewardsDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpSalariesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpSalariesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpSchoolsDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpSchoolsDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpSkillsDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpSkillsDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpTasksDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpTasksDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpTypesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmpTypesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmployeesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmEmployeesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmInjuryTypesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmInjuryTypesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmPenaltiesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmPenaltiesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmRewardTypesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmRewardTypesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmStatusesDTO.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/dto/EmStatusesDTO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmBorrowingTypesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmBorrowingTypesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmBorrowingTypesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmBorrowingTypesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmContractTypesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmContractTypesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmContractTypesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmContractTypesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpAccomplishmentsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpAccomplishmentsMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpAccomplishmentsMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpAccomplishmentsMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpBankAccountsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpBankAccountsMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpBankAccountsMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpBankAccountsMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpBorrowingsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpBorrowingsMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpBorrowingsMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpBorrowingsMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpCitizenshipsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpCitizenshipsMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpCitizenshipsMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpCitizenshipsMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpContactsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpContactsMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpContactsMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpContactsMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpDisabilitiesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpDisabilitiesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpDisabilitiesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpDisabilitiesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpDocumentsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpDocumentsMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpDocumentsMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpDocumentsMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpEmgContactsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpEmgContactsMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpEmgContactsMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpEmgContactsMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpFamiliesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpFamiliesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpFamiliesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpFamiliesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpIdentificationsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpIdentificationsMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpIdentificationsMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpIdentificationsMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpInjuriesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpInjuriesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpInjuriesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpInjuriesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpMetaDataMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpMetaDataMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpMetaDataMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpMetaDataMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpNotesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpNotesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpNotesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpNotesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpOrgWorkPlacesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpOrgWorkPlacesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpOrgWorkPlacesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpOrgWorkPlacesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpPreviousJobsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpPreviousJobsMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpPreviousJobsMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpPreviousJobsMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpResidencesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpResidencesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpResidencesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpResidencesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpRewardsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpRewardsMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpRewardsMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpRewardsMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpSalariesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpSalariesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpSalariesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpSalariesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpSchoolsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpSchoolsMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpSchoolsMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpSchoolsMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpSkillsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpSkillsMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpSkillsMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpSkillsMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpTasksMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpTasksMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpTasksMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpTasksMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpTypesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpTypesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpTypesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmpTypesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmployeesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmployeesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmployeesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmEmployeesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmInjuryTypesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmInjuryTypesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmInjuryTypesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmInjuryTypesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmPenaltiesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmPenaltiesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmPenaltiesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmPenaltiesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmRewardTypesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmRewardTypesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmRewardTypesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmRewardTypesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmStatusesMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmStatusesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmStatusesMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EmStatusesMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EntityMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/service/mapper/EntityMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmBorrowingTypesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmBorrowingTypesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmContractTypesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmContractTypesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpAccomplishmentsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpAccomplishmentsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpBankAccountsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpBankAccountsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpBorrowingsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpBorrowingsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpCitizenshipsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpCitizenshipsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpContactsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpContactsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpDisabilitiesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpDisabilitiesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpDocumentsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpDocumentsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpEmgContactsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpEmgContactsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpFamiliesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpFamiliesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpIdentificationsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpIdentificationsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpInjuriesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpInjuriesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpMetaDataResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpMetaDataResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpNotesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpNotesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpOrgWorkPlacesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpOrgWorkPlacesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpPreviousJobsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpPreviousJobsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpResidencesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpResidencesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpRewardsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpRewardsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpSalariesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpSalariesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpSchoolsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpSchoolsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpSkillsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpSkillsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpTasksResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpTasksResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpTypesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmpTypesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmployeesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmEmployeesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmInjuryTypesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmInjuryTypesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmPenaltiesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmPenaltiesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmRewardTypesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmRewardTypesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmStatusesResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/EmStatusesResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/LogsResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/LogsResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/ProfileInfoResource$ProfileInfoVM.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/ProfileInfoResource$ProfileInfoVM.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/ProfileInfoResource.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/ProfileInfoResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/BadRequestAlertException.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/BadRequestAlertException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/CustomParameterizedException.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/CustomParameterizedException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/EmailAlreadyUsedException.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/EmailAlreadyUsedException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/EmailNotFoundException.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/EmailNotFoundException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/ErrorConstants.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/ErrorConstants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/ExceptionTranslator.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/ExceptionTranslator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/FieldErrorVM.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/FieldErrorVM.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/InternalServerErrorException.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/InternalServerErrorException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/InvalidPasswordException.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/InvalidPasswordException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/LoginAlreadyUsedException.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/errors/LoginAlreadyUsedException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/util/HeaderUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/util/HeaderUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/util/PaginationUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/util/PaginationUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/vm/LoggerVM.class" afterPath="$PROJECT_DIR$/target/classes/com/infostudio/ba/web/rest/vm/LoggerVM.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hcmEmpMicroservice.log" afterPath="$PROJECT_DIR$/hcmEmpMicroservice.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmBorrowingTypesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmBorrowingTypesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmContractTypesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmContractTypesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpAccomplishmentsMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpAccomplishmentsMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpBankAccountsMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpBankAccountsMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpBorrowingsMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpBorrowingsMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpCitizenshipsMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpCitizenshipsMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpContactsMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpContactsMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpDisabilitiesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpDisabilitiesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpDocumentsMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpDocumentsMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpEmgContactsMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpEmgContactsMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpFamiliesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpFamiliesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpIdentificationsMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpIdentificationsMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpInjuriesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpInjuriesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpMetaDataMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpMetaDataMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpNotesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpNotesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpOrgWorkPlacesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpOrgWorkPlacesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpPreviousJobsMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpPreviousJobsMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpResidencesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpResidencesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpRewardsMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpRewardsMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpSalariesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpSalariesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpSchoolsMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpSchoolsMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpSkillsMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpSkillsMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpTasksMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpTasksMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpTypesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmpTypesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmployeesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmEmployeesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmInjuryTypesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmInjuryTypesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmPenaltiesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmPenaltiesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmRewardTypesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmRewardTypesMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmStatusesMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/infostudio/ba/service/mapper/EmStatusesMapperImpl.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hcmEmpMicroservice.log" beforeDir="false" afterPath="$PROJECT_DIR$/hcmEmpMicroservice.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infostudio/ba/HcmEmpMicroserviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infostudio/ba/HcmEmpMicroserviceApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpDocumentsResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpDocumentsResource.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1502653690">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="787" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="787" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="4" />
+          <entry key="xml" value="1" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="4" />
+          <entry key="XML" value="1" />
+          <entry key="YAML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EmEmpOrgWorkPlacesRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmpOrgWorkPlacesRepository.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="203">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmEmpOrgWorkPlaces.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/domain/EmEmpOrgWorkPlaces.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/CoreMicroserviceProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
-                <marker date="1532092863361" expanded="true" signature="1240:1241" ph="@{...}" />
-                <marker date="1532092863361" expanded="false" signature="1397:1408" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="1418:1424" ph=" }" />
-                <marker date="1532092863361" expanded="false" signature="1456:1467" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="1480:1486" ph=" }" />
-                <marker date="1532092863361" expanded="false" signature="1522:1533" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="1549:1555" ph=" }" />
-                <marker date="1532092863361" expanded="true" signature="1616:1678" ph="{...}" />
-                <marker date="1532092863361" expanded="false" signature="1727:1738" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="1763:1769" ph=" }" />
-                <marker date="1532092863361" expanded="false" signature="1803:1814" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="1828:1834" ph=" }" />
-                <marker date="1532092863361" expanded="true" signature="1891:1949" ph="{...}" />
-                <marker date="1532092863361" expanded="false" signature="1994:2005" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="2026:2032" ph=" }" />
-                <marker date="1532092863361" expanded="false" signature="2080:2091" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="2121:2127" ph=" }" />
-                <marker date="1532092863361" expanded="true" signature="2214:2304" ph="{...}" />
-                <marker date="1532092863361" expanded="true" signature="2380:2449" ph="{...}" />
-                <marker date="1532092863361" expanded="false" signature="2489:2500" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="2522:2528" ph=" }" />
-                <marker date="1532092863361" expanded="true" signature="2599:2673" ph="{...}" />
-                <marker date="1532092863361" expanded="false" signature="2732:2743" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="2780:2786" ph=" }" />
-                <marker date="1532092863361" expanded="false" signature="2826:2837" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="2855:2861" ph=" }" />
-                <marker date="1532092863361" expanded="true" signature="2929:2996" ph="{...}" />
-                <marker date="1532092863361" expanded="false" signature="3052:3063" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="3093:3099" ph=" }" />
-                <marker date="1532092863361" expanded="false" signature="3147:3158" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="3180:3186" ph=" }" />
-                <marker date="1532092863361" expanded="true" signature="3266:3341" ph="{...}" />
-                <marker date="1532092863361" expanded="false" signature="3409:3420" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="3458:3464" ph=" }" />
-                <marker date="1532092863361" expanded="true" signature="3626:4029" ph="{...}" />
-                <marker date="1532092863361" expanded="false" signature="4070:4081" ph=" { " />
-                <marker date="1532092863361" expanded="false" signature="4114:4120" ph=" }" />
-                <marker date="1532092863361" expanded="true" signature="4165:4696" ph="{...}" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmEmployeesResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmployeesResource.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/HcmEmpMicroserviceApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1498">
-              <caret line="190" column="10" lean-forward="false" selection-start-line="190" selection-start-column="10" selection-end-line="190" selection-end-column="10" />
-              <folding>
-                <marker date="1532092863394" expanded="true" signature="8711:8878" ph="{...}" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmEmpEmgContactsResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpEmgContactsResource.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="56" column="38" lean-forward="false" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
-              <folding>
-                <marker date="1532092863390" expanded="true" signature="5989:6735" ph="/**...*/" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmEmpEmgContactsDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/dto/EmEmpEmgContactsDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="160" column="20" lean-forward="false" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmEmpTypes.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/domain/EmEmpTypes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="150">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmEmpTasks.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/domain/EmEmpTasks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="315">
+              <caret line="28" column="30" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmEmpTasksResource.java" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpTasksResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="121" column="40" lean-forward="false" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="1545">
+              <caret line="121" column="40" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmEmpTasksRepository.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmpTasksRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="165">
+              <caret line="15" column="37" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmEmployeesRepository.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmployeesRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="330">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpDocumentsResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-323">
+              <caret line="108" column="118" selection-start-line="108" selection-start-column="118" selection-end-line="108" selection-end-column="118" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>.assert</find>
+      <find>dateTo</find>
+      <find>hystrix</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpOrgWorkPlacesResource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmpOrgWorkPlacesRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmployeesRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmployeesResource.java" />
         <option value="$PROJECT_DIR$/.yo-rc.json" />
@@ -467,6 +177,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/dto/EmEmpTasksDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmpTasksRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpTasksResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmpOrgWorkPlacesRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/infostudio/ba/HcmEmpMicroserviceApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/CoreMicroserviceProxy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpDocumentsResource.java" />
       </list>
     </option>
   </component>
@@ -482,33 +197,21 @@
     </packageJsonPaths>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
-    <option name="x" value="7" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
     <option name="y" value="20" />
-    <option name="width" value="1342" />
-    <option name="height" value="730" />
+    <option name="width" value="1346" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -549,19 +252,53 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ba" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hcm-emp-microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hcmEmpMicroservice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ba" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hcm-emp-microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hcmEmpMicroservice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ba" type="462c0819:PsiDirectoryNode" />
               <item name="rest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hcm-emp-microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hcmEmpMicroservice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hcm-emp-microservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hcmEmpMicroservice" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="orgworkplaces&#9;PSI&#9;JAVA://com.infostudio.ba.service.dto.EmEmpOrgWorkPlacesDTO" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541078027121" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -627,45 +364,50 @@
       <workItem from="1531987842491" duration="10249000" />
       <workItem from="1532507794865" duration="657000" />
       <workItem from="1532517525414" duration="7644000" />
+      <workItem from="1541058682481" duration="1711000" />
+      <workItem from="1541064877206" duration="8000" />
+      <workItem from="1541073136424" duration="4604000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23745000" />
+    <option name="totallyTimeSpent" value="30068000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="823" extended-state="0" />
+    <frame x="-3" y="0" width="1372" height="771" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24773414" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3294702" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,607 +416,176 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpOrgWorkPlacesResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1596">
-          <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding>
-            <marker date="1532092863391" expanded="true" signature="6248:8141" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/dto/EmEmpOrgWorkPlacesDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmpOrgWorkPlacesRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/domain/EmEmpOrgWorkPlaces.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <marker date="1532092863361" expanded="true" signature="1240:1241" ph="@{...}" />
-            <marker date="1532092863361" expanded="false" signature="1397:1408" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="1418:1424" ph=" }" />
-            <marker date="1532092863361" expanded="false" signature="1456:1467" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="1480:1486" ph=" }" />
-            <marker date="1532092863361" expanded="false" signature="1522:1533" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="1549:1555" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="1616:1678" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="1727:1738" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="1763:1769" ph=" }" />
-            <marker date="1532092863361" expanded="false" signature="1803:1814" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="1828:1834" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="1891:1949" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="1994:2005" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="2026:2032" ph=" }" />
-            <marker date="1532092863361" expanded="false" signature="2080:2091" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="2121:2127" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="2214:2304" ph="{...}" />
-            <marker date="1532092863361" expanded="true" signature="2380:2449" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="2489:2500" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="2522:2528" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="2599:2673" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="2732:2743" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="2780:2786" ph=" }" />
-            <marker date="1532092863361" expanded="false" signature="2826:2837" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="2855:2861" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="2929:2996" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="3052:3063" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="3093:3099" ph=" }" />
-            <marker date="1532092863361" expanded="false" signature="3147:3158" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="3180:3186" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="3266:3341" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="3409:3420" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="3458:3464" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="3626:4029" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="4070:4081" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="4114:4120" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="4165:4696" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmployeesResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1498">
-          <caret line="131" column="10" lean-forward="true" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
-          <folding>
-            <marker date="1532092863394" expanded="true" signature="8711:8878" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpEmgContactsResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="56" column="38" lean-forward="false" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
-          <folding>
-            <marker date="1532092863390" expanded="true" signature="5989:6735" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmployeesRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/domain/EmEmployees.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3850">
-          <caret line="364" column="0" lean-forward="false" selection-start-line="364" selection-start-column="0" selection-end-line="364" selection-end-column="0" />
-          <folding>
-            <marker date="1532092863363" expanded="false" signature="3100:3111" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3121:3127" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="3159:3170" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3183:3189" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="3218:3229" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3241:3247" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="3290:3344" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="3382:3393" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3410:3416" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="3445:3456" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3468:3474" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="3517:3571" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="3609:3620" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3637:3643" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="3675:3686" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3700:3706" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="3754:3812" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="3855:3866" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3887:3893" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="3928:3939" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3957:3963" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="4018:4084" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="4134:4145" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="4174:4180" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="4212:4223" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="4238:4244" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="4293:4353" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="4397:4408" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="4431:4437" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="4472:4483" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="4501:4507" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="4562:4628" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="4678:4689" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="4718:4724" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="4766:4777" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="4801:4807" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="4875:4953" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="5016:5027" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="5068:5074" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="5110:5121" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="5140:5146" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="5203:5271" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="5323:5334" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="5365:5371" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="5402:5413" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="5427:5433" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="5480:5538" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="5580:5591" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="5612:5618" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="5663:5674" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="5702:5708" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="5783:5869" ph="{...}" />
-            <marker date="1532092863363" expanded="true" signature="5940:6005" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="6043:6054" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6075:6081" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="6142:6214" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="6270:6281" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6316:6322" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="6357:6368" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6386:6392" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="6447:6513" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="6563:6574" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6603:6609" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="6648:6659" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6678:6684" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="6744:6812" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="6867:6878" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6909:6915" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="6951:6962" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6978:6984" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="7038:7100" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="7149:7160" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7185:7191" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="7219:7230" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7241:7247" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="7288:7340" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="7376:7387" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7402:7408" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="7442:7453" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7470:7476" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="7529:7593" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="7641:7652" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7679:7685" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="7719:7730" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7747:7753" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="7806:7870" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="7918:7929" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7956:7962" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="7998:8009" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8028:8034" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="8091:8159" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="8211:8222" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8253:8259" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="8289:8300" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8313:8319" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="8364:8420" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="8460:8471" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8490:8496" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="8540:8551" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8578:8584" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="8657:8741" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="8809:8820" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8867:8873" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="8912:8923" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8944:8950" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="9012:9084" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="9141:9152" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="9187:9193" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="9234:9245" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="9268:9274" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="9340:9416" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="9477:9488" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="9527:9533" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="9578:9589" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="9613:9619" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="9684:9756" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="9816:9827" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="9862:9868" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="9905:9916" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="9932:9938" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="9995:10059" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="10111:10122" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="10149:10155" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="10317:10685" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="10726:10737" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="10770:10776" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="10821:12089" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/dto/EmEmployeesDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
-          <caret line="108" column="19" lean-forward="false" selection-start-line="108" selection-start-column="19" selection-end-line="108" selection-end-column="19" />
-          <folding>
-            <marker date="1532092863381" expanded="true" signature="9395:9402" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/dto/EmEmpEmgContactsDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpOrgWorkPlacesResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2499">
-          <caret line="147" column="27" lean-forward="false" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmpOrgWorkPlacesRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/dto/EmEmpOrgWorkPlacesDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/mapper/EmContractTypesMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="11" column="53" lean-forward="false" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/mapper/EntityMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/dto/EmEmpRewardsDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="51" column="10" lean-forward="false" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+          <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/dto/EmEmployeesDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1484">
-          <caret line="112" column="19" lean-forward="false" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
-          <folding>
-            <marker date="1532092863381" expanded="true" signature="9395:9402" ph="{...}" />
-          </folding>
+          <caret line="112" column="19" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.11.RELEASE/spring-data-commons-1.13.11.RELEASE.jar!/org/springframework/data/repository/PagingAndSortingRepository.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/1.11.11.RELEASE/spring-data-jpa-1.11.11.RELEASE.jar!/org/springframework/data/jpa/repository/JpaRepository.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/domain/EmEmployees.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3850">
-          <caret line="386" column="0" lean-forward="false" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
-          <folding>
-            <marker date="1532092863363" expanded="false" signature="3100:3111" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3121:3127" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="3159:3170" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3183:3189" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="3218:3229" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3241:3247" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="3290:3344" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="3382:3393" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3410:3416" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="3445:3456" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3468:3474" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="3517:3571" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="3609:3620" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3637:3643" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="3675:3686" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3700:3706" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="3754:3812" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="3855:3866" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3887:3893" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="3928:3939" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="3957:3963" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="4018:4084" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="4134:4145" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="4174:4180" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="4212:4223" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="4238:4244" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="4293:4353" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="4397:4408" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="4431:4437" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="4472:4483" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="4501:4507" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="4562:4628" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="4678:4689" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="4718:4724" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="4766:4777" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="4801:4807" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="4875:4953" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="5016:5027" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="5068:5074" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="5110:5121" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="5140:5146" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="5203:5271" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="5323:5334" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="5365:5371" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="5402:5413" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="5427:5433" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="5480:5538" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="5580:5591" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="5612:5618" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="5663:5674" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="5702:5708" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="5783:5869" ph="{...}" />
-            <marker date="1532092863363" expanded="true" signature="5940:6005" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="6043:6054" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6075:6081" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="6142:6214" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="6270:6281" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6316:6322" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="6357:6368" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6386:6392" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="6447:6513" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="6563:6574" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6603:6609" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="6648:6659" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6678:6684" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="6744:6812" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="6867:6878" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6909:6915" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="6951:6962" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="6978:6984" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="7038:7100" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="7149:7160" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7185:7191" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="7219:7230" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7241:7247" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="7288:7340" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="7376:7387" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7402:7408" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="7442:7453" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7470:7476" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="7529:7593" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="7641:7652" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7679:7685" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="7719:7730" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7747:7753" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="7806:7870" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="7918:7929" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="7956:7962" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="7998:8009" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8028:8034" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="8091:8159" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="8211:8222" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8253:8259" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="8289:8300" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8313:8319" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="8364:8420" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="8460:8471" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8490:8496" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="8540:8551" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8578:8584" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="8657:8741" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="8809:8820" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8867:8873" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="8912:8923" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="8944:8950" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="9012:9084" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="9141:9152" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="9187:9193" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="9234:9245" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="9268:9274" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="9340:9416" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="9477:9488" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="9527:9533" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="9578:9589" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="9613:9619" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="9684:9756" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="9816:9827" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="9862:9868" ph=" }" />
-            <marker date="1532092863363" expanded="false" signature="9905:9916" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="9932:9938" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="9995:10059" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="10111:10122" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="10149:10155" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="10317:10685" ph="{...}" />
-            <marker date="1532092863363" expanded="false" signature="10726:10737" ph=" { " />
-            <marker date="1532092863363" expanded="false" signature="10770:10776" ph=" }" />
-            <marker date="1532092863363" expanded="true" signature="10821:12089" ph="{...}" />
-          </folding>
+          <caret line="386" selection-start-line="386" selection-end-line="386" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/dto/EmEmpOrgWorkPlacesDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
-          <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding />
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpOrgWorkPlacesResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1596">
-          <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-          <folding>
-            <marker date="1532092863391" expanded="true" signature="6248:8141" ph="/**...*/" />
-          </folding>
+          <caret line="165" selection-start-line="165" selection-end-line="165" />
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/ArrayList.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmpOrgWorkPlacesRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/domain/EmEmpOrgWorkPlaces.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <marker date="1532092863361" expanded="true" signature="1240:1241" ph="@{...}" />
-            <marker date="1532092863361" expanded="false" signature="1397:1408" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="1418:1424" ph=" }" />
-            <marker date="1532092863361" expanded="false" signature="1456:1467" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="1480:1486" ph=" }" />
-            <marker date="1532092863361" expanded="false" signature="1522:1533" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="1549:1555" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="1616:1678" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="1727:1738" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="1763:1769" ph=" }" />
-            <marker date="1532092863361" expanded="false" signature="1803:1814" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="1828:1834" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="1891:1949" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="1994:2005" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="2026:2032" ph=" }" />
-            <marker date="1532092863361" expanded="false" signature="2080:2091" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="2121:2127" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="2214:2304" ph="{...}" />
-            <marker date="1532092863361" expanded="true" signature="2380:2449" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="2489:2500" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="2522:2528" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="2599:2673" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="2732:2743" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="2780:2786" ph=" }" />
-            <marker date="1532092863361" expanded="false" signature="2826:2837" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="2855:2861" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="2929:2996" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="3052:3063" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="3093:3099" ph=" }" />
-            <marker date="1532092863361" expanded="false" signature="3147:3158" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="3180:3186" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="3266:3341" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="3409:3420" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="3458:3464" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="3626:4029" ph="{...}" />
-            <marker date="1532092863361" expanded="false" signature="4070:4081" ph=" { " />
-            <marker date="1532092863361" expanded="false" signature="4114:4120" ph=" }" />
-            <marker date="1532092863361" expanded="true" signature="4165:4696" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/ArrayList.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmployeesRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="150">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmployeesResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1498">
-          <caret line="190" column="10" lean-forward="false" selection-start-line="190" selection-start-column="10" selection-end-line="190" selection-end-column="10" />
-          <folding>
-            <marker date="1532092863394" expanded="true" signature="8711:8878" ph="{...}" />
-          </folding>
+        <state relative-caret-position="2415">
+          <caret line="190" column="7" selection-start-line="190" selection-start-column="7" selection-end-line="190" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpEmgContactsResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="56" column="38" lean-forward="false" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
-          <folding>
-            <marker date="1532092863390" expanded="true" signature="5989:6735" ph="/**...*/" />
-          </folding>
+        <state relative-caret-position="495">
+          <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/dto/EmEmpEmgContactsDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="160" column="20" lean-forward="false" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="1635">
+          <caret line="160" column="20" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/domain/EmEmpTypes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="150">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/domain/EmEmpTasks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmpTasksRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="37" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpTasksResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="121" column="40" lean-forward="false" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="1545">
+          <caret line="121" column="40" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmpTasksRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/repository/EmEmployeesRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/HcmEmpMicroserviceApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/service/CoreMicroserviceProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpDocumentsResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="108" column="118" selection-start-line="108" selection-start-column="118" selection-end-line="108" selection-end-column="118" />
         </state>
       </provider>
     </entry>
