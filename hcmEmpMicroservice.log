@@ -20206,3 +20206,40 @@ Members {size:1, ver:1} [
 2018-11-01 14:17:24.696 DEBUG 22744 --- [XNIO-2 task-1] c.i.ba.web.rest.EmEmpDocumentsResource   : REST request to delete EmEmpDocuments : 242301
 2018-11-01 14:17:24.772  INFO 22744 --- [XNIO-2 task-1] c.h.i.p.impl.PartitionStateManager       : [127.0.0.1]:13786 [dev] [3.9.1] Initializing cluster partition table arrangement...
 2018-11-01 14:17:26.094 DEBUG 22744 --- [XNIO-2 task-1] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpDocumentsResource.deleteEmEmpDocuments() with result = <200 OK,{X-hcmEmpMicroserviceApp-alert=[hcmGatewayApp.emEmpDocuments.deleted], X-hcmEmpMicroserviceApp-params=[242301]}>
+2018-11-01 14:21:57.577  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 14:22:03.371 ERROR 22744 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Liquibase could not start correctly, your database is NOT ready: Could not acquire change log lock.  Currently locked by 192.168.1.51 (192.168.1.51) since 6/27/18 2:50 PM
+
+liquibase.exception.LockException: Could not acquire change log lock.  Currently locked by 192.168.1.51 (192.168.1.51) since 6/27/18 2:50 PM
+	at liquibase.lockservice.StandardLockService.waitForLock(StandardLockService.java:190)
+	at liquibase.Liquibase.update(Liquibase.java:196)
+	at liquibase.Liquibase.update(Liquibase.java:192)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.initDb(AsyncSpringLiquibase.java:94)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.lambda$afterPropertiesSet$0(AsyncSpringLiquibase.java:77)
+	at io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor.lambda$createWrappedRunnable$1(ExceptionHandlingAsyncTaskExecutor.java:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018-11-01 14:26:57.591  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 14:31:57.593  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 14:36:57.596  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 14:39:52.406  WARN 22744 --- [XNIO-2 task-2] o.z.p.spring.web.advice.AdviceTrait      : Unauthorized: Full authentication is required to access this resource
+2018-11-01 14:39:52.492  WARN 22744 --- [XNIO-2 task-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved exception caused by Handler execution: org.springframework.security.authentication.InsufficientAuthenticationException: Full authentication is required to access this resource
+2018-11-01 14:40:15.223  WARN 22744 --- [XNIO-2 task-3] o.z.p.spring.web.advice.AdviceTrait      : Unauthorized: Full authentication is required to access this resource
+2018-11-01 14:40:15.226  WARN 22744 --- [XNIO-2 task-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved exception caused by Handler execution: org.springframework.security.authentication.InsufficientAuthenticationException: Full authentication is required to access this resource
+2018-11-01 14:40:16.218  WARN 22744 --- [XNIO-2 task-4] o.z.p.spring.web.advice.AdviceTrait      : Unauthorized: Full authentication is required to access this resource
+2018-11-01 14:40:16.221  WARN 22744 --- [XNIO-2 task-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved exception caused by Handler execution: org.springframework.security.authentication.InsufficientAuthenticationException: Full authentication is required to access this resource
+2018-11-01 14:41:57.597  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 14:46:57.598  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 14:51:57.602  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 14:56:57.606  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 15:01:57.610  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 15:06:57.617  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 15:11:57.622  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 15:16:57.623  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 15:21:57.626  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 15:26:57.628  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 15:31:57.629  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-01 15:36:57.630  INFO 22744 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
