@@ -4,7 +4,7 @@ import com.codahale.metrics.annotation.Timed;
 import com.infostudio.ba.domain.EmEmpDocuments;
 
 import com.infostudio.ba.repository.EmEmpDocumentsRepository;
-import com.infostudio.ba.service.CoreMicroserviceProxy;
+import com.infostudio.ba.service.proxy.CoreMicroserviceProxy;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
