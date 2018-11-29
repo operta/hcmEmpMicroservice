@@ -21,7 +21,6 @@ public class EmEmpDocumentsDTO implements Serializable {
 
     private String description;
 
-    @NotNull
     private LocalDate dateCreated;
 
     private LocalDate validFrom;

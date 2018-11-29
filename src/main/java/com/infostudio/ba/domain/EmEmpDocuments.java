@@ -33,8 +33,7 @@ public class EmEmpDocuments extends AbstractAuditingEntity implements Serializab
     @Column(name = "description")
     private String description;
 
-    @NotNull
-    @Column(name = "date_created", nullable = false)
+    @Column(name = "date_created")
     private LocalDate dateCreated;
 
     @Column(name = "valid_from")
