@@ -3,7 +3,11 @@ package com.infostudio.ba.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.infostudio.ba.domain.EmEmpOrgWorkPlaces;
 
+import com.infostudio.ba.domain.EmEmpSalaries;
 import com.infostudio.ba.repository.EmEmpOrgWorkPlacesRepository;
+import com.infostudio.ba.repository.EmEmpSalariesRepository;
+import com.infostudio.ba.service.proxy.CoreMicroserviceProxy;
+import com.infostudio.ba.service.proxy.model.OgOrgWorkPlaces;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
@@ -39,11 +43,34 @@ public class EmEmpOrgWorkPlacesResource {
 
     private final EmEmpOrgWorkPlacesRepository emEmpOrgWorkPlacesRepository;
 
+    private final EmEmpSalariesRepository emEmpSalariesRepository;
+
     private final EmEmpOrgWorkPlacesMapper emEmpOrgWorkPlacesMapper;
 
-    public EmEmpOrgWorkPlacesResource(EmEmpOrgWorkPlacesRepository emEmpOrgWorkPlacesRepository, EmEmpOrgWorkPlacesMapper emEmpOrgWorkPlacesMapper) {
+    private final CoreMicroserviceProxy coreMicroserviceProxy;
+
+    public EmEmpOrgWorkPlacesResource(EmEmpOrgWorkPlacesRepository emEmpOrgWorkPlacesRepository,
+                                      EmEmpOrgWorkPlacesMapper emEmpOrgWorkPlacesMapper,
+                                      EmEmpSalariesRepository emEmpSalariesRepository,
+                                      CoreMicroserviceProxy coreMicroserviceProxy) {
         this.emEmpOrgWorkPlacesRepository = emEmpOrgWorkPlacesRepository;
         this.emEmpOrgWorkPlacesMapper = emEmpOrgWorkPlacesMapper;
+        this.emEmpSalariesRepository = emEmpSalariesRepository;
+        this.coreMicroserviceProxy = coreMicroserviceProxy;
+    }
+
+    public void createEmEmpSalary(EmEmpOrgWorkPlaces emEmpOrgWorkPlaces, String auth){
+        EmEmpSalaries emEmpSalaries = new EmEmpSalaries();
+        emEmpSalaries.setDateFrom(emEmpOrgWorkPlaces.getDateFrom());
+        emEmpSalaries.setDateTo(emEmpOrgWorkPlaces.getDateTo());
+        emEmpSalaries.setIdEmployee(emEmpOrgWorkPlaces.getIdEmployee());
+        emEmpSalaries.setWorkHistoryCoefficient(emEmpOrgWorkPlaces.getWorkHistoryCoefficient());
+        emEmpSalaries.setIdContractType(emEmpOrgWorkPlaces.getIdContractType());
+
+        OgOrgWorkPlaces ogOrgWorkPlaces = coreMicroserviceProxy.getOgOrgWorkPlaceById((long)emEmpOrgWorkPlaces.getIdOrgWorkPlace(),
+                auth).getBody();
+        emEmpSalaries.setIdWorkPlace((int)(long)ogOrgWorkPlaces.getIdWorkPlaceId());
+        emEmpSalariesRepository.save(emEmpSalaries);
     }
 
     /**
@@ -55,13 +82,15 @@ public class EmEmpOrgWorkPlacesResource {
      */
     @PostMapping("/em-emp-org-work-places")
     @Timed
-    public ResponseEntity<EmEmpOrgWorkPlacesDTO> createEmEmpOrgWorkPlaces(@Valid @RequestBody EmEmpOrgWorkPlacesDTO emEmpOrgWorkPlacesDTO) throws URISyntaxException {
+    public ResponseEntity<EmEmpOrgWorkPlacesDTO> createEmEmpOrgWorkPlaces(@Valid @RequestBody EmEmpOrgWorkPlacesDTO emEmpOrgWorkPlacesDTO,
+                                                                          @RequestHeader("Authorization") String auth) throws URISyntaxException {
         log.debug("REST request to save EmEmpOrgWorkPlaces : {}", emEmpOrgWorkPlacesDTO);
         if (emEmpOrgWorkPlacesDTO.getId() != null) {
             throw new BadRequestAlertException("A new emEmpOrgWorkPlaces cannot already have an ID", ENTITY_NAME, "idexists");
         }
         EmEmpOrgWorkPlaces emEmpOrgWorkPlaces = emEmpOrgWorkPlacesMapper.toEntity(emEmpOrgWorkPlacesDTO);
         emEmpOrgWorkPlaces = emEmpOrgWorkPlacesRepository.save(emEmpOrgWorkPlaces);
+        createEmEmpSalary(emEmpOrgWorkPlaces, auth);
         EmEmpOrgWorkPlacesDTO result = emEmpOrgWorkPlacesMapper.toDto(emEmpOrgWorkPlaces);
         return ResponseEntity.created(new URI("/api/em-emp-org-work-places/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
@@ -79,13 +108,15 @@ public class EmEmpOrgWorkPlacesResource {
      */
     @PutMapping("/em-emp-org-work-places")
     @Timed
-    public ResponseEntity<EmEmpOrgWorkPlacesDTO> updateEmEmpOrgWorkPlaces(@Valid @RequestBody EmEmpOrgWorkPlacesDTO emEmpOrgWorkPlacesDTO) throws URISyntaxException {
+    public ResponseEntity<EmEmpOrgWorkPlacesDTO> updateEmEmpOrgWorkPlaces(@Valid @RequestBody EmEmpOrgWorkPlacesDTO emEmpOrgWorkPlacesDTO,
+                                                                          @RequestHeader("Authorization") String auth) throws URISyntaxException {
         log.debug("REST request to update EmEmpOrgWorkPlaces : {}", emEmpOrgWorkPlacesDTO);
         if (emEmpOrgWorkPlacesDTO.getId() == null) {
-            return createEmEmpOrgWorkPlaces(emEmpOrgWorkPlacesDTO);
+            return createEmEmpOrgWorkPlaces(emEmpOrgWorkPlacesDTO, auth);
         }
         EmEmpOrgWorkPlaces emEmpOrgWorkPlaces = emEmpOrgWorkPlacesMapper.toEntity(emEmpOrgWorkPlacesDTO);
         emEmpOrgWorkPlaces = emEmpOrgWorkPlacesRepository.save(emEmpOrgWorkPlaces);
+        createEmEmpSalary(emEmpOrgWorkPlaces, auth);
         EmEmpOrgWorkPlacesDTO result = emEmpOrgWorkPlacesMapper.toDto(emEmpOrgWorkPlaces);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpOrgWorkPlacesDTO.getId().toString()))

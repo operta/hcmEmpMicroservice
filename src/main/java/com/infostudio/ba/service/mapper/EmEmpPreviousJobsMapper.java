@@ -11,7 +11,12 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring", uses = {})
 public interface EmEmpPreviousJobsMapper extends EntityMapper<EmEmpPreviousJobsDTO, EmEmpPreviousJobs> {
 
+    @Mapping(source = "idEmployee.id", target= "idEmployeeId")
+    @Mapping(source = "idEmployee.name", target = "idEmployeeName")
+    EmEmpPreviousJobsDTO toDto(EmEmpPreviousJobs emEmpPreviousJobs);
 
+    @Mapping(source = "idEmployeeId", target = "idEmployee.id")
+    EmEmpPreviousJobs toEntity(EmEmpPreviousJobsDTO emEmpPreviousJobsDTO);
 
     default EmEmpPreviousJobs fromId(Long id) {
         if (id == null) {

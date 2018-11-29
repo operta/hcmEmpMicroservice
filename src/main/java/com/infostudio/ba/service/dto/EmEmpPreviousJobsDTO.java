@@ -41,18 +41,28 @@ public class EmEmpPreviousJobsDTO implements Serializable {
 
     private Instant updatedAt;
 
-    private EmEmployees idEmployee;
+    private String idEmployeeName;
+
+    private Long idEmployeeId;
+
+    public String getIdEmployeeName() {
+        return idEmployeeName;
+    }
+
+    public void setIdEmployeeName(String idEmployeeName) {
+        this.idEmployeeName = idEmployeeName;
+    }
+
+    public Long getIdEmployeeId() {
+        return idEmployeeId;
+    }
+
+    public void setIdEmployeeId(Long idEmployeeId) {
+        this.idEmployeeId = idEmployeeId;
+    }
 
     public Long getId() {
         return id;
-    }
-
-    public EmEmployees getIdEmployee() {
-        return idEmployee;
-    }
-
-    public void setIdEmployee(EmEmployees idEmployee) {
-        this.idEmployee = idEmployee;
     }
 
     public void setId(Long id) {
@@ -184,6 +194,7 @@ public class EmEmpPreviousJobsDTO implements Serializable {
         return Objects.hashCode(getId());
     }
 
+
     @Override
     public String toString() {
         return "EmEmpPreviousJobsDTO{" +
@@ -201,7 +212,9 @@ public class EmEmpPreviousJobsDTO implements Serializable {
                 ", createdAt=" + createdAt +
                 ", updatedBy='" + updatedBy + '\'' +
                 ", updatedAt=" + updatedAt +
-                ", idEmployee=" + idEmployee +
+                ", idEmployeeName='" + idEmployeeName + '\'' +
+                ", idEmployeeId=" + idEmployeeId +
                 '}';
     }
+
 }

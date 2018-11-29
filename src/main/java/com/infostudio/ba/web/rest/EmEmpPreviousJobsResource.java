@@ -12,6 +12,7 @@ import com.infostudio.ba.service.mapper.EmEmpPreviousJobsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cglib.core.Local;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -22,8 +23,14 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import java.time.Duration;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+
+import static java.time.temporal.ChronoUnit.DAYS;
+import static java.time.temporal.ChronoUnit.MONTHS;
+import static java.time.temporal.ChronoUnit.YEARS;
 
 /**
  * REST controller for managing EmEmpPreviousJobs.
@@ -59,7 +66,24 @@ public class EmEmpPreviousJobsResource {
         if (emEmpPreviousJobsDTO.getId() != null) {
             throw new BadRequestAlertException("A new emEmpPreviousJobs cannot already have an ID", ENTITY_NAME, "idexists");
         }
+
+        Long serviceYears = YEARS.between(emEmpPreviousJobsDTO.getDateFrom(), emEmpPreviousJobsDTO.getDateTo());
+        LocalDate dateFromWith2MoreYears = emEmpPreviousJobsDTO.getDateFrom().plusYears(serviceYears);
+        Long serviceMonths = MONTHS.between(dateFromWith2MoreYears, emEmpPreviousJobsDTO.getDateTo());
+        dateFromWith2MoreYears = dateFromWith2MoreYears.plusMonths(serviceMonths);
+        Long serviceDays = DAYS.between(dateFromWith2MoreYears, emEmpPreviousJobsDTO.getDateTo());
+
+
+        emEmpPreviousJobsDTO.setLengthOfServiceDays(serviceDays.intValue());
+        emEmpPreviousJobsDTO.setLengthOfServiceMonths(serviceMonths.intValue());
+        emEmpPreviousJobsDTO.setLengthOfServiceYears(serviceYears.intValue());
+
+
         EmEmpPreviousJobs emEmpPreviousJobs = emEmpPreviousJobsMapper.toEntity(emEmpPreviousJobsDTO);
+        /*
+        System.out.println("-----------------------------");
+        System.out.println(emEmpPreviousJobs);
+        */
         emEmpPreviousJobs = emEmpPreviousJobsRepository.save(emEmpPreviousJobs);
         EmEmpPreviousJobsDTO result = emEmpPreviousJobsMapper.toDto(emEmpPreviousJobs);
         return ResponseEntity.created(new URI("/api/em-emp-previous-jobs/" + result.getId()))
