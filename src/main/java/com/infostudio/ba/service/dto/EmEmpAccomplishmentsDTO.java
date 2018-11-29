@@ -23,7 +23,7 @@ public class EmEmpAccomplishmentsDTO implements Serializable {
 
     private String organization;
 
-    private String location;
+    private Long location;
 
     private String association;
 
@@ -87,11 +87,11 @@ public class EmEmpAccomplishmentsDTO implements Serializable {
         this.organization = organization;
     }
 
-    public String getLocation() {
+    public Long getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(Long location) {
         this.location = location;
     }
 

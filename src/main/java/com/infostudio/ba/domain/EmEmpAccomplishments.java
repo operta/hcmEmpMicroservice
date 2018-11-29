@@ -37,7 +37,7 @@ public class EmEmpAccomplishments implements Serializable {
     private String organization;
 
     @Column(name = "location")
-    private String location;
+    private Long location;
 
     @Column(name = "association")
     private String association;
@@ -121,16 +121,16 @@ public class EmEmpAccomplishments implements Serializable {
         this.organization = organization;
     }
 
-    public String getLocation() {
+    public Long getLocation() {
         return location;
     }
 
-    public EmEmpAccomplishments location(String location) {
+    public EmEmpAccomplishments location(Long location) {
         this.location = location;
         return this;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(Long location) {
         this.location = location;
     }
 

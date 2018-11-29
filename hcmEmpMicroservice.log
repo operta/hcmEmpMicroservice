@@ -23277,3 +23277,130 @@ liquibase.exception.LockException: Could not acquire change log lock.  Currently
 2018-11-08 10:26:52.978 DEBUG 9835 --- [XNIO-3 task-15] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpPreviousJobsResource.getEmEmpPreviousJobsByEmpId() with argument[s] = [243001]
 2018-11-08 10:26:52.979 DEBUG 9835 --- [XNIO-3 task-15] c.i.b.w.rest.EmEmpPreviousJobsResource   : REST request to get EmEmpPreviousJobs by Employee Id : 243001
 2018-11-08 10:26:53.022 DEBUG 9835 --- [XNIO-3 task-15] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpPreviousJobsResource.getEmEmpPreviousJobsByEmpId() with result = <200 OK,[EmEmpPreviousJobsDTO{id=259501, company='Google', position='Software Developer', dateFrom=2016-11-01, dateTo=2018-11-30, reasonOfLeaving='Slabo placaju', managerPosition='N', lengthOfServiceYears=2, lengthOfServiceMonths=0, lengthOfServiceDays=29, createdBy='admin', createdAt=2018-11-08T09:00:19Z, updatedBy='admin', updatedAt=2018-11-08T09:26:52Z, idEmployeeName='Mehmed', idEmployeeId=243001}, EmEmpPreviousJobsDTO{id=243251, company='SSST', position='Lab Demonstrator', dateFrom=2018-11-01, dateTo=2018-11-30, reasonOfLeaving='Slabo placaju', managerPosition='N', lengthOfServiceYears=null, lengthOfServiceMonths=null, lengthOfServiceDays=null, createdBy='admin', createdAt=2018-11-01T15:51:37Z, updatedBy='admin', updatedAt=2018-11-01T15:55:06Z, idEmployeeName='Mehmed', idEmployeeId=243001}, EmEmpPreviousJobsDTO{id=259601, company='Amazon', position='Junior Software Developer', dateFrom=2013-11-08, dateTo=2018-11-09, reasonOfLeaving='No interesting tasks', managerPosition='N', lengthOfServiceYears=5, lengthOfServiceMonths=0, lengthOfServiceDays=1, createdBy='admin', createdAt=2018-11-08T09:26:01Z, updatedBy='admin', updatedAt=2018-11-08T09:26:01Z, idEmployeeName='Mehmed', idEmployeeId=243001}],{}>
+2018-11-29 09:08:54.818  INFO 6458 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : The following profiles are active: swagger,dev
+2018-11-29 09:08:57.341 DEBUG 6458 --- [restartedMain] c.i.ba.config.AsyncConfiguration         : Creating Async Task Executor
+2018-11-29 09:08:58.324 DEBUG 6458 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Registering JVM gauges
+2018-11-29 09:08:58.339 DEBUG 6458 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Monitoring the datasource
+2018-11-29 09:08:58.340 DEBUG 6458 --- [restartedMain] c.i.ba.config.MetricsConfiguration       : Initializing Metrics JMX reporting
+2018-11-29 09:08:59.448 DEBUG 6458 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast
+2018-11-29 09:08:59.475 DEBUG 6458 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Configuring Hazelcast clustering for instanceId: hcmEmpMicroservice
+2018-11-29 09:08:59.477 DEBUG 6458 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-11-29 09:08:59.600  INFO 6458 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-11-29 09:08:59.780  INFO 6458 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-11-29 09:08:59.780  INFO 6458 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-11-29 09:08:59.991  INFO 6458 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-11-29 09:08:59.991  INFO 6458 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-11-29 09:09:00.278  INFO 6458 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-29 09:09:00.313  INFO 6458 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-11-29 09:09:00.313  INFO 6458 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-11-29 09:09:00.313  INFO 6458 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-11-29 09:09:00.313  INFO 6458 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-11-29 09:09:00.313  INFO 6458 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-11-29 09:09:00.313  INFO 6458 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-11-29 09:09:00.313  INFO 6458 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-11-29 09:09:00.586  INFO 6458 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-11-29 09:09:00.587  INFO 6458 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-11-29 09:09:00.590  INFO 6458 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-11-29 09:09:00.593  INFO 6458 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1543478940593 with initial instances count: 0
+2018-11-29 09:09:00.704  INFO 6458 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13786, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13786], bind any local is true
+2018-11-29 09:09:00.725  INFO 6458 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13786
+2018-11-29 09:09:00.725  INFO 6458 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-11-29 09:09:00.725  INFO 6458 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-11-29 09:09:01.012  INFO 6458 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13786 [dev] [3.9.1] Backpressure is disabled
+2018-11-29 09:09:01.618  INFO 6458 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13786 [dev] [3.9.1] Creating TcpIpJoiner
+2018-11-29 09:09:02.143  INFO 6458 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13786 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-11-29 09:09:02.145  INFO 6458 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13786 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-11-29 09:09:02.150  INFO 6458 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTING
+2018-11-29 09:09:02.186  INFO 6458 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13786 [dev] [3.9.1] Cluster version set to 3.9
+2018-11-29 09:09:02.187  INFO 6458 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13786 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13786 - cdb279e2-c688-4870-9e09-0fb82d7d4517 this
+]
+
+2018-11-29 09:09:02.211  INFO 6458 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13786 [dev] [3.9.1] [127.0.0.1]:13786 is STARTED
+2018-11-29 09:09:03.030  INFO 6458 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application configuration, using profiles: swagger
+2018-11-29 09:09:03.030 DEBUG 6458 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Initializing Metrics registries
+2018-11-29 09:09:03.035 DEBUG 6458 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Filter
+2018-11-29 09:09:03.035 DEBUG 6458 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Registering Metrics Servlet
+2018-11-29 09:09:03.038  INFO 6458 --- [restartedMain] com.infostudio.ba.config.WebConfigurer   : Web application fully configured
+2018-11-29 09:09:03.249 DEBUG 6458 --- [restartedMain] c.i.ba.config.DatabaseConfiguration      : Configuring Liquibase
+2018-11-29 09:09:03.258  WARN 6458 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-11-29 09:09:05.050  INFO 6458 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-11-29 09:09:05.052  INFO 6458 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [hcmEmpMicroservice].
+2018-11-29 09:09:05.781  INFO 6458 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cfe27de54ac24b1267c9454cb6f8af22 - Re-registering apps/HCMEMPMICROSERVICE
+2018-11-29 09:09:05.782  INFO 6458 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cfe27de54ac24b1267c9454cb6f8af22: registering service...
+2018-11-29 09:09:06.127  INFO 6458 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cfe27de54ac24b1267c9454cb6f8af22 - registration status: 204
+2018-11-29 09:09:10.588  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-11-29 09:09:10.589  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-11-29 09:09:10.589  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-11-29 09:09:10.590  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-11-29 09:09:10.590  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-11-29 09:09:10.590  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-11-29 09:09:10.591  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-11-29 09:09:10.788  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-11-29 09:09:11.429 DEBUG 6458 --- [restartedMain] c.i.ba.config.CacheConfiguration         : Starting HazelcastCacheManager
+2018-11-29 09:09:13.101  WARN 6458 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-11-29 09:09:13.110  WARN 6458 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-11-29 09:09:13.907 DEBUG 6458 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Starting Swagger
+2018-11-29 09:09:13.916 DEBUG 6458 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Started Swagger in 8 ms
+2018-11-29 09:09:15.588  INFO 6458 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1543478955588, current=UP, previous=STARTING]
+2018-11-29 09:09:16.134  INFO 6458 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cfe27de54ac24b1267c9454cb6f8af22: registering service...
+2018-11-29 09:09:16.261  INFO 6458 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HCMEMPMICROSERVICE/hcmEmpMicroservice:cfe27de54ac24b1267c9454cb6f8af22 - registration status: 204
+2018-11-29 09:09:17.405  INFO 6458 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : Started HcmEmpMicroserviceApp in 26.044 seconds (JVM running for 26.538)
+2018-11-29 09:09:17.406  INFO 6458 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Application 'hcmEmpMicroservice' is running! Access URLs:
+	Local: 		http://localhost:8085
+	External: 	http://0.0.0.192:8085
+	Profile(s): 	[swagger, dev]
+----------------------------------------------------------
+2018-11-29 09:09:17.407  INFO 6458 --- [restartedMain] com.infostudio.ba.HcmEmpMicroserviceApp  : 
+----------------------------------------------------------
+	Config Server: 	Connected to the JHipster Registry config server!
+----------------------------------------------------------
+2018-11-29 09:09:20.809  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-11-29 09:09:20.810  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-11-29 09:09:20.810  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-11-29 09:09:20.811  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-11-29 09:09:20.811  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-11-29 09:09:20.811  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-11-29 09:09:20.812  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-11-29 09:09:20.923  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-11-29 09:09:30.924  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-11-29 09:09:30.925  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-11-29 09:09:30.925  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-11-29 09:09:30.925  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-11-29 09:09:30.926  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-11-29 09:09:30.926  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-11-29 09:09:30.926  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-11-29 09:09:31.053  INFO 6458 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-11-29 09:14:00.320  INFO 6458 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-11-29 09:14:05.962 ERROR 6458 --- [hcm-emp-microservice-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Liquibase could not start correctly, your database is NOT ready: Could not acquire change log lock.  Currently locked by 192.168.1.51 (192.168.1.51) since 6/27/18 2:50 PM
+
+liquibase.exception.LockException: Could not acquire change log lock.  Currently locked by 192.168.1.51 (192.168.1.51) since 6/27/18 2:50 PM
+	at liquibase.lockservice.StandardLockService.waitForLock(StandardLockService.java:190)
+	at liquibase.Liquibase.update(Liquibase.java:196)
+	at liquibase.Liquibase.update(Liquibase.java:192)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.initDb(AsyncSpringLiquibase.java:94)
+	at io.github.jhipster.config.liquibase.AsyncSpringLiquibase.lambda$afterPropertiesSet$0(AsyncSpringLiquibase.java:77)
+	at io.github.jhipster.async.ExceptionHandlingAsyncTaskExecutor.lambda$createWrappedRunnable$1(ExceptionHandlingAsyncTaskExecutor.java:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018-11-29 09:16:32.229 DEBUG 6458 --- [XNIO-2 task-2] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.getAllEmEmpAccomplishments() with argument[s] = [Page request [number: 0, size 20, sort: null]]
+2018-11-29 09:16:32.242 DEBUG 6458 --- [XNIO-2 task-2] c.i.b.w.r.EmEmpAccomplishmentsResource   : REST request to get a page of EmEmpAccomplishments
+2018-11-29 09:16:32.400  INFO 6458 --- [XNIO-2 task-2] c.h.i.p.impl.PartitionStateManager       : [127.0.0.1]:13786 [dev] [3.9.1] Initializing cluster partition table arrangement...
+2018-11-29 09:16:32.636 DEBUG 6458 --- [XNIO-2 task-2] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.getAllEmEmpAccomplishments() with result = <200 OK,[EmEmpAccomplishmentsDTO{id=250451, title='Exellence Award', description='null', organization='SSST', location='null', association='null', ongoing='null', link='null', dateFrom='null', dateTo='null', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=3}, EmEmpAccomplishmentsDTO{id=341052, title='njemacki', description='null', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='null', dateTo='null', occupation='null', proficiency='native', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=4}, EmEmpAccomplishmentsDTO{id=341051, title='Oracle', description='null', organization='oracle', location='null', association='dsada', ongoing='F', link='oralc.ecom', dateFrom='2018-11-14', dateTo='2018-12-04', occupation='lala', proficiency='hahahahah', licenceNumber='lala', rating=100, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=1}],{X-Total-Count=[3], Link=[</api/em-emp-accomplishments?page=0&size=20>; rel="last",</api/em-emp-accomplishments?page=0&size=20>; rel="first"]}>
+2018-11-29 09:17:22.353 DEBUG 6458 --- [XNIO-2 task-3] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.getAllEmEmpAccomplishments() with argument[s] = [Page request [number: 0, size 20, sort: null]]
+2018-11-29 09:17:22.354 DEBUG 6458 --- [XNIO-2 task-3] c.i.b.w.r.EmEmpAccomplishmentsResource   : REST request to get a page of EmEmpAccomplishments
+2018-11-29 09:17:22.455 DEBUG 6458 --- [XNIO-2 task-3] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.getAllEmEmpAccomplishments() with result = <200 OK,[EmEmpAccomplishmentsDTO{id=250451, title='Exellence Award', description='null', organization='SSST', location='10', association='null', ongoing='null', link='null', dateFrom='null', dateTo='null', occupation='null', proficiency='null', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=3}, EmEmpAccomplishmentsDTO{id=341052, title='njemacki', description='null', organization='null', location='null', association='null', ongoing='null', link='null', dateFrom='null', dateTo='null', occupation='null', proficiency='native', licenceNumber='null', rating=null, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=4}, EmEmpAccomplishmentsDTO{id=341051, title='Oracle', description='null', organization='oracle', location='null', association='dsada', ongoing='F', link='oralc.ecom', dateFrom='2018-11-14', dateTo='2018-12-04', occupation='lala', proficiency='hahahahah', licenceNumber='lala', rating=100, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=1}],{X-Total-Count=[3], Link=[</api/em-emp-accomplishments?page=0&size=20>; rel="last",</api/em-emp-accomplishments?page=0&size=20>; rel="first"]}>
+2018-11-29 09:18:06.250 DEBUG 6458 --- [XNIO-2 task-4] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.updateEmEmpAccomplishments() with argument[s] = [EmEmpAccomplishmentsDTO{id=341051, title='Oracle', description='null', organization='oracle', location='10', association='dsada', ongoing='F', link='oralc.ecom', dateFrom='2018-11-14', dateTo='2018-12-04', occupation='lala', proficiency='hahahahah', licenceNumber='lala', rating=100, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=1}]
+2018-11-29 09:18:06.251 DEBUG 6458 --- [XNIO-2 task-4] c.i.b.w.r.EmEmpAccomplishmentsResource   : REST request to update EmEmpAccomplishments : EmEmpAccomplishmentsDTO{id=341051, title='Oracle', description='null', organization='oracle', location='10', association='dsada', ongoing='F', link='oralc.ecom', dateFrom='2018-11-14', dateTo='2018-12-04', occupation='lala', proficiency='hahahahah', licenceNumber='lala', rating=100, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=1}
+2018-11-29 09:18:06.373 DEBUG 6458 --- [XNIO-2 task-4] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.updateEmEmpAccomplishments() with result = <200 OK,EmEmpAccomplishmentsDTO{id=341051, title='Oracle', description='null', organization='oracle', location='10', association='dsada', ongoing='F', link='oralc.ecom', dateFrom='2018-11-14', dateTo='2018-12-04', occupation='lala', proficiency='hahahahah', licenceNumber='lala', rating=100, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=1},{X-hcmEmpMicroserviceApp-alert=[hcmGatewayApp.emEmpAccomplishments.updated], X-hcmEmpMicroserviceApp-params=[341051]}>
+2018-11-29 09:18:41.628 DEBUG 6458 --- [XNIO-2 task-5] c.i.ba.aop.logging.LoggingAspect         : Enter: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.createEmEmpAccomplishments() with argument[s] = [EmEmpAccomplishmentsDTO{id=null, title='Apple', description='null', organization='oracle', location='339', association='dsada', ongoing='F', link='oralc.ecom', dateFrom='2018-11-14', dateTo='2018-12-04', occupation='lala', proficiency='hahahahah', licenceNumber='lala', rating=100, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=1}]
+2018-11-29 09:18:41.629 DEBUG 6458 --- [XNIO-2 task-5] c.i.b.w.r.EmEmpAccomplishmentsResource   : REST request to save EmEmpAccomplishments : EmEmpAccomplishmentsDTO{id=null, title='Apple', description='null', organization='oracle', location='339', association='dsada', ongoing='F', link='oralc.ecom', dateFrom='2018-11-14', dateTo='2018-12-04', occupation='lala', proficiency='hahahahah', licenceNumber='lala', rating=100, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=1}
+2018-11-29 09:18:41.701 DEBUG 6458 --- [XNIO-2 task-5] c.i.ba.aop.logging.LoggingAspect         : Exit: com.infostudio.ba.web.rest.EmEmpAccomplishmentsResource.createEmEmpAccomplishments() with result = <201 Created,EmEmpAccomplishmentsDTO{id=342051, title='Apple', description='null', organization='oracle', location='339', association='dsada', ongoing='F', link='oralc.ecom', dateFrom='2018-11-14', dateTo='2018-12-04', occupation='lala', proficiency='hahahahah', licenceNumber='lala', rating=100, createdBy='null', createdAt='null', updatedBy='null', updatedAt='null', idAccomplishmentType=1},{Location=[/api/em-emp-accomplishments/342051], X-hcmEmpMicroserviceApp-alert=[hcmGatewayApp.emEmpAccomplishments.created], X-hcmEmpMicroserviceApp-params=[342051]}>
