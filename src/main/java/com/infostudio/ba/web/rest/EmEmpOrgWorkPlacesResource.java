@@ -90,7 +90,7 @@ public class EmEmpOrgWorkPlacesResource {
         }
         EmEmpOrgWorkPlaces emEmpOrgWorkPlaces = emEmpOrgWorkPlacesMapper.toEntity(emEmpOrgWorkPlacesDTO);
         emEmpOrgWorkPlaces = emEmpOrgWorkPlacesRepository.save(emEmpOrgWorkPlaces);
-        createEmEmpSalary(emEmpOrgWorkPlaces, auth);
+        // createEmEmpSalary(emEmpOrgWorkPlaces, auth);
         EmEmpOrgWorkPlacesDTO result = emEmpOrgWorkPlacesMapper.toDto(emEmpOrgWorkPlaces);
         return ResponseEntity.created(new URI("/api/em-emp-org-work-places/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
@@ -159,7 +159,7 @@ public class EmEmpOrgWorkPlacesResource {
         log.debug("REST request to get EmEmpOrgWorkPlaces by Employee id : {}", id);
         List<EmEmpOrgWorkPlaces> emEmpOrgWorkPlaces = emEmpOrgWorkPlacesRepository.findByIdEmployeeId(id);
         List<EmEmpOrgWorkPlacesDTO> emEmpOrgWorkPlacesDTO = emEmpOrgWorkPlacesMapper.toDto(emEmpOrgWorkPlaces);
-        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpOrgWorkPlacesDTO));
+        return new ResponseEntity<>(emEmpOrgWorkPlacesDTO, null, HttpStatus.OK);
     }
 
     @GetMapping("/em-emp-org-work-places/last/employee/{id}")
