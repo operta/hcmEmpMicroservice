@@ -44,6 +44,8 @@ public class EmEmployeesDTO implements Serializable {
 
     private LocalDate hireDate;
 
+    private LocalDate leaveDate;
+
     private String ssn;
 
     private String taxNumber;
@@ -79,6 +81,14 @@ public class EmEmployeesDTO implements Serializable {
     private Long idStatusId;
 
     private String idStatusName;
+
+    public LocalDate getLeaveDate() {
+        return leaveDate;
+    }
+
+    public void setLeaveDate(LocalDate leaveDate) {
+        this.leaveDate = leaveDate;
+    }
 
     public Long getId() {
         return id;
