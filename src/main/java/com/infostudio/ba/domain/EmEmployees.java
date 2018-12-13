@@ -70,6 +70,9 @@ public class EmEmployees extends AbstractAuditingEntity implements Serializable 
     @Column(name = "hire_date")
     private LocalDate hireDate;
 
+    @Column(name = "leave_date")
+    private LocalDate leaveDate;
+
     @Column(name = "ssn")
     private String ssn;
 
@@ -110,6 +113,14 @@ public class EmEmployees extends AbstractAuditingEntity implements Serializable 
 
     @Column(name = "image_blob")
     private byte[] imageBlob;
+
+    public LocalDate getLeaveDate() {
+        return leaveDate;
+    }
+
+    public void setLeaveDate(LocalDate leaveDate) {
+        this.leaveDate = leaveDate;
+    }
 
     public String getImageBlobContentType() {
         return imageBlobContentType;
@@ -503,6 +514,7 @@ public class EmEmployees extends AbstractAuditingEntity implements Serializable 
             ", personalPhoneNumber='" + getPersonalPhoneNumber() + "'" +
             ", idLegalEntity=" + getIdLegalEntity() +
             ", idQualification=" + getIdQualification() +
+            ", leaveDate=" + getLeaveDate() +
             "}";
     }
 }

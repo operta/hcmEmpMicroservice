@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "taxReductionCoefficient",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "baseTaxReductionAmount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "optionalTaxReductionAmount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "dateFrom",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateTo",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "idEmployee",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20181211130850",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "em_emp_tax",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "hcmEmpMicroservice",
+    "searchEngine": false
+}

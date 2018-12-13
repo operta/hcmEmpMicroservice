@@ -34,6 +34,7 @@
     <include file="config/liquibase/changelog/20180517100443_added_entity_EmRewardTypes.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20180517100444_added_entity_EmStatuses.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20180725112511_added_entity_EmEmpTasks.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181211130850_added_entity_EmEmpTax.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20180517100419_added_entity_constraints_EmEmpAccomplishments.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20180517100420_added_entity_constraints_EmEmpBankAccounts.xml" relativeToChangelogFile="false"/>
