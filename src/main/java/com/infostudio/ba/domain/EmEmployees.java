@@ -94,6 +94,9 @@ public class EmEmployees extends AbstractAuditingEntity implements Serializable 
     @Column(name = "id_qualification")
     private Integer idQualification;
 
+    @Column(name = "archived")
+    private String archived;
+
     @OneToOne
     @JoinColumn(name = "id_employment_type")
     private EmEmpTypes idEmploymentType;
@@ -187,6 +190,14 @@ public class EmEmployees extends AbstractAuditingEntity implements Serializable 
 
     public String getSurname() {
         return surname;
+    }
+
+    public String getArchived() {
+        return archived;
+    }
+
+    public void setArchived(String archived) {
+        this.archived = archived;
     }
 
     public EmEmployees surname(String surname) {

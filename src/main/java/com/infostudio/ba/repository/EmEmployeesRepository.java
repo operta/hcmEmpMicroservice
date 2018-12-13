@@ -26,5 +26,5 @@ public interface EmEmployeesRepository extends JpaRepository<EmEmployees, Long> 
     List<EmEmployees> findAllByHireDateLessThanEqual(LocalDate toDate);
     List<EmEmployees> findAllByIdQualification(Integer idQualification);
 
-
+    List<EmEmployees> findAllByArchived(String archived);
 }

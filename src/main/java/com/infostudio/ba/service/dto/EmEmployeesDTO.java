@@ -20,6 +20,8 @@ public class EmEmployeesDTO implements Serializable {
     @NotNull
     private String name;
 
+    private String archived = "N";
+
     private Integer idUser;
 
     private String middleName;
@@ -166,6 +168,14 @@ public class EmEmployeesDTO implements Serializable {
 
     public void setResidentialSituation(String residentialSituation) {
         this.residentialSituation = residentialSituation;
+    }
+
+    public String getArchived() {
+        return archived;
+    }
+
+    public void setArchived(String archived) {
+        this.archived = archived;
     }
 
     public String getMaritalStatus() {

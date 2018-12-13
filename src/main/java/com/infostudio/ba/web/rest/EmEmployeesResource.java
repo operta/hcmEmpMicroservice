@@ -42,6 +42,8 @@ public class EmEmployeesResource {
 
     private static final String ENTITY_NAME = "emEmployees";
 
+    private static final String ARCHIVED = "N";
+
     private final EmEmployeesRepository emEmployeesRepository;
 
     private final EmEmpOrgWorkPlacesRepository emEmpOrgWorkPlacesRepository;
@@ -81,6 +83,7 @@ public class EmEmployeesResource {
         if(possibleEmployee != null){
             throw new BadRequestAlertException("A user can only have one employee associated with him", ENTITY_NAME, "idexists");
         }
+        emEmployeesDTO.setArchived("N");
         EmEmployees emEmployees = emEmployeesMapper.toEntity(emEmployeesDTO);
         emEmployees = emEmployeesRepository.save(emEmployees);
         EmEmployeesDTO result = emEmployeesMapper.toDto(emEmployees);
@@ -105,6 +108,14 @@ public class EmEmployeesResource {
         if (emEmployeesDTO.getId() == null) {
             return createEmEmployees(emEmployeesDTO);
         }
+        if (emEmployeesDTO.getCode() == null){
+            throw new BadRequestAlertException("Code attribute of employee must not be null", ENTITY_NAME,
+                    "codenull");
+        }
+        if (!emEmployeesDTO.getArchived().equals("Y") && !emEmployeesDTO.getArchived().equals("N")){
+            throw new BadRequestAlertException("Archived cannot have value different from 'Y' or 'N'", ENTITY_NAME,
+                    "archivedoutofbounds");
+        }
         EmEmployees emEmployees = emEmployeesMapper.toEntity(emEmployeesDTO);
         emEmployees = emEmployeesRepository.save(emEmployees);
         EmEmployeesDTO result = emEmployeesMapper.toDto(emEmployees);
@@ -125,11 +136,20 @@ public class EmEmployeesResource {
             @RequestParam(value = "fromDate", required = false) LocalDate fromDate,
             @RequestParam(value = "toDate", required = false) LocalDate toDate,
             @RequestParam(value = "name", required = false) String name,
-            @RequestParam(value ="surname", required = false) String surname,
+            @RequestParam(value = "surname", required = false) String surname,
             @RequestParam(value = "qualificationId", required = false) Integer qualificationId,
+            @RequestParam(value = "archived", required = false) String archived,
             Pageable pageable) {
         log.debug("REST request to get a page of EmEmployees");
-        Set<EmEmployees> allEmps = new HashSet<>(emEmployeesRepository.findAll());
+
+        if(archived == null){
+            archived = ARCHIVED;
+        }else if(!archived.equals("N") && !archived.equals("Y")){
+            throw new BadRequestAlertException("Archived cannot have field different from 'Y' or 'N'", ENTITY_NAME,
+                    "archivedoutofbounds");
+        }
+
+        Set<EmEmployees> allEmps = new HashSet<>(emEmployeesRepository.findAllByArchived(archived));
         if(fromDate != null){
             Set<EmEmployees> empsFromDate = new HashSet<>(emEmployeesRepository.findAllByHireDateGreaterThanEqual(fromDate));
             allEmps.retainAll(empsFromDate);
