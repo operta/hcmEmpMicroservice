@@ -23,6 +23,7 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -129,6 +130,21 @@ public class EmEmpSalariesResource {
         List<EmEmpSalaries> emEmpSalaries = emEmpSalariesRepository.findByIdEmployeeId(id);
         List<EmEmpSalariesDTO> emEmpSalariesDTO = emEmpSalariesMapper.toDto(emEmpSalaries);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpSalariesDTO));
+    }
+
+    @GetMapping("/em-emp-salaries/last-salary/employee/{id}")
+    @Timed
+    public ResponseEntity<EmEmpSalariesDTO> getLastEmEmpSalaryForEmpId(@PathVariable Long id){
+        log.debug("REST request to get last EmEmpSalaries by Employee Id: {}", id);
+        ResponseEntity<List<EmEmpSalariesDTO>> empSalaryResponse = getEmEmpSalariesByEmpId(id);
+        if(empSalaryResponse.getStatusCode() == HttpStatus.NOT_FOUND){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        EmEmpSalariesDTO lastSalaryForEmp = empSalaryResponse.getBody()
+                .stream()
+                .max(Comparator.comparing(EmEmpSalariesDTO::getDateFrom))
+                .orElse(null);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(lastSalaryForEmp));
     }
 
     /**
