@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98cdf9cf-e227-4cc8-b627-59a9fda21ee2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpSalariesResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpSalariesResource.java" afterDir="false" />
-    </list>
+    <list default="true" id="98cdf9cf-e227-4cc8-b627-59a9fda21ee2" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +13,7 @@
     <session id="1502653690">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
@@ -26,13 +24,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4474" />
+          <entry key="java" value="4531" />
           <entry key="yml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4474" />
+          <entry key="JAVA" value="4531" />
           <entry key="YAML" value="4" />
         </counts>
       </usages-collector>
@@ -77,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpSalariesResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="146" column="8" lean-forward="true" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+            <state relative-caret-position="195">
+              <caret line="134" column="59" lean-forward="true" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -219,10 +217,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
-    <option name="width" value="1346" />
-    <option name="height" value="728" />
+    <option name="x" value="-161" />
+    <option name="y" value="108" />
+    <option name="width" value="1334" />
+    <option name="height" value="734" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -405,7 +403,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50032000" />
+    <option name="totallyTimeSpent" value="50857000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1372" height="771" extended-state="6" />
@@ -835,8 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infostudio/ba/web/rest/EmEmpSalariesResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="146" column="8" lean-forward="true" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+        <state relative-caret-position="195">
+          <caret line="134" column="59" lean-forward="true" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="59" />
         </state>
       </provider>
     </entry>
