@@ -14,7 +14,6 @@ import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpOrgWorkPlacesDTO;
 import com.infostudio.ba.service.mapper.EmEmpOrgWorkPlacesMapper;
 import io.github.jhipster.web.util.ResponseUtil;
-import org.joda.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -28,6 +27,7 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -175,7 +175,7 @@ public class EmEmpOrgWorkPlacesResource {
     @Timed
     public ResponseEntity<List<EmEmpOrgWorkPlacesDTO>> getAllEmEmpOrgWorkPlacesByEmpId(@PathVariable Long id) {
         log.debug("REST request to get all EmEmpOrgWorkPlaces by Employee id : {}", id);
-        List<EmEmpOrgWorkPlaces> emEmpOrgWorkPlacesList = emEmpOrgWorkPlacesRepository.findAllByIdEmployeeIdAndDateToIsNullOrDateToLessThanEqual(id,
+        List<EmEmpOrgWorkPlaces> emEmpOrgWorkPlacesList = emEmpOrgWorkPlacesRepository.findAllByIdEmployeeIdAndDateToIsNullOrDateToGreaterThanEqual(id,
                 LocalDate.now());
         List<EmEmpOrgWorkPlacesDTO> emEmpOrgWorkPlacesDTOList = emEmpOrgWorkPlacesMapper.toDto(emEmpOrgWorkPlacesList);
         return ResponseEntity.ok(emEmpOrgWorkPlacesDTOList);
