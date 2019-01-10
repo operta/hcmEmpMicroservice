@@ -2,6 +2,7 @@ package com.infostudio.ba.repository;
 
 import com.infostudio.ba.domain.EmEmpOrgWorkPlaces;
 import feign.Param;
+import org.joda.time.LocalDate;
 import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.*;
@@ -24,4 +25,6 @@ public interface EmEmpOrgWorkPlacesRepository extends JpaRepository<EmEmpOrgWork
     List<EmEmpOrgWorkPlaces> findLastOrgWorkPlaces();
 
     List<EmEmpOrgWorkPlaces> findAllById(Long id);
+
+    List<EmEmpOrgWorkPlaces> findAllByIdEmployeeIdAndDateToIsNullOrDateToLessThanEqual(Long idEmployee, LocalDate dateTo);
 }
