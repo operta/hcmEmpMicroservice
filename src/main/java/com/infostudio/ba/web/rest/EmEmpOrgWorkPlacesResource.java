@@ -1,6 +1,5 @@
 package com.infostudio.ba.web.rest;
 
-import antlr.collections.List;
 import com.codahale.metrics.annotation.Timed;
 import com.infostudio.ba.domain.EmEmpOrgWorkPlaces;
 
