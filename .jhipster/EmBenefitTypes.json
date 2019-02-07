@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20190206130103",
+    "dto": "mapstruct",
+    "service": "no",
+    "entityTableName": "em_benefit_types",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination",
+    "microserviceName": "hcmEmpMicroservice",
+    "searchEngine": false
+}
