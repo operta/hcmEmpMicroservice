@@ -1,8 +1,8 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import com.infostudio.ba.domain.EmEmpBenefits;
 
+import com.infostudio.ba.domain.EmEmpBenefits;
 import com.infostudio.ba.repository.EmEmpBenefitsRepository;
 import com.infostudio.ba.repository.EmEmployeesRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
@@ -24,8 +24,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * REST controller for managing EmEmpBenefits.
@@ -105,11 +104,28 @@ public class EmEmpBenefitsResource {
      */
     @GetMapping("/em-emp-benefits")
     @Timed
-    public ResponseEntity<List<EmEmpBenefitsDTO>> getAllEmEmpBenefits(Pageable pageable) {
+    public ResponseEntity<List<EmEmpBenefitsDTO>> getAllEmEmpBenefits(Pageable pageable,
+                                                                      @RequestParam(name = "employee", required = false) Long employeeId,
+                                                                      @RequestParam(name = "benefit-type", required = false) Long benefitTypeId) {
         log.debug("REST request to get a page of EmEmpBenefits");
-        Page<EmEmpBenefits> page = emEmpBenefitsRepository.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/em-emp-benefits");
-        return new ResponseEntity<>(emEmpBenefitsMapper.toDto(page.getContent()), headers, HttpStatus.OK);
+        Set<EmEmpBenefits> allEmpEmpBenefits = new HashSet<>(emEmpBenefitsRepository.findAll());
+        Map<String, String> uriParams = new HashMap<>();
+        if (employeeId != null) {
+            allEmpEmpBenefits.retainAll(new HashSet<>(emEmpBenefitsRepository.findAllByEmEmployeesId(employeeId)));
+            uriParams.put("employee", employeeId.toString());
+        }
+        if(benefitTypeId != null) {
+            log.debug("BENEFIT TYPE ID: {}", benefitTypeId);
+            allEmpEmpBenefits.retainAll(new HashSet<>(emEmpBenefitsRepository.findAllByEmBenefitTypesId(benefitTypeId)));
+            uriParams.put("benefit-type", benefitTypeId.toString());
+        }
+        List<EmEmpBenefits> emBenefitEntities = new ArrayList<>(allEmpEmpBenefits);
+        List<EmEmpBenefitsDTO> emEmpBenefits = emEmpBenefitsMapper.toDto(emBenefitEntities);
+
+        Page<EmEmpBenefitsDTO> page = PaginationUtil.createPageFromList(emEmpBenefits, pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeadersForSearchEndpoint(page, "/api/em-emp-benefits",
+                uriParams);
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
     @GetMapping("/em-emp-benefits/employee/{id}")

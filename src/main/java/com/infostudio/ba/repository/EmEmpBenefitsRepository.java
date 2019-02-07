@@ -15,4 +15,5 @@ import java.util.List;
 @Repository
 public interface EmEmpBenefitsRepository extends JpaRepository<EmEmpBenefits, Long> {
     List<EmEmpBenefits> findAllByEmEmployeesId(Long employeeId);
+    List<EmEmpBenefits> findAllByEmBenefitTypesId(Long benefitTypeId);
 }
