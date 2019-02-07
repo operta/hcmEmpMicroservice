@@ -1,8 +1,13 @@
 package com.infostudio.ba.web.rest.util;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.util.UriComponentsBuilder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Utility class for handling pagination.
@@ -41,5 +46,17 @@ public final class PaginationUtil {
 
     private static String generateUri(String baseUrl, int page, int size) {
         return UriComponentsBuilder.fromUriString(baseUrl).queryParam("page", page).queryParam("size", size).toUriString();
+    }
+
+    public static <T> Page<T> createPageFromList(List<T> list, Pageable pageable) {
+        if (list == null) {
+            throw new IllegalArgumentException("List cannot be null.");
+        }
+        int startOfPage = pageable.getPageNumber() * pageable.getPageSize();
+        if (startOfPage > list.size()) {
+            return new PageImpl<>(new ArrayList<>(), pageable, 0);
+        }
+        int endOfPage = startOfPage + pageable.getPageSize() > list.size() ? list.size() : startOfPage + pageable.getPageSize();
+        return new PageImpl<>(list.subList(startOfPage, endOfPage), pageable, list.size());
     }
 }

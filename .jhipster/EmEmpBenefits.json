@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "emEmployees",
+            "otherEntityName": "emEmployees",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "emBenefitTypes",
+            "otherEntityName": "emBenefitTypes",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date_from",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "date_to",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20190206125918",
+    "dto": "mapstruct",
+    "service": "no",
+    "entityTableName": "eeb",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination",
+    "microserviceName": "hcmEmpMicroservice",
+    "searchEngine": false
+}
