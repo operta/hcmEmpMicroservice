@@ -11,7 +11,6 @@ import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpBenefitsDTO;
 import com.infostudio.ba.service.mapper.EmEmpBenefitsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
-import org.checkerframework.checker.units.qual.Time;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -24,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -106,23 +106,32 @@ public class EmEmpBenefitsResource {
     @Timed
     public ResponseEntity<List<EmEmpBenefitsDTO>> getAllEmEmpBenefits(Pageable pageable,
                                                                       @RequestParam(name = "employee", required = false) Long employeeId,
-                                                                      @RequestParam(name = "benefit-type", required = false) Long benefitTypeId) {
+                                                                      @RequestParam(name = "benefit-type", required = false) Long benefitTypeId,
+                                                                      @RequestParam(name = "date-from", required = false) LocalDate dateFrom,
+                                                                      @RequestParam(name = "date-to", required = false) LocalDate dateTo) {
         log.debug("REST request to get a page of EmEmpBenefits");
         Set<EmEmpBenefits> allEmpEmpBenefits = new HashSet<>(emEmpBenefitsRepository.findAll());
         Map<String, String> uriParams = new HashMap<>();
         if (employeeId != null) {
-            allEmpEmpBenefits.retainAll(new HashSet<>(emEmpBenefitsRepository.findAllByEmEmployeesId(employeeId)));
+            allEmpEmpBenefits.retainAll(emEmpBenefitsRepository.findAllByEmEmployeesId(employeeId));
             uriParams.put("employee", employeeId.toString());
         }
-        if(benefitTypeId != null) {
-            log.debug("BENEFIT TYPE ID: {}", benefitTypeId);
-            allEmpEmpBenefits.retainAll(new HashSet<>(emEmpBenefitsRepository.findAllByEmBenefitTypesId(benefitTypeId)));
+        if (benefitTypeId != null) {
+            allEmpEmpBenefits.retainAll(emEmpBenefitsRepository.findAllByEmBenefitTypesId(benefitTypeId));
             uriParams.put("benefit-type", benefitTypeId.toString());
+        }
+        if (dateFrom != null) {
+            allEmpEmpBenefits.retainAll(emEmpBenefitsRepository.findAllByDateFromGreaterThanEqual(dateFrom));
+            uriParams.put("date-from", dateFrom.toString());
+        }
+        if (dateTo != null) {
+            allEmpEmpBenefits.retainAll(emEmpBenefitsRepository.findAllByDateToLessThanEqual(dateTo));
+            uriParams.put("date-to", dateTo.toString());
         }
         List<EmEmpBenefits> emBenefitEntities = new ArrayList<>(allEmpEmpBenefits);
         List<EmEmpBenefitsDTO> emEmpBenefits = emEmpBenefitsMapper.toDto(emBenefitEntities);
 
-        Page<EmEmpBenefitsDTO> page = PaginationUtil.createPageFromList(emEmpBenefits, pageable);
+        Page<EmEmpBenefitsDTO> page = PaginationUtil.generatePageFromList(emEmpBenefits, pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeadersForSearchEndpoint(page, "/api/em-emp-benefits",
                 uriParams);
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
@@ -137,10 +146,10 @@ public class EmEmpBenefitsResource {
             throw new BadRequestAlertException("Employee does not exist.",
                     ENTITY_NAME, "employeeDoesNotExist");
         }
-        List<EmEmpBenefits> benefitsByEmployee = emEmpBenefitsRepository.findAllByEmEmployeesId(id);
+        List<EmEmpBenefits> benefitsByEmployee = new ArrayList<>(emEmpBenefitsRepository.findAllByEmEmployeesId(id));
         List<EmEmpBenefitsDTO> benefitsByEmployeeDTO = emEmpBenefitsMapper.toDto(benefitsByEmployee);
 
-        Page<EmEmpBenefitsDTO> page = PaginationUtil.createPageFromList(benefitsByEmployeeDTO, pageable);
+        Page<EmEmpBenefitsDTO> page = PaginationUtil.generatePageFromList(benefitsByEmployeeDTO, pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/em-emp-benefits/employee/" + id);
         return ResponseEntity.ok()
                 .headers(headers)

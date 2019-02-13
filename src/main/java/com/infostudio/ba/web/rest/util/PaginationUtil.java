@@ -6,6 +6,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -85,15 +87,18 @@ public final class PaginationUtil {
         return UriComponentsBuilder.fromUriString(baseUrl).queryParam("page", page).queryParam("size", size).toUriString();
     }
 
-    public static <T> Page<T> createPageFromList(List<T> list, Pageable pageable) {
+    public static <T> Page<T> generatePageFromList(List<T> list, Pageable pageable) {
         if (list == null) {
             throw new IllegalArgumentException("List must not be null.");
         }
+
         int startOfPage = pageable.getPageNumber() * pageable.getPageSize();
         if (startOfPage > list.size()) {
             return new PageImpl<>(new ArrayList<>(), pageable, 0);
         }
-        int endOfPage = startOfPage + pageable.getPageSize() > list.size() ? list.size() : startOfPage + pageable.getPageSize();
+
+        int endOfPage = startOfPage + pageable.getPageSize();
+        endOfPage = (endOfPage > list.size()) ? list.size() : endOfPage;
         return new PageImpl<>(list.subList(startOfPage, endOfPage), pageable, list.size());
     }
 }
