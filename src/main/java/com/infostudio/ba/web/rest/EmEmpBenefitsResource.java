@@ -120,12 +120,8 @@ public class EmEmpBenefitsResource {
             allEmpEmpBenefits.retainAll(emEmpBenefitsRepository.findAllByEmBenefitTypesId(benefitTypeId));
             uriParams.put("benefit-type", benefitTypeId.toString());
         }
-        log.debug("BEFORE DATE FROM IF");
         if (dateFrom != null) {
-            log.debug("DATE FROM: {}", dateFrom);
-            log.debug("EMP BENEFITS BEFORE SIZE: {}", allEmpEmpBenefits.size());
             allEmpEmpBenefits.retainAll(emEmpBenefitsRepository.findAllByDateFromGreaterThanEqual(dateFrom));
-            log.debug("EMP BENEFITS AFTER SIZE: {}", allEmpEmpBenefits.size());
             uriParams.put("date-from", dateFrom.toString());
         }
         if (dateTo != null) {
