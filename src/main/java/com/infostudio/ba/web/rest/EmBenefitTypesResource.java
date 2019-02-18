@@ -10,6 +10,7 @@ import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmBenefitTypesDTO;
 import com.infostudio.ba.service.mapper.EmBenefitTypesMapper;
 import io.github.jhipster.web.util.ResponseUtil;
+import org.apache.commons.lang.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -59,6 +60,11 @@ public class EmBenefitTypesResource {
         if (emBenefitTypesDTO.getId() != null) {
             throw new BadRequestAlertException("A new emBenefitTypes cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        String randomCode = RandomStringUtils.randomAlphanumeric(7).toUpperCase();
+        while(emBenefitTypesRepository.findByCode(randomCode) != null) {
+            randomCode = RandomStringUtils.randomAlphanumeric(7).toUpperCase();
+        }
+        emBenefitTypesDTO.setCode(randomCode);
         EmBenefitTypes emBenefitTypes = emBenefitTypesMapper.toEntity(emBenefitTypesDTO);
         emBenefitTypes = emBenefitTypesRepository.save(emBenefitTypes);
         EmBenefitTypesDTO result = emBenefitTypesMapper.toDto(emBenefitTypes);
