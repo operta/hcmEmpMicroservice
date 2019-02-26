@@ -40,8 +40,8 @@ public class EmEmpMetaData extends AbstractAuditingEntity implements Serializabl
     @JoinColumn(name = "id_employee")
     private EmEmployees idEmployee;
 
-    @JoinColumn(name = "id_meta_data")
-    private Integer idMetaData;
+    @JoinColumn(name = "id_detail")
+    private Integer idDetail;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
 
@@ -54,12 +54,12 @@ public class EmEmpMetaData extends AbstractAuditingEntity implements Serializabl
         this.idEmployee = idEmployee;
     }
 
-    public Integer getIdMetaData() {
-        return idMetaData;
+    public Integer getIdDetail() {
+        return idDetail;
     }
 
-    public void setIdMetaData(Integer idMetaData) {
-        this.idMetaData = idMetaData;
+    public void setIdDetail(Integer idDetail) {
+        this.idDetail = idDetail;
     }
 
     public Long getId() {
@@ -96,17 +96,17 @@ public class EmEmpMetaData extends AbstractAuditingEntity implements Serializabl
         this.value = value;
     }
 
-    public String getDisplayvalue() {
+    public String getDisplayValue() {
         return displayValue;
     }
 
-    public EmEmpMetaData displayvalue(String displayvalue) {
-        this.displayValue = displayvalue;
+    public EmEmpMetaData displayValue(String displayValue) {
+        this.displayValue = displayValue;
         return this;
     }
 
-    public void setDisplayvalue(String displayvalue) {
-        this.displayValue = displayvalue;
+    public void setDisplayValue(String displayValue) {
+        this.displayValue = displayValue;
     }
 
     public Double getOrdering() {
@@ -150,10 +150,10 @@ public class EmEmpMetaData extends AbstractAuditingEntity implements Serializabl
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", value='" + value + '\'' +
-                ", displayvalue='" + displayValue + '\'' +
+                ", displayValue='" + displayValue + '\'' +
                 ", ordering=" + ordering +
                 ", idEmployee=" + idEmployee +
-                ", idMetaData=" + idMetaData +
+                ", idDetail=" + idDetail +
                 '}';
     }
 }
