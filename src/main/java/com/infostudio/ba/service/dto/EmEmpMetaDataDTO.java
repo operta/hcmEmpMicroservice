@@ -18,7 +18,7 @@ public class EmEmpMetaDataDTO implements Serializable {
 
     private String value;
 
-    private String displayvalue;
+    private String displayValue;
 
     private Double ordering;
 
@@ -30,16 +30,16 @@ public class EmEmpMetaDataDTO implements Serializable {
 
     private Instant updatedAt;
 
-    private Integer idMetaData;
+    private Integer idDetail;
 
     private EmEmployees idEmployee;
 
-    public Integer getIdMetaData() {
-        return idMetaData;
+    public Integer getIdDetail() {
+        return idDetail;
     }
 
-    public void setIdMetaData(Integer idMetaData) {
-        this.idMetaData = idMetaData;
+    public void setIdDetail(Integer idDetail) {
+        this.idDetail = idDetail;
     }
 
     public EmEmployees getIdEmployee() {
@@ -74,12 +74,12 @@ public class EmEmpMetaDataDTO implements Serializable {
         this.value = value;
     }
 
-    public String getDisplayvalue() {
-        return displayvalue;
+    public String getDisplayValue() {
+        return displayValue;
     }
 
-    public void setDisplayvalue(String displayvalue) {
-        this.displayvalue = displayvalue;
+    public void setDisplayValue(String displayValue) {
+        this.displayValue = displayValue;
     }
 
     public Double getOrdering() {
@@ -149,13 +149,13 @@ public class EmEmpMetaDataDTO implements Serializable {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", value='" + value + '\'' +
-                ", displayvalue='" + displayvalue + '\'' +
+                ", displayValue='" + displayValue + '\'' +
                 ", ordering=" + ordering +
                 ", createdBy='" + createdBy + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedBy='" + updatedBy + '\'' +
                 ", updatedAt=" + updatedAt +
-                ", idMetaData=" + idMetaData +
+                ", idDetail=" + idDetail +
                 ", idEmployee=" + idEmployee +
                 '}';
     }
