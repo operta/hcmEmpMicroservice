@@ -114,6 +114,11 @@ public class EmEmployees extends AbstractAuditingEntity implements Serializable 
     @Column(name = "image_blob")
     private byte[] imageBlob;
 
+    public EmEmployees withId(Long id) {
+        this.id = id;
+        return this;
+    }
+
     public LocalDate getLeaveDate() {
         return leaveDate;
     }

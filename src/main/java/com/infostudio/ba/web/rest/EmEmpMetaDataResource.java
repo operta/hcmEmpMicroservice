@@ -2,13 +2,15 @@ package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.infostudio.ba.domain.EmEmpMetaData;
-
+import com.infostudio.ba.domain.EmEmployees;
 import com.infostudio.ba.repository.EmEmpMetaDataRepository;
+import com.infostudio.ba.repository.EmEmployeesRepository;
+import com.infostudio.ba.service.dto.EmEmpMetaDataDTO;
+import com.infostudio.ba.service.dto.EmEmpMetaDataHelperDTO;
+import com.infostudio.ba.service.mapper.EmEmpMetaDataMapper;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
-import com.infostudio.ba.service.dto.EmEmpMetaDataDTO;
-import com.infostudio.ba.service.mapper.EmEmpMetaDataMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +23,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -40,9 +41,13 @@ public class EmEmpMetaDataResource {
 
     private final EmEmpMetaDataMapper emEmpMetaDataMapper;
 
-    public EmEmpMetaDataResource(EmEmpMetaDataRepository emEmpMetaDataRepository, EmEmpMetaDataMapper emEmpMetaDataMapper) {
+    private final EmEmployeesRepository emEmployeesRepository;
+
+    public EmEmpMetaDataResource(EmEmpMetaDataRepository emEmpMetaDataRepository, EmEmpMetaDataMapper emEmpMetaDataMapper,
+                                 EmEmployeesRepository emEmployeesRepository) {
         this.emEmpMetaDataRepository = emEmpMetaDataRepository;
         this.emEmpMetaDataMapper = emEmpMetaDataMapper;
+        this.emEmployeesRepository = emEmployeesRepository;
     }
 
     /**
@@ -65,6 +70,34 @@ public class EmEmpMetaDataResource {
         return ResponseEntity.created(new URI("/api/em-emp-meta-data/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
+    }
+
+    @PostMapping("/em-emp-meta-data/new")
+    public ResponseEntity<EmEmpMetaDataHelperDTO> createMetadataForEmployee(@RequestBody EmEmpMetaDataHelperDTO emEmpMetaDataHelper) {
+        log.debug("REST request to save EmEmpMetadata for employee with id: {}", emEmpMetaDataHelper.getEmployeeId());
+        if (emEmpMetaDataHelper.getEmployeeId() == null) {
+            throw new BadRequestAlertException("Employee id is required.",
+                    ENTITY_NAME, "employeeIdRequired");
+        }
+        if (emEmpMetaDataHelper.getDetailsIds() == null) {
+            throw new BadRequestAlertException("You must provide the id of the details associated with the employee",
+                    ENTITY_NAME, "detailsRequired");
+        }
+        boolean employeeExists = emEmployeesRepository.exists(emEmpMetaDataHelper.getEmployeeId());
+        if (!employeeExists) {
+            String employeeDoesNotExistMessage = String.format("Employee with id %d does not exist", emEmpMetaDataHelper.getEmployeeId());
+            throw new BadRequestAlertException(employeeDoesNotExistMessage,
+                    ENTITY_NAME, "employeeDoesNotExist");
+        }
+        EmEmpMetaData emEmpMetaData = new EmEmpMetaData();
+        emEmpMetaData.setIdEmployee(new EmEmployees().withId(emEmpMetaDataHelper.getEmployeeId()));
+
+        for (Long detailId : emEmpMetaDataHelper.getDetailsIds()) {
+            emEmpMetaData.setIdDetail(detailId.intValue());
+            emEmpMetaDataRepository.save(emEmpMetaData);
+        }
+        return ResponseEntity.created(URI.create("/api/em-emp-meta-data"))
+                .body(emEmpMetaDataHelper);
     }
 
     /**
