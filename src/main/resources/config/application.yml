@@ -52,8 +52,8 @@ feign:
 
 zuul:
     host:
-        connect-timeout-millis: 5000
-        socket-timeout-millis: 10000
+        connect-timeout-millis: 50000
+        socket-timeout-millis: 50000
 
 hystrix:
     share-security-context: true
@@ -62,7 +62,7 @@ hystrix:
             execution:
                 isolation:
                     thread:
-                        timeoutInMilliseconds: 10000
+                        timeoutInMilliseconds: 50000
 
 management:
     security:
