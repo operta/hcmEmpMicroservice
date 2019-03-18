@@ -4,12 +4,15 @@ import com.codahale.metrics.annotation.Timed;
 import com.infostudio.ba.domain.EmEmpTasks;
 import com.infostudio.ba.repository.EmEmpTasksRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.service.dto.EmEmpTasksDTO;
 import com.infostudio.ba.service.mapper.EmEmpTasksMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.actuate.audit.listener.AuditApplicationEvent;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,9 +38,12 @@ public class EmEmpTasksResource {
 
     private final EmEmpTasksMapper emEmpTasksMapper;
 
-    public EmEmpTasksResource(EmEmpTasksRepository emEmpTasksRepository, EmEmpTasksMapper emEmpTasksMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpTasksResource(EmEmpTasksRepository emEmpTasksRepository, EmEmpTasksMapper emEmpTasksMapper, ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpTasksRepository = emEmpTasksRepository;
         this.emEmpTasksMapper = emEmpTasksMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -54,13 +60,18 @@ public class EmEmpTasksResource {
         if (emEmpTasksDTO.getId() != null) {
             throw new BadRequestAlertException("A new emEmpTasks cannot already have an ID", ENTITY_NAME, "idexists");
         }
-
         EmEmpTasks emEmpTasks = emEmpTasksMapper.toEntity(emEmpTasksDTO);
         emEmpTasks = emEmpTasksRepository.save(emEmpTasks);
         EmEmpTasksDTO result = emEmpTasksMapper.toDto(emEmpTasks);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        emEmpTasks.getIdEmployee().toString(),
+                        HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()).toString()
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-tasks/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
-            .body(result);
+                .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
+                .body(result);
     }
 
     /**
@@ -82,9 +93,15 @@ public class EmEmpTasksResource {
         EmEmpTasks emEmpTasks = emEmpTasksMapper.toEntity(emEmpTasksDTO);
         emEmpTasks = emEmpTasksRepository.save(emEmpTasks);
         EmEmpTasksDTO result = emEmpTasksMapper.toDto(emEmpTasks);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        emEmpTasks.getIdEmployee().toString(),
+                        HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, result.getId().toString()).toString()
+                )
+        );
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpTasksDTO.getId().toString()))
-            .body(result);
+                .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpTasksDTO.getId().toString()))
+                .body(result);
     }
 
     /**
@@ -111,7 +128,6 @@ public class EmEmpTasksResource {
     public ResponseEntity<EmEmpTasksDTO> getEmEmpTasks(@PathVariable Long id) {
         log.debug("REST request to get EmEmpTasks : {}", id);
         EmEmpTasksDTO emEmpTasksDTO = emEmpTasksMapper.toDto(emEmpTasksRepository.findOne(id));
-
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpTasksDTO));
     }
 
@@ -120,7 +136,6 @@ public class EmEmpTasksResource {
     public ResponseEntity<List<EmEmpTasksDTO>> getEmEmpTasksByEmpId(@PathVariable Long id) {
         log.debug("REST request to get EmEmpTasks by Employee Id : {}", id);
         List<EmEmpTasksDTO> emEmpTasksDTO = emEmpTasksMapper.toDto(emEmpTasksRepository.findByIdEmployee(id.intValue()));
-
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(emEmpTasksDTO));
     }
 
@@ -134,8 +149,14 @@ public class EmEmpTasksResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpTasks(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpTasks : {}", id);
-
+        EmEmpTasks emEmpTasks = emEmpTasksRepository.findOne(id);
         emEmpTasksRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        emEmpTasks.getIdEmployee().toString(),
+                        HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString()).toString()
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }
