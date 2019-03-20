@@ -1,6 +1,7 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpTasks;
 import com.infostudio.ba.repository.EmEmpTasksRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
@@ -66,7 +67,9 @@ public class EmEmpTasksResource {
         applicationEventPublisher.publishEvent(
                 AuditUtil.createAuditEvent(
                         emEmpTasks.getIdEmployee().toString(),
-                        HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()).toString()
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
                 )
         );
         return ResponseEntity.created(new URI("/api/em-emp-tasks/" + result.getId()))
@@ -96,7 +99,9 @@ public class EmEmpTasksResource {
         applicationEventPublisher.publishEvent(
                 AuditUtil.createAuditEvent(
                         emEmpTasks.getIdEmployee().toString(),
-                        HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, result.getId().toString()).toString()
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
                 )
         );
         return ResponseEntity.ok()
@@ -154,7 +159,9 @@ public class EmEmpTasksResource {
         applicationEventPublisher.publishEvent(
                 AuditUtil.createAuditEvent(
                         emEmpTasks.getIdEmployee().toString(),
-                        HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString()).toString()
+                        ENTITY_NAME,
+                        id.toString(),
+                        Action.DELETE
                 )
         );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
