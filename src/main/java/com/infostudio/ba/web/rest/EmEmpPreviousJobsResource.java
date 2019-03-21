@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpPreviousJobs;
 
 import com.infostudio.ba.repository.EmEmpPreviousJobsRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpPreviousJobsDTO;
@@ -13,6 +15,7 @@ import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cglib.core.Local;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -47,9 +50,14 @@ public class EmEmpPreviousJobsResource {
 
     private final EmEmpPreviousJobsMapper emEmpPreviousJobsMapper;
 
-    public EmEmpPreviousJobsResource(EmEmpPreviousJobsRepository emEmpPreviousJobsRepository, EmEmpPreviousJobsMapper emEmpPreviousJobsMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpPreviousJobsResource(EmEmpPreviousJobsRepository emEmpPreviousJobsRepository,
+                                     EmEmpPreviousJobsMapper emEmpPreviousJobsMapper,
+                                     ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpPreviousJobsRepository = emEmpPreviousJobsRepository;
         this.emEmpPreviousJobsMapper = emEmpPreviousJobsMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -86,6 +94,14 @@ public class EmEmpPreviousJobsResource {
         */
         emEmpPreviousJobs = emEmpPreviousJobsRepository.save(emEmpPreviousJobs);
         EmEmpPreviousJobsDTO result = emEmpPreviousJobsMapper.toDto(emEmpPreviousJobs);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-previous-jobs/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -110,6 +126,14 @@ public class EmEmpPreviousJobsResource {
         EmEmpPreviousJobs emEmpPreviousJobs = emEmpPreviousJobsMapper.toEntity(emEmpPreviousJobsDTO);
         emEmpPreviousJobs = emEmpPreviousJobsRepository.save(emEmpPreviousJobs);
         EmEmpPreviousJobsDTO result = emEmpPreviousJobsMapper.toDto(emEmpPreviousJobs);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpPreviousJobsDTO.getId().toString()))
             .body(result);
@@ -164,7 +188,16 @@ public class EmEmpPreviousJobsResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpPreviousJobs(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpPreviousJobs : {}", id);
+        EmEmpPreviousJobs previousJob = emEmpPreviousJobsRepository.findOne(id);
         emEmpPreviousJobsRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        previousJob.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        previousJob.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpNotes;
 
 import com.infostudio.ba.repository.EmEmpNotesRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpNotesDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpNotesMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -41,9 +44,14 @@ public class EmEmpNotesResource {
 
     private final EmEmpNotesMapper emEmpNotesMapper;
 
-    public EmEmpNotesResource(EmEmpNotesRepository emEmpNotesRepository, EmEmpNotesMapper emEmpNotesMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpNotesResource(EmEmpNotesRepository emEmpNotesRepository,
+                              EmEmpNotesMapper emEmpNotesMapper,
+                              ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpNotesRepository = emEmpNotesRepository;
         this.emEmpNotesMapper = emEmpNotesMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -63,6 +71,14 @@ public class EmEmpNotesResource {
         EmEmpNotes emEmpNotes = emEmpNotesMapper.toEntity(emEmpNotesDTO);
         emEmpNotes = emEmpNotesRepository.save(emEmpNotes);
         EmEmpNotesDTO result = emEmpNotesMapper.toDto(emEmpNotes);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-notes/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -87,6 +103,14 @@ public class EmEmpNotesResource {
         EmEmpNotes emEmpNotes = emEmpNotesMapper.toEntity(emEmpNotesDTO);
         emEmpNotes = emEmpNotesRepository.save(emEmpNotes);
         EmEmpNotesDTO result = emEmpNotesMapper.toDto(emEmpNotes);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpNotesDTO.getId().toString()))
             .body(result);
@@ -147,7 +171,16 @@ public class EmEmpNotesResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpNotes(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpNotes : {}", id);
+        EmEmpNotes note = emEmpNotesRepository.findOne(id);
         emEmpNotesRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        note.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        note.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

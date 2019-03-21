@@ -1,5 +1,7 @@
 package com.infostudio.ba.web.rest;
 
+import com.infostudio.ba.domain.Action;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import org.apache.commons.lang.RandomStringUtils;
 
 import com.codahale.metrics.annotation.Timed;
@@ -16,6 +18,7 @@ import com.infostudio.ba.service.mapper.EmEmployeesMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -50,11 +53,16 @@ public class EmEmployeesResource {
 
     private final EmEmployeesMapper emEmployeesMapper;
 
-    public EmEmployeesResource(EmEmployeesRepository emEmployeesRepository, EmEmployeesMapper emEmployeesMapper,
-                               EmEmpOrgWorkPlacesRepository emEmpOrgWorkPlacesRepository) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmployeesResource(EmEmployeesRepository emEmployeesRepository,
+                               EmEmployeesMapper emEmployeesMapper,
+                               EmEmpOrgWorkPlacesRepository emEmpOrgWorkPlacesRepository,
+                               ApplicationEventPublisher applicationEventPublisher) {
         this.emEmployeesRepository = emEmployeesRepository;
         this.emEmployeesMapper = emEmployeesMapper;
         this.emEmpOrgWorkPlacesRepository = emEmpOrgWorkPlacesRepository;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -87,6 +95,14 @@ public class EmEmployeesResource {
         EmEmployees emEmployees = emEmployeesMapper.toEntity(emEmployeesDTO);
         emEmployees = emEmployeesRepository.save(emEmployees);
         EmEmployeesDTO result = emEmployeesMapper.toDto(emEmployees);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-employees/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -119,6 +135,14 @@ public class EmEmployeesResource {
         EmEmployees emEmployees = emEmployeesMapper.toEntity(emEmployeesDTO);
         emEmployees = emEmployeesRepository.save(emEmployees);
         EmEmployeesDTO result = emEmployeesMapper.toDto(emEmployees);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmployeesDTO.getId().toString()))
             .body(result);
@@ -219,6 +243,14 @@ public class EmEmployeesResource {
     public ResponseEntity<Void> deleteEmEmployees(@PathVariable Long id) {
         log.debug("REST request to delete EmEmployees : {}", id);
         emEmployeesRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        id.toString(),
+                        ENTITY_NAME,
+                        id.toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

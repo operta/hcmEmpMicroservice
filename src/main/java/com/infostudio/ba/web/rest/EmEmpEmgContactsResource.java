@@ -1,10 +1,13 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
+import com.infostudio.ba.domain.EmEmpContacts;
 import com.infostudio.ba.domain.EmEmpEmgContacts;
 
 import com.infostudio.ba.repository.EmEmpEmgContactsRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpEmgContactsDTO;
@@ -12,6 +15,7 @@ import com.infostudio.ba.service.mapper.EmEmpEmgContactsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -40,9 +44,14 @@ public class EmEmpEmgContactsResource {
 
     private final EmEmpEmgContactsMapper emEmpEmgContactsMapper;
 
-    public EmEmpEmgContactsResource(EmEmpEmgContactsRepository emEmpEmgContactsRepository, EmEmpEmgContactsMapper emEmpEmgContactsMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpEmgContactsResource(EmEmpEmgContactsRepository emEmpEmgContactsRepository,
+                                    EmEmpEmgContactsMapper emEmpEmgContactsMapper,
+                                    ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpEmgContactsRepository = emEmpEmgContactsRepository;
         this.emEmpEmgContactsMapper = emEmpEmgContactsMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -62,6 +71,14 @@ public class EmEmpEmgContactsResource {
         EmEmpEmgContacts emEmpEmgContacts = emEmpEmgContactsMapper.toEntity(emEmpEmgContactsDTO);
         emEmpEmgContacts = emEmpEmgContactsRepository.save(emEmpEmgContacts);
         EmEmpEmgContactsDTO result = emEmpEmgContactsMapper.toDto(emEmpEmgContacts);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-emg-contacts/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -86,6 +103,14 @@ public class EmEmpEmgContactsResource {
         EmEmpEmgContacts emEmpEmgContacts = emEmpEmgContactsMapper.toEntity(emEmpEmgContactsDTO);
         emEmpEmgContacts = emEmpEmgContactsRepository.save(emEmpEmgContacts);
         EmEmpEmgContactsDTO result = emEmpEmgContactsMapper.toDto(emEmpEmgContacts);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpEmgContactsDTO.getId().toString()))
             .body(result);
@@ -140,7 +165,16 @@ public class EmEmpEmgContactsResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpEmgContacts(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpEmgContacts : {}", id);
+        EmEmpEmgContacts contact = emEmpEmgContactsRepository.findOne(id);
         emEmpEmgContactsRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        contact.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        contact.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

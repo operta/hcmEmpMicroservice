@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpRewards;
 
 import com.infostudio.ba.repository.EmEmpRewardsRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpRewardsDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpRewardsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -40,9 +43,14 @@ public class EmEmpRewardsResource {
 
     private final EmEmpRewardsMapper emEmpRewardsMapper;
 
-    public EmEmpRewardsResource(EmEmpRewardsRepository emEmpRewardsRepository, EmEmpRewardsMapper emEmpRewardsMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpRewardsResource(EmEmpRewardsRepository emEmpRewardsRepository,
+                                EmEmpRewardsMapper emEmpRewardsMapper,
+                                ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpRewardsRepository = emEmpRewardsRepository;
         this.emEmpRewardsMapper = emEmpRewardsMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -62,6 +70,14 @@ public class EmEmpRewardsResource {
         EmEmpRewards emEmpRewards = emEmpRewardsMapper.toEntity(emEmpRewardsDTO);
         emEmpRewards = emEmpRewardsRepository.save(emEmpRewards);
         EmEmpRewardsDTO result = emEmpRewardsMapper.toDto(emEmpRewards);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-rewards/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -86,6 +102,14 @@ public class EmEmpRewardsResource {
         EmEmpRewards emEmpRewards = emEmpRewardsMapper.toEntity(emEmpRewardsDTO);
         emEmpRewards = emEmpRewardsRepository.save(emEmpRewards);
         EmEmpRewardsDTO result = emEmpRewardsMapper.toDto(emEmpRewards);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpRewardsDTO.getId().toString()))
             .body(result);
@@ -140,7 +164,16 @@ public class EmEmpRewardsResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpRewards(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpRewards : {}", id);
+        EmEmpRewards reward = emEmpRewardsRepository.findOne(id);
         emEmpRewardsRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        reward.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        reward.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

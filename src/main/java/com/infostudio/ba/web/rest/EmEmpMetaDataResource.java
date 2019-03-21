@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpMetaData;
 
 import com.infostudio.ba.repository.EmEmpMetaDataRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpMetaDataDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpMetaDataMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -40,9 +43,14 @@ public class EmEmpMetaDataResource {
 
     private final EmEmpMetaDataMapper emEmpMetaDataMapper;
 
-    public EmEmpMetaDataResource(EmEmpMetaDataRepository emEmpMetaDataRepository, EmEmpMetaDataMapper emEmpMetaDataMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpMetaDataResource(EmEmpMetaDataRepository emEmpMetaDataRepository,
+                                 EmEmpMetaDataMapper emEmpMetaDataMapper,
+                                 ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpMetaDataRepository = emEmpMetaDataRepository;
         this.emEmpMetaDataMapper = emEmpMetaDataMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -62,6 +70,14 @@ public class EmEmpMetaDataResource {
         EmEmpMetaData emEmpMetaData = emEmpMetaDataMapper.toEntity(emEmpMetaDataDTO);
         emEmpMetaData = emEmpMetaDataRepository.save(emEmpMetaData);
         EmEmpMetaDataDTO result = emEmpMetaDataMapper.toDto(emEmpMetaData);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-meta-data/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -86,6 +102,14 @@ public class EmEmpMetaDataResource {
         EmEmpMetaData emEmpMetaData = emEmpMetaDataMapper.toEntity(emEmpMetaDataDTO);
         emEmpMetaData = emEmpMetaDataRepository.save(emEmpMetaData);
         EmEmpMetaDataDTO result = emEmpMetaDataMapper.toDto(emEmpMetaData);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpMetaDataDTO.getId().toString()))
             .body(result);
@@ -140,7 +164,16 @@ public class EmEmpMetaDataResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpMetaData(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpMetaData : {}", id);
+        EmEmpMetaData metaData = emEmpMetaDataRepository.findOne(id);
         emEmpMetaDataRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        metaData.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        metaData.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

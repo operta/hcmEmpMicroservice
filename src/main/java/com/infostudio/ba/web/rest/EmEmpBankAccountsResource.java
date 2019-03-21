@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpBankAccounts;
 
 import com.infostudio.ba.repository.EmEmpBankAccountsRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpBankAccountsDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpBankAccountsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -41,9 +44,14 @@ public class EmEmpBankAccountsResource {
 
     private final EmEmpBankAccountsMapper emEmpBankAccountsMapper;
 
-    public EmEmpBankAccountsResource(EmEmpBankAccountsRepository emEmpBankAccountsRepository, EmEmpBankAccountsMapper emEmpBankAccountsMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpBankAccountsResource(EmEmpBankAccountsRepository emEmpBankAccountsRepository,
+                                     EmEmpBankAccountsMapper emEmpBankAccountsMapper,
+                                     ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpBankAccountsRepository = emEmpBankAccountsRepository;
         this.emEmpBankAccountsMapper = emEmpBankAccountsMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -63,6 +71,14 @@ public class EmEmpBankAccountsResource {
         EmEmpBankAccounts emEmpBankAccounts = emEmpBankAccountsMapper.toEntity(emEmpBankAccountsDTO);
         emEmpBankAccounts = emEmpBankAccountsRepository.save(emEmpBankAccounts);
         EmEmpBankAccountsDTO result = emEmpBankAccountsMapper.toDto(emEmpBankAccounts);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        emEmpBankAccounts.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-bank-accounts/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -87,6 +103,14 @@ public class EmEmpBankAccountsResource {
         EmEmpBankAccounts emEmpBankAccounts = emEmpBankAccountsMapper.toEntity(emEmpBankAccountsDTO);
         emEmpBankAccounts = emEmpBankAccountsRepository.save(emEmpBankAccounts);
         EmEmpBankAccountsDTO result = emEmpBankAccountsMapper.toDto(emEmpBankAccounts);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        emEmpBankAccounts.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpBankAccountsDTO.getId().toString()))
             .body(result);
@@ -146,7 +170,16 @@ public class EmEmpBankAccountsResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpBankAccounts(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpBankAccounts : {}", id);
+        EmEmpBankAccounts bankAccount = emEmpBankAccountsRepository.findOne(id);
         emEmpBankAccountsRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        bankAccount.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        bankAccount.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

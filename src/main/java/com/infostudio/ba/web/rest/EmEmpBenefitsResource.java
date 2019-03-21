@@ -2,10 +2,12 @@ package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpBenefits;
 import com.infostudio.ba.repository.EmEmpBenefitsRepository;
 import com.infostudio.ba.repository.EmEmployeesRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpBenefitsDTO;
@@ -13,6 +15,7 @@ import com.infostudio.ba.service.mapper.EmEmpBenefitsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -43,11 +46,16 @@ public class EmEmpBenefitsResource {
 
     private final EmEmployeesRepository emEmployeesRepository;
 
-    public EmEmpBenefitsResource(EmEmpBenefitsRepository emEmpBenefitsRepository, EmEmpBenefitsMapper emEmpBenefitsMapper,
-                                 EmEmployeesRepository emEmployeesRepository) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpBenefitsResource(EmEmpBenefitsRepository emEmpBenefitsRepository,
+                                 EmEmpBenefitsMapper emEmpBenefitsMapper,
+                                 EmEmployeesRepository emEmployeesRepository,
+                                 ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpBenefitsRepository = emEmpBenefitsRepository;
         this.emEmpBenefitsMapper = emEmpBenefitsMapper;
         this.emEmployeesRepository = emEmployeesRepository;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -67,6 +75,14 @@ public class EmEmpBenefitsResource {
         EmEmpBenefits emEmpBenefits = emEmpBenefitsMapper.toEntity(emEmpBenefitsDTO);
         emEmpBenefits = emEmpBenefitsRepository.save(emEmpBenefits);
         EmEmpBenefitsDTO result = emEmpBenefitsMapper.toDto(emEmpBenefits);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getEmEmployeesId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-benefits/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -91,6 +107,14 @@ public class EmEmpBenefitsResource {
         EmEmpBenefits emEmpBenefits = emEmpBenefitsMapper.toEntity(emEmpBenefitsDTO);
         emEmpBenefits = emEmpBenefitsRepository.save(emEmpBenefits);
         EmEmpBenefitsDTO result = emEmpBenefitsMapper.toDto(emEmpBenefits);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getEmEmployeesId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpBenefitsDTO.getId().toString()))
             .body(result);
@@ -181,7 +205,17 @@ public class EmEmpBenefitsResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpBenefits(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpBenefits : {}", id);
+        EmEmpBenefits benefit = emEmpBenefitsRepository.findOne(id);
+        EmEmpBenefitsDTO benefitsDTO = emEmpBenefitsMapper.toDto(benefit);
         emEmpBenefitsRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        benefitsDTO.getEmEmployeesId().toString(),
+                        ENTITY_NAME,
+                        benefitsDTO.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpSkills;
 
 import com.infostudio.ba.repository.EmEmpSkillsRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpSkillsDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpSkillsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -40,9 +43,14 @@ public class EmEmpSkillsResource {
 
     private final EmEmpSkillsMapper emEmpSkillsMapper;
 
-    public EmEmpSkillsResource(EmEmpSkillsRepository emEmpSkillsRepository, EmEmpSkillsMapper emEmpSkillsMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpSkillsResource(EmEmpSkillsRepository emEmpSkillsRepository,
+                               EmEmpSkillsMapper emEmpSkillsMapper,
+                               ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpSkillsRepository = emEmpSkillsRepository;
         this.emEmpSkillsMapper = emEmpSkillsMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -62,6 +70,14 @@ public class EmEmpSkillsResource {
         EmEmpSkills emEmpSkills = emEmpSkillsMapper.toEntity(emEmpSkillsDTO);
         emEmpSkills = emEmpSkillsRepository.save(emEmpSkills);
         EmEmpSkillsDTO result = emEmpSkillsMapper.toDto(emEmpSkills);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-skills/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -86,6 +102,14 @@ public class EmEmpSkillsResource {
         EmEmpSkills emEmpSkills = emEmpSkillsMapper.toEntity(emEmpSkillsDTO);
         emEmpSkills = emEmpSkillsRepository.save(emEmpSkills);
         EmEmpSkillsDTO result = emEmpSkillsMapper.toDto(emEmpSkills);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpSkillsDTO.getId().toString()))
             .body(result);
@@ -140,7 +164,16 @@ public class EmEmpSkillsResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpSkills(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpSkills : {}", id);
+        EmEmpSkills skill = emEmpSkillsRepository.findOne(id);
         emEmpSkillsRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        skill.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        skill.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

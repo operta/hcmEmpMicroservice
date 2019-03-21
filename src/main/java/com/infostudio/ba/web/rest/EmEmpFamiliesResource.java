@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpFamilies;
 
 import com.infostudio.ba.repository.EmEmpFamiliesRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpFamiliesDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpFamiliesMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -41,9 +44,14 @@ public class EmEmpFamiliesResource {
 
     private final EmEmpFamiliesMapper emEmpFamiliesMapper;
 
-    public EmEmpFamiliesResource(EmEmpFamiliesRepository emEmpFamiliesRepository, EmEmpFamiliesMapper emEmpFamiliesMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpFamiliesResource(EmEmpFamiliesRepository emEmpFamiliesRepository,
+                                 EmEmpFamiliesMapper emEmpFamiliesMapper,
+                                 ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpFamiliesRepository = emEmpFamiliesRepository;
         this.emEmpFamiliesMapper = emEmpFamiliesMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -63,6 +71,14 @@ public class EmEmpFamiliesResource {
         EmEmpFamilies emEmpFamilies = emEmpFamiliesMapper.toEntity(emEmpFamiliesDTO);
         emEmpFamilies = emEmpFamiliesRepository.save(emEmpFamilies);
         EmEmpFamiliesDTO result = emEmpFamiliesMapper.toDto(emEmpFamilies);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-families/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -87,6 +103,14 @@ public class EmEmpFamiliesResource {
         EmEmpFamilies emEmpFamilies = emEmpFamiliesMapper.toEntity(emEmpFamiliesDTO);
         emEmpFamilies = emEmpFamiliesRepository.save(emEmpFamilies);
         EmEmpFamiliesDTO result = emEmpFamiliesMapper.toDto(emEmpFamilies);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpFamiliesDTO.getId().toString()))
             .body(result);
@@ -148,7 +172,16 @@ public class EmEmpFamiliesResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpFamilies(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpFamilies : {}", id);
+        EmEmpFamilies family = emEmpFamiliesRepository.findOne(id);
         emEmpFamiliesRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        family.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        family.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

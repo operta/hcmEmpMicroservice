@@ -160,7 +160,7 @@ public class EmEmpTasksResource {
                 AuditUtil.createAuditEvent(
                         emEmpTasks.getIdEmployee().toString(),
                         ENTITY_NAME,
-                        id.toString(),
+                        emEmpTasks.getId().toString(),
                         Action.DELETE
                 )
         );

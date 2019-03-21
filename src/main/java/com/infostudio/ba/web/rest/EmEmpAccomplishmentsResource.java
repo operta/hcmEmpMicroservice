@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpAccomplishments;
 
 import com.infostudio.ba.repository.EmEmpAccomplishmentsRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpAccomplishmentsDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpAccomplishmentsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -41,9 +44,14 @@ public class EmEmpAccomplishmentsResource {
 
     private final EmEmpAccomplishmentsMapper emEmpAccomplishmentsMapper;
 
-    public EmEmpAccomplishmentsResource(EmEmpAccomplishmentsRepository emEmpAccomplishmentsRepository, EmEmpAccomplishmentsMapper emEmpAccomplishmentsMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpAccomplishmentsResource(EmEmpAccomplishmentsRepository emEmpAccomplishmentsRepository,
+                                        EmEmpAccomplishmentsMapper emEmpAccomplishmentsMapper,
+                                        ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpAccomplishmentsRepository = emEmpAccomplishmentsRepository;
         this.emEmpAccomplishmentsMapper = emEmpAccomplishmentsMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -63,6 +71,14 @@ public class EmEmpAccomplishmentsResource {
         EmEmpAccomplishments emEmpAccomplishments = emEmpAccomplishmentsMapper.toEntity(emEmpAccomplishmentsDTO);
         emEmpAccomplishments = emEmpAccomplishmentsRepository.save(emEmpAccomplishments);
         EmEmpAccomplishmentsDTO result = emEmpAccomplishmentsMapper.toDto(emEmpAccomplishments);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        emEmpAccomplishments.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-accomplishments/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -87,6 +103,14 @@ public class EmEmpAccomplishmentsResource {
         EmEmpAccomplishments emEmpAccomplishments = emEmpAccomplishmentsMapper.toEntity(emEmpAccomplishmentsDTO);
         emEmpAccomplishments = emEmpAccomplishmentsRepository.save(emEmpAccomplishments);
         EmEmpAccomplishmentsDTO result = emEmpAccomplishmentsMapper.toDto(emEmpAccomplishments);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        emEmpAccomplishments.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpAccomplishmentsDTO.getId().toString()))
             .body(result);
@@ -148,7 +172,16 @@ public class EmEmpAccomplishmentsResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpAccomplishments(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpAccomplishments : {}", id);
+        EmEmpAccomplishments accomplishment = emEmpAccomplishmentsRepository.findOne(id);
         emEmpAccomplishmentsRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        accomplishment.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        id.toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

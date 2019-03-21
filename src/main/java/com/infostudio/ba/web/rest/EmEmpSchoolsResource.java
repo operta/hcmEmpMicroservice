@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpSchools;
 
 import com.infostudio.ba.repository.EmEmpSchoolsRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpSchoolsDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpSchoolsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -40,9 +43,14 @@ public class EmEmpSchoolsResource {
 
     private final EmEmpSchoolsMapper emEmpSchoolsMapper;
 
-    public EmEmpSchoolsResource(EmEmpSchoolsRepository emEmpSchoolsRepository, EmEmpSchoolsMapper emEmpSchoolsMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpSchoolsResource(EmEmpSchoolsRepository emEmpSchoolsRepository,
+                                EmEmpSchoolsMapper emEmpSchoolsMapper,
+                                ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpSchoolsRepository = emEmpSchoolsRepository;
         this.emEmpSchoolsMapper = emEmpSchoolsMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -62,6 +70,14 @@ public class EmEmpSchoolsResource {
         EmEmpSchools emEmpSchools = emEmpSchoolsMapper.toEntity(emEmpSchoolsDTO);
         emEmpSchools = emEmpSchoolsRepository.save(emEmpSchools);
         EmEmpSchoolsDTO result = emEmpSchoolsMapper.toDto(emEmpSchools);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-schools/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -86,6 +102,14 @@ public class EmEmpSchoolsResource {
         EmEmpSchools emEmpSchools = emEmpSchoolsMapper.toEntity(emEmpSchoolsDTO);
         emEmpSchools = emEmpSchoolsRepository.save(emEmpSchools);
         EmEmpSchoolsDTO result = emEmpSchoolsMapper.toDto(emEmpSchools);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpSchoolsDTO.getId().toString()))
             .body(result);
@@ -140,7 +164,16 @@ public class EmEmpSchoolsResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpSchools(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpSchools : {}", id);
+        EmEmpSchools school = emEmpSchoolsRepository.findOne(id);
         emEmpSchoolsRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        school.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        school.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

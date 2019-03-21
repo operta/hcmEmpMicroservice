@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpDisabilities;
 
 import com.infostudio.ba.repository.EmEmpDisabilitiesRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpDisabilitiesDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpDisabilitiesMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -40,9 +43,14 @@ public class EmEmpDisabilitiesResource {
 
     private final EmEmpDisabilitiesMapper emEmpDisabilitiesMapper;
 
-    public EmEmpDisabilitiesResource(EmEmpDisabilitiesRepository emEmpDisabilitiesRepository, EmEmpDisabilitiesMapper emEmpDisabilitiesMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpDisabilitiesResource(EmEmpDisabilitiesRepository emEmpDisabilitiesRepository,
+                                     EmEmpDisabilitiesMapper emEmpDisabilitiesMapper,
+                                     ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpDisabilitiesRepository = emEmpDisabilitiesRepository;
         this.emEmpDisabilitiesMapper = emEmpDisabilitiesMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -62,6 +70,14 @@ public class EmEmpDisabilitiesResource {
         EmEmpDisabilities emEmpDisabilities = emEmpDisabilitiesMapper.toEntity(emEmpDisabilitiesDTO);
         emEmpDisabilities = emEmpDisabilitiesRepository.save(emEmpDisabilities);
         EmEmpDisabilitiesDTO result = emEmpDisabilitiesMapper.toDto(emEmpDisabilities);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-disabilities/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -86,6 +102,14 @@ public class EmEmpDisabilitiesResource {
         EmEmpDisabilities emEmpDisabilities = emEmpDisabilitiesMapper.toEntity(emEmpDisabilitiesDTO);
         emEmpDisabilities = emEmpDisabilitiesRepository.save(emEmpDisabilities);
         EmEmpDisabilitiesDTO result = emEmpDisabilitiesMapper.toDto(emEmpDisabilities);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpDisabilitiesDTO.getId().toString()))
             .body(result);
@@ -140,7 +164,16 @@ public class EmEmpDisabilitiesResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpDisabilities(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpDisabilities : {}", id);
+        EmEmpDisabilities disability = emEmpDisabilitiesRepository.findOne(id);
         emEmpDisabilitiesRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        disability.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        disability.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

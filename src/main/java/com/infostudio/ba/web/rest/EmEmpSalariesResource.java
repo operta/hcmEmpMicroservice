@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpSalaries;
 
 import com.infostudio.ba.repository.EmEmpSalariesRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpSalariesDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpSalariesMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -42,9 +45,14 @@ public class EmEmpSalariesResource {
 
     private final EmEmpSalariesMapper emEmpSalariesMapper;
 
-    public EmEmpSalariesResource(EmEmpSalariesRepository emEmpSalariesRepository, EmEmpSalariesMapper emEmpSalariesMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpSalariesResource(EmEmpSalariesRepository emEmpSalariesRepository,
+                                 EmEmpSalariesMapper emEmpSalariesMapper,
+                                 ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpSalariesRepository = emEmpSalariesRepository;
         this.emEmpSalariesMapper = emEmpSalariesMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -64,6 +72,14 @@ public class EmEmpSalariesResource {
         EmEmpSalaries emEmpSalaries = emEmpSalariesMapper.toEntity(emEmpSalariesDTO);
         emEmpSalaries = emEmpSalariesRepository.save(emEmpSalaries);
         EmEmpSalariesDTO result = emEmpSalariesMapper.toDto(emEmpSalaries);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-salaries/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -88,6 +104,14 @@ public class EmEmpSalariesResource {
         EmEmpSalaries emEmpSalaries = emEmpSalariesMapper.toEntity(emEmpSalariesDTO);
         emEmpSalaries = emEmpSalariesRepository.save(emEmpSalaries);
         EmEmpSalariesDTO result = emEmpSalariesMapper.toDto(emEmpSalaries);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpSalariesDTO.getId().toString()))
             .body(result);
@@ -157,7 +181,16 @@ public class EmEmpSalariesResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpSalaries(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpSalaries : {}", id);
+        EmEmpSalaries salary = emEmpSalariesRepository.findOne(id);
         emEmpSalariesRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        salary.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        salary.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

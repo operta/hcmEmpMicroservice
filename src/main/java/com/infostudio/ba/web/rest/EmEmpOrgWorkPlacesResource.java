@@ -1,6 +1,7 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpOrgWorkPlaces;
 
 import com.infostudio.ba.domain.EmEmpSalaries;
@@ -9,6 +10,7 @@ import com.infostudio.ba.repository.EmEmpSalariesRepository;
 import com.infostudio.ba.service.proxy.CoreMicroserviceProxy;
 import com.infostudio.ba.service.proxy.model.OgOrgWorkPlaces;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpOrgWorkPlacesDTO;
@@ -16,6 +18,7 @@ import com.infostudio.ba.service.mapper.EmEmpOrgWorkPlacesMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -50,14 +53,18 @@ public class EmEmpOrgWorkPlacesResource {
 
     private final CoreMicroserviceProxy coreMicroserviceProxy;
 
+    private final ApplicationEventPublisher applicationEventPublisher;
+
     public EmEmpOrgWorkPlacesResource(EmEmpOrgWorkPlacesRepository emEmpOrgWorkPlacesRepository,
                                       EmEmpOrgWorkPlacesMapper emEmpOrgWorkPlacesMapper,
                                       EmEmpSalariesRepository emEmpSalariesRepository,
-                                      CoreMicroserviceProxy coreMicroserviceProxy) {
+                                      CoreMicroserviceProxy coreMicroserviceProxy,
+                                      ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpOrgWorkPlacesRepository = emEmpOrgWorkPlacesRepository;
         this.emEmpOrgWorkPlacesMapper = emEmpOrgWorkPlacesMapper;
         this.emEmpSalariesRepository = emEmpSalariesRepository;
         this.coreMicroserviceProxy = coreMicroserviceProxy;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     public void createEmEmpSalary(EmEmpOrgWorkPlaces emEmpOrgWorkPlaces, String auth){
@@ -93,6 +100,14 @@ public class EmEmpOrgWorkPlacesResource {
         emEmpOrgWorkPlaces = emEmpOrgWorkPlacesRepository.save(emEmpOrgWorkPlaces);
         // createEmEmpSalary(emEmpOrgWorkPlaces, auth);
         EmEmpOrgWorkPlacesDTO result = emEmpOrgWorkPlacesMapper.toDto(emEmpOrgWorkPlaces);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-org-work-places/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -119,6 +134,14 @@ public class EmEmpOrgWorkPlacesResource {
         emEmpOrgWorkPlaces = emEmpOrgWorkPlacesRepository.save(emEmpOrgWorkPlaces);
         createEmEmpSalary(emEmpOrgWorkPlaces, auth);
         EmEmpOrgWorkPlacesDTO result = emEmpOrgWorkPlacesMapper.toDto(emEmpOrgWorkPlaces);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpOrgWorkPlacesDTO.getId().toString()))
             .body(result);
@@ -200,7 +223,16 @@ public class EmEmpOrgWorkPlacesResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpOrgWorkPlaces(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpOrgWorkPlaces : {}", id);
+        EmEmpOrgWorkPlaces workPlace = emEmpOrgWorkPlacesRepository.findOne(id);
         emEmpOrgWorkPlacesRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        workPlace.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        workPlace.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

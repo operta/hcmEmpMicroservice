@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpCitizenships;
 
 import com.infostudio.ba.repository.EmEmpCitizenshipsRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpCitizenshipsDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpCitizenshipsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -40,9 +43,14 @@ public class EmEmpCitizenshipsResource {
 
     private final EmEmpCitizenshipsMapper emEmpCitizenshipsMapper;
 
-    public EmEmpCitizenshipsResource(EmEmpCitizenshipsRepository emEmpCitizenshipsRepository, EmEmpCitizenshipsMapper emEmpCitizenshipsMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpCitizenshipsResource(EmEmpCitizenshipsRepository emEmpCitizenshipsRepository,
+                                     EmEmpCitizenshipsMapper emEmpCitizenshipsMapper,
+                                     ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpCitizenshipsRepository = emEmpCitizenshipsRepository;
         this.emEmpCitizenshipsMapper = emEmpCitizenshipsMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -62,6 +70,14 @@ public class EmEmpCitizenshipsResource {
         EmEmpCitizenships emEmpCitizenships = emEmpCitizenshipsMapper.toEntity(emEmpCitizenshipsDTO);
         emEmpCitizenships = emEmpCitizenshipsRepository.save(emEmpCitizenships);
         EmEmpCitizenshipsDTO result = emEmpCitizenshipsMapper.toDto(emEmpCitizenships);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-citizenships/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -86,6 +102,14 @@ public class EmEmpCitizenshipsResource {
         EmEmpCitizenships emEmpCitizenships = emEmpCitizenshipsMapper.toEntity(emEmpCitizenshipsDTO);
         emEmpCitizenships = emEmpCitizenshipsRepository.save(emEmpCitizenships);
         EmEmpCitizenshipsDTO result = emEmpCitizenshipsMapper.toDto(emEmpCitizenships);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpCitizenshipsDTO.getId().toString()))
             .body(result);
@@ -140,7 +164,16 @@ public class EmEmpCitizenshipsResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpCitizenships(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpCitizenships : {}", id);
+        EmEmpCitizenships citizenship = emEmpCitizenshipsRepository.findOne(id);
         emEmpCitizenshipsRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        citizenship.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        citizenship.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

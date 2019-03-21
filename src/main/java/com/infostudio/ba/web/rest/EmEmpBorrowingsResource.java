@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpBorrowings;
 
 import com.infostudio.ba.repository.EmEmpBorrowingsRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpBorrowingsDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpBorrowingsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -41,9 +44,14 @@ public class EmEmpBorrowingsResource {
 
     private final EmEmpBorrowingsMapper emEmpBorrowingsMapper;
 
-    public EmEmpBorrowingsResource(EmEmpBorrowingsRepository emEmpBorrowingsRepository, EmEmpBorrowingsMapper emEmpBorrowingsMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpBorrowingsResource(EmEmpBorrowingsRepository emEmpBorrowingsRepository,
+                                   EmEmpBorrowingsMapper emEmpBorrowingsMapper,
+                                   ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpBorrowingsRepository = emEmpBorrowingsRepository;
         this.emEmpBorrowingsMapper = emEmpBorrowingsMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -63,6 +71,14 @@ public class EmEmpBorrowingsResource {
         EmEmpBorrowings emEmpBorrowings = emEmpBorrowingsMapper.toEntity(emEmpBorrowingsDTO);
         emEmpBorrowings = emEmpBorrowingsRepository.save(emEmpBorrowings);
         EmEmpBorrowingsDTO result = emEmpBorrowingsMapper.toDto(emEmpBorrowings);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-borrowings/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -87,6 +103,14 @@ public class EmEmpBorrowingsResource {
         EmEmpBorrowings emEmpBorrowings = emEmpBorrowingsMapper.toEntity(emEmpBorrowingsDTO);
         emEmpBorrowings = emEmpBorrowingsRepository.save(emEmpBorrowings);
         EmEmpBorrowingsDTO result = emEmpBorrowingsMapper.toDto(emEmpBorrowings);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpBorrowingsDTO.getId().toString()))
             .body(result);
@@ -147,7 +171,16 @@ public class EmEmpBorrowingsResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpBorrowings(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpBorrowings : {}", id);
+        EmEmpBorrowings borrowing = emEmpBorrowingsRepository.findOne(id);
         emEmpBorrowingsRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        borrowing.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        borrowing.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

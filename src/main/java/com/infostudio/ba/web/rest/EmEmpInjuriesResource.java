@@ -1,10 +1,12 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpInjuries;
 
 import com.infostudio.ba.repository.EmEmpInjuriesRepository;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpInjuriesDTO;
@@ -12,6 +14,7 @@ import com.infostudio.ba.service.mapper.EmEmpInjuriesMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -40,9 +43,14 @@ public class EmEmpInjuriesResource {
 
     private final EmEmpInjuriesMapper emEmpInjuriesMapper;
 
-    public EmEmpInjuriesResource(EmEmpInjuriesRepository emEmpInjuriesRepository, EmEmpInjuriesMapper emEmpInjuriesMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpInjuriesResource(EmEmpInjuriesRepository emEmpInjuriesRepository,
+                                 EmEmpInjuriesMapper emEmpInjuriesMapper,
+                                 ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpInjuriesRepository = emEmpInjuriesRepository;
         this.emEmpInjuriesMapper = emEmpInjuriesMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -62,6 +70,14 @@ public class EmEmpInjuriesResource {
         EmEmpInjuries emEmpInjuries = emEmpInjuriesMapper.toEntity(emEmpInjuriesDTO);
         emEmpInjuries = emEmpInjuriesRepository.save(emEmpInjuries);
         EmEmpInjuriesDTO result = emEmpInjuriesMapper.toDto(emEmpInjuries);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-injuries/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -86,6 +102,14 @@ public class EmEmpInjuriesResource {
         EmEmpInjuries emEmpInjuries = emEmpInjuriesMapper.toEntity(emEmpInjuriesDTO);
         emEmpInjuries = emEmpInjuriesRepository.save(emEmpInjuries);
         EmEmpInjuriesDTO result = emEmpInjuriesMapper.toDto(emEmpInjuries);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpInjuriesDTO.getId().toString()))
             .body(result);
@@ -146,7 +170,16 @@ public class EmEmpInjuriesResource {
     @Timed
     public ResponseEntity<Void> deleteEmEmpInjuries(@PathVariable Long id) {
         log.debug("REST request to delete EmEmpInjuries : {}", id);
+        EmEmpInjuries injury = emEmpInjuriesRepository.findOne(id);
         emEmpInjuriesRepository.delete(id);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        injury.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        injury.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }

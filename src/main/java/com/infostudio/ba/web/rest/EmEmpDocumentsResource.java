@@ -1,11 +1,13 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Action;
 import com.infostudio.ba.domain.EmEmpDocuments;
 
 import com.infostudio.ba.repository.EmEmpDocumentsRepository;
 import com.infostudio.ba.service.proxy.CoreMicroserviceProxy;
 import com.infostudio.ba.web.rest.errors.BadRequestAlertException;
+import com.infostudio.ba.web.rest.util.AuditUtil;
 import com.infostudio.ba.web.rest.util.HeaderUtil;
 import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpDocumentsDTO;
@@ -14,6 +16,7 @@ import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -46,9 +49,14 @@ public class EmEmpDocumentsResource {
 
     private final EmEmpDocumentsMapper emEmpDocumentsMapper;
 
-    public EmEmpDocumentsResource(EmEmpDocumentsRepository emEmpDocumentsRepository, EmEmpDocumentsMapper emEmpDocumentsMapper) {
+    private final ApplicationEventPublisher applicationEventPublisher;
+
+    public EmEmpDocumentsResource(EmEmpDocumentsRepository emEmpDocumentsRepository,
+                                  EmEmpDocumentsMapper emEmpDocumentsMapper,
+                                  ApplicationEventPublisher applicationEventPublisher) {
         this.emEmpDocumentsRepository = emEmpDocumentsRepository;
         this.emEmpDocumentsMapper = emEmpDocumentsMapper;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     /**
@@ -68,6 +76,14 @@ public class EmEmpDocumentsResource {
         EmEmpDocuments emEmpDocuments = emEmpDocumentsMapper.toEntity(emEmpDocumentsDTO);
         emEmpDocuments = emEmpDocumentsRepository.save(emEmpDocuments);
         EmEmpDocumentsDTO result = emEmpDocumentsMapper.toDto(emEmpDocuments);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
         return ResponseEntity.created(new URI("/api/em-emp-documents/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -92,6 +108,14 @@ public class EmEmpDocumentsResource {
         EmEmpDocuments emEmpDocuments = emEmpDocumentsMapper.toEntity(emEmpDocumentsDTO);
         emEmpDocuments = emEmpDocumentsRepository.save(emEmpDocuments);
         EmEmpDocumentsDTO result = emEmpDocumentsMapper.toDto(emEmpDocuments);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.PUT
+                )
+        );
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, emEmpDocumentsDTO.getId().toString()))
             .body(result);
@@ -157,6 +181,14 @@ public class EmEmpDocumentsResource {
         EmEmpDocuments empDocuments = emEmpDocumentsRepository.findOne(id);
         emEmpDocumentsRepository.delete(id);
         coreMicroserviceProxy.deleteDmDocumentLink((long)empDocuments.getIdDocumentLink(), auth);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        empDocuments.getIdEmployee().getId().toString(),
+                        ENTITY_NAME,
+                        empDocuments.getId().toString(),
+                        Action.DELETE
+                )
+        );
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }
