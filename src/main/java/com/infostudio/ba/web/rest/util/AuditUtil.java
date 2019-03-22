@@ -1,11 +1,7 @@
 package com.infostudio.ba.web.rest.util;
 
-
-import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import com.infostudio.ba.domain.Action;
 import org.springframework.boot.actuate.audit.listener.AuditApplicationEvent;
 
