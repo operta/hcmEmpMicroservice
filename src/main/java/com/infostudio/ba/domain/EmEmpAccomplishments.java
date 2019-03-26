@@ -38,6 +38,9 @@ public class EmEmpAccomplishments implements Serializable {
 
     @Column(name = "location")
     private Long location;
+    
+    @Column(name = "location_name")
+    private String locationName;
 
     @Column(name = "association")
     private String association;
@@ -127,6 +130,19 @@ public class EmEmpAccomplishments implements Serializable {
 
     public EmEmpAccomplishments location(Long location) {
         this.location = location;
+        return this;
+    }
+    
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
+    }
+    
+    public String getLocationName() {
+        return locationName;
+    }
+    
+    public EmEmpAccomplishments locationName(String locationName) {
+        this.locationName = locationName;
         return this;
     }
 
@@ -306,6 +322,7 @@ public class EmEmpAccomplishments implements Serializable {
             ", description='" + getDescription() + "'" +
             ", organization='" + getOrganization() + "'" +
             ", location='" + getLocation() + "'" +
+            ", locationName='" + getLocationName() + "'" +
             ", association='" + getAssociation() + "'" +
             ", ongoing='" + getOngoing() + "'" +
             ", link='" + getLink() + "'" +
