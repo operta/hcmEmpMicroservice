@@ -11,6 +11,12 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring", uses = {})
 public interface EmEmpMetaDataMapper extends EntityMapper<EmEmpMetaDataDTO, EmEmpMetaData> {
 
+    @Mapping(source = "idEmployee", target = "idEmployee.id")
+    EmEmpMetaData toEntity(EmEmpMetaDataDTO emEmpMetaDataDTO);
+
+
+    @Mapping(source = "idEmployee.id", target = "idEmployee")
+    EmEmpMetaDataDTO toDto(EmEmpMetaData emEmpMetaDataD);
 
 
     default EmEmpMetaData fromId(Long id) {

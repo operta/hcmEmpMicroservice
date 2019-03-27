@@ -6,7 +6,7 @@ public class EmEmpMetaDataHelperDTO {
 
     private Long[] detailsIds;
 
-    private Long employeeId;
+    private Long idEmployee;
 
     public Long[] getDetailsIds() {
         return detailsIds;
@@ -16,19 +16,19 @@ public class EmEmpMetaDataHelperDTO {
         this.detailsIds = detailsIds;
     }
 
-    public Long getEmployeeId() {
-        return employeeId;
+    public Long getIdEmployee() {
+        return idEmployee;
     }
 
-    public void setEmployeeId(Long idEmployee) {
-        this.employeeId = idEmployee;
+    public void setIdEmployee(Long idEmployee) {
+        this.idEmployee = idEmployee;
     }
 
     @Override
     public String toString() {
         return "EmEmpMetaDataHelperDTO{" +
                 "detailsIds=" + Arrays.toString(detailsIds) +
-                ", idEmployee=" + employeeId +
+                ", idEmployee=" + idEmployee +
                 '}';
     }
 }

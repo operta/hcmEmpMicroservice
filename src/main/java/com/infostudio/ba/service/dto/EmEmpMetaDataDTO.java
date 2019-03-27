@@ -32,7 +32,7 @@ public class EmEmpMetaDataDTO implements Serializable {
 
     private Integer idDetail;
 
-    private EmEmployees idEmployee;
+    private Long idEmployee;
 
     public Integer getIdDetail() {
         return idDetail;
@@ -42,11 +42,11 @@ public class EmEmpMetaDataDTO implements Serializable {
         this.idDetail = idDetail;
     }
 
-    public EmEmployees getIdEmployee() {
+    public Long getIdEmployee() {
         return idEmployee;
     }
 
-    public void setIdEmployee(EmEmployees idEmployee) {
+    public void setIdEmployee(Long idEmployee) {
         this.idEmployee = idEmployee;
     }
 

@@ -64,6 +64,9 @@ public class EmEmpMetaDataResource {
         if (emEmpMetaDataDTO.getId() != null) {
             throw new BadRequestAlertException("A new emEmpMetaData cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        if (emEmpMetaDataDTO.getTitle() == null || emEmpMetaDataDTO.getTitle().trim().isEmpty()) {
+            throw new BadRequestAlertException("You need to add a title.", ENTITY_NAME, "emEmpMetaDataTitleRequired");
+        }
         EmEmpMetaData emEmpMetaData = emEmpMetaDataMapper.toEntity(emEmpMetaDataDTO);
         emEmpMetaData = emEmpMetaDataRepository.save(emEmpMetaData);
         EmEmpMetaDataDTO result = emEmpMetaDataMapper.toDto(emEmpMetaData);
@@ -74,8 +77,8 @@ public class EmEmpMetaDataResource {
 
     @PostMapping("/em-emp-meta-data/new")
     public ResponseEntity<EmEmpMetaDataHelperDTO> createMetadataForEmployee(@RequestBody EmEmpMetaDataHelperDTO emEmpMetaDataHelper) {
-        log.debug("REST request to save EmEmpMetadata for employee with id: {}", emEmpMetaDataHelper.getEmployeeId());
-        if (emEmpMetaDataHelper.getEmployeeId() == null) {
+        log.debug("REST request to save EmEmpMetadata for employee with id: {}", emEmpMetaDataHelper.getIdEmployee());
+        if (emEmpMetaDataHelper.getIdEmployee() == null) {
             throw new BadRequestAlertException("Employee id is required.",
                     ENTITY_NAME, "employeeIdRequired");
         }
@@ -83,16 +86,25 @@ public class EmEmpMetaDataResource {
             throw new BadRequestAlertException("You must provide the id of the details associated with the employee",
                     ENTITY_NAME, "detailsRequired");
         }
-        boolean employeeExists = emEmployeesRepository.exists(emEmpMetaDataHelper.getEmployeeId());
+        boolean employeeExists = emEmployeesRepository.exists(emEmpMetaDataHelper.getIdEmployee());
         if (!employeeExists) {
-            String employeeDoesNotExistMessage = String.format("Employee with id %d does not exist", emEmpMetaDataHelper.getEmployeeId());
+            String employeeDoesNotExistMessage = String.format("Employee with id %d does not exist", emEmpMetaDataHelper.getIdEmployee());
             throw new BadRequestAlertException(employeeDoesNotExistMessage,
                     ENTITY_NAME, "employeeDoesNotExist");
         }
-        EmEmpMetaData emEmpMetaData = new EmEmpMetaData();
-        emEmpMetaData.setIdEmployee(new EmEmployees().withId(emEmpMetaDataHelper.getEmployeeId()));
+        long employeeId = emEmpMetaDataHelper.getIdEmployee();
 
         for (Long detailId : emEmpMetaDataHelper.getDetailsIds()) {
+            boolean metaDataWithSameEmployeeAndDetailExist = emEmpMetaDataRepository.existsByIdEmployeeIdAndIdDetail(employeeId, detailId.intValue());
+            if (metaDataWithSameEmployeeAndDetailExist) {
+                throw new BadRequestAlertException("You already are associated with a detail with the given id.",
+                        ENTITY_NAME, "idEmployeeAndDetailIdCombinationExists");
+            }
+        }
+
+        for (Long detailId : emEmpMetaDataHelper.getDetailsIds()) {
+            EmEmpMetaData emEmpMetaData = new EmEmpMetaData();
+            emEmpMetaData.setIdEmployee(new EmEmployees().withId(emEmpMetaDataHelper.getIdEmployee()));
             emEmpMetaData.setIdDetail(detailId.intValue());
             emEmpMetaDataRepository.save(emEmpMetaData);
         }
