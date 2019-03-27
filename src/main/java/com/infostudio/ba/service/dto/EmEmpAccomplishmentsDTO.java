@@ -24,6 +24,8 @@ public class EmEmpAccomplishmentsDTO implements Serializable {
     private String organization;
 
     private Long location;
+    
+    private String locationName;
 
     private String association;
 
@@ -93,6 +95,14 @@ public class EmEmpAccomplishmentsDTO implements Serializable {
 
     public void setLocation(Long location) {
         this.location = location;
+    }
+    
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
     }
 
     public String getAssociation() {
@@ -244,6 +254,7 @@ public class EmEmpAccomplishmentsDTO implements Serializable {
             ", description='" + getDescription() + "'" +
             ", organization='" + getOrganization() + "'" +
             ", location='" + getLocation() + "'" +
+            ", locationName='" + getLocationName() + "'" +
             ", association='" + getAssociation() + "'" +
             ", ongoing='" + getOngoing() + "'" +
             ", link='" + getLink() + "'" +
