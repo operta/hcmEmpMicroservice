@@ -15,4 +15,6 @@ import java.util.List;
 @Repository
 public interface EmEmpMetaDataRepository extends JpaRepository<EmEmpMetaData, Long> {
     List<EmEmpMetaData> findByIdEmployeeId(Long id);
+
+    boolean existsByIdEmployeeIdAndIdDetail(Long employeeId, Integer detailId);
 }
