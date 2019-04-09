@@ -1,19 +1,20 @@
 package com.infostudio.ba.service.dto;
 
-import java.util.Arrays;
+
+import com.infostudio.ba.domain.Detail;
 
 public class EmEmpMetaDataHelperDTO {
 
-    private Long[] detailsIds;
+    private Detail[] details;
 
     private Long idEmployee;
 
-    public Long[] getDetailsIds() {
-        return detailsIds;
+    public Detail[] getDetails() {
+        return details;
     }
 
-    public void setDetailsIds(Long[] detailsIds) {
-        this.detailsIds = detailsIds;
+    public void setDetails(Detail[] details) {
+        this.details = details;
     }
 
     public Long getIdEmployee() {
@@ -22,13 +23,5 @@ public class EmEmpMetaDataHelperDTO {
 
     public void setIdEmployee(Long idEmployee) {
         this.idEmployee = idEmployee;
-    }
-
-    @Override
-    public String toString() {
-        return "EmEmpMetaDataHelperDTO{" +
-                "detailsIds=" + Arrays.toString(detailsIds) +
-                ", idEmployee=" + idEmployee +
-                '}';
     }
 }

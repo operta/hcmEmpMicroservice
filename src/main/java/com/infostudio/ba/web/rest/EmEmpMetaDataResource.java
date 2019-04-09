@@ -1,6 +1,7 @@
 package com.infostudio.ba.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.infostudio.ba.domain.Detail;
 import com.infostudio.ba.domain.EmEmpMetaData;
 import com.infostudio.ba.domain.EmEmployees;
 import com.infostudio.ba.repository.EmEmpMetaDataRepository;
@@ -82,7 +83,7 @@ public class EmEmpMetaDataResource {
             throw new BadRequestAlertException("Employee id is required.",
                     ENTITY_NAME, "employeeIdRequired");
         }
-        if (emEmpMetaDataHelper.getDetailsIds() == null) {
+        if (emEmpMetaDataHelper.getDetails() == null) {
             throw new BadRequestAlertException("You must provide the id of the details associated with the employee",
                     ENTITY_NAME, "detailsRequired");
         }
@@ -94,18 +95,19 @@ public class EmEmpMetaDataResource {
         }
         long employeeId = emEmpMetaDataHelper.getIdEmployee();
 
-        for (Long detailId : emEmpMetaDataHelper.getDetailsIds()) {
-            boolean metaDataWithSameEmployeeAndDetailExist = emEmpMetaDataRepository.existsByIdEmployeeIdAndIdDetail(employeeId, detailId.intValue());
+        for (Detail detail : emEmpMetaDataHelper.getDetails()) {
+            boolean metaDataWithSameEmployeeAndDetailExist = emEmpMetaDataRepository.existsByIdEmployeeIdAndIdDetail(employeeId, detail.getId().intValue());
             if (metaDataWithSameEmployeeAndDetailExist) {
                 throw new BadRequestAlertException("You already are associated with a detail with the given id.",
                         ENTITY_NAME, "idEmployeeAndDetailIdCombinationExists");
             }
         }
 
-        for (Long detailId : emEmpMetaDataHelper.getDetailsIds()) {
+        for (Detail detail : emEmpMetaDataHelper.getDetails()) {
             EmEmpMetaData emEmpMetaData = new EmEmpMetaData();
             emEmpMetaData.setIdEmployee(new EmEmployees().withId(emEmpMetaDataHelper.getIdEmployee()));
-            emEmpMetaData.setIdDetail(detailId.intValue());
+            emEmpMetaData.setIdDetail(detail.getId().intValue());
+            emEmpMetaData.setTitle(detail.getTitle());
             emEmpMetaDataRepository.save(emEmpMetaData);
         }
         return ResponseEntity.created(URI.create("/api/em-emp-meta-data"))
