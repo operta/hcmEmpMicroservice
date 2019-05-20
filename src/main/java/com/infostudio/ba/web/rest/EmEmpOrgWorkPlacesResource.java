@@ -82,6 +82,39 @@ public class EmEmpOrgWorkPlacesResource {
     }
 
     /**
+     * POST  /em-emp-org-work-places/create-from-applicant : Create a new emEmpOrgWorkPlaces.
+     *
+     * @param emEmpOrgWorkPlacesDTO the emEmpOrgWorkPlacesDTO to create
+     * @return the ResponseEntity with status 201 (Created) and with body the new emEmpOrgWorkPlacesDTO, or with status 400 (Bad Request) if the emEmpOrgWorkPlaces has already an ID
+     * @throws URISyntaxException if the Location URI syntax is incorrect
+     */
+    @PostMapping("/em-emp-org-work-places/create-from-applicant")
+    @Timed
+    public ResponseEntity<EmEmpOrgWorkPlacesDTO> createEmEmpOrgWorkPlacesFromApplicant(@Valid @RequestBody EmEmpOrgWorkPlacesDTO emEmpOrgWorkPlacesDTO,
+                                                                          @RequestHeader("Authorization") String auth) throws URISyntaxException {
+        log.debug("REST request to save EmEmpOrgWorkPlaces : {}", emEmpOrgWorkPlacesDTO);
+        if (emEmpOrgWorkPlacesDTO.getId() != null) {
+            throw new BadRequestAlertException("A new emEmpOrgWorkPlaces cannot already have an ID", ENTITY_NAME, "idexists");
+        }
+        EmEmpOrgWorkPlaces emEmpOrgWorkPlaces = emEmpOrgWorkPlacesMapper.toEntity(emEmpOrgWorkPlacesDTO);
+        emEmpOrgWorkPlaces = emEmpOrgWorkPlacesRepository.save(emEmpOrgWorkPlaces);
+        // createEmEmpSalary(emEmpOrgWorkPlaces, auth);
+        EmEmpOrgWorkPlacesDTO result = emEmpOrgWorkPlacesMapper.toDto(emEmpOrgWorkPlaces);
+        applicationEventPublisher.publishEvent(
+                AuditUtil.createAuditEvent(
+                        result.getIdEmployeeId().toString(),
+                        ENTITY_NAME,
+                        result.getId().toString(),
+                        Action.POST
+                )
+        );
+        return ResponseEntity.created(new URI("/api/em-emp-org-work-places/" + result.getId()))
+                .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
+                .body(result);
+    }
+
+
+    /**
      * POST  /em-emp-org-work-places : Create a new emEmpOrgWorkPlaces.
      *
      * @param emEmpOrgWorkPlacesDTO the emEmpOrgWorkPlacesDTO to create
