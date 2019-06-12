@@ -59,7 +59,7 @@ public final class AuditUtil {
         auditMessage.setParam(entityId);
         switch (type) {
             case POST:
-                auditMessage.setMessage(APPLICATION_NAME + "." + entityName + ".created");
+				auditMessage.setMessage(APPLICATION_NAME + "." + entityName + ".created");
                 break;
             case PUT:
                 auditMessage.setMessage(APPLICATION_NAME + "." + entityName + ".updated");

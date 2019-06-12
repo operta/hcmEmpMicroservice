@@ -12,6 +12,7 @@ import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpAccomplishmentsDTO;
 import com.infostudio.ba.service.mapper.EmEmpAccomplishmentsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
+import org.checkerframework.checker.units.qual.Time;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEventPublisher;
@@ -22,6 +23,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.Header;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -53,6 +55,18 @@ public class EmEmpAccomplishmentsResource {
         this.emEmpAccomplishmentsMapper = emEmpAccomplishmentsMapper;
         this.applicationEventPublisher = applicationEventPublisher;
     }
+
+
+    @PostMapping("/em-emp-accomplishments/list")
+	@Timed
+	public ResponseEntity<Void> createEmEmpAccomplishmentsFromList(@RequestBody List<EmEmpAccomplishmentsDTO> accomplishments) throws URISyntaxException {
+		for (EmEmpAccomplishmentsDTO accomplishment : accomplishments) {
+			createEmEmpAccomplishments(accomplishment);
+		}
+		return ResponseEntity.created(URI.create("/api/em-emp-accomplishments"))
+				.headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, null))
+				.build();
+	}
 
     /**
      * POST  /em-emp-accomplishments : Create a new emEmpAccomplishments.

@@ -28,6 +28,8 @@ public class EmEmpContactsDTO implements Serializable {
 
     private EmEmployees idEmployee;
 
+    private Long idContactType;
+
     public Long getId() {
         return id;
     }
@@ -56,7 +58,15 @@ public class EmEmpContactsDTO implements Serializable {
         return description;
     }
 
-    public void setDescription(String description) {
+	public Long getIdContactType() {
+		return idContactType;
+	}
+
+	public void setIdContactType(Long idContactType) {
+		this.idContactType = idContactType;
+	}
+
+	public void setDescription(String description) {
         this.description = description;
     }
 
@@ -113,18 +123,19 @@ public class EmEmpContactsDTO implements Serializable {
         return Objects.hashCode(getId());
     }
 
-    @Override
-    public String toString() {
-        return "EmEmpContactsDTO{" +
-                "id=" + id +
-                ", contact='" + contact + '\'' +
-                ", description='" + description + '\'' +
-                ", createdBy='" + createdBy + '\'' +
-                ", createdAt=" + createdAt +
-                ", updatedBy='" + updatedBy + '\'' +
-                ", updatedAt=" + updatedAt +
-                ", idEmployee=" + idEmployee +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "EmEmpContactsDTO{" +
+				"id=" + id +
+				", contact='" + contact + '\'' +
+				", description='" + description + '\'' +
+				", createdBy='" + createdBy + '\'' +
+				", createdAt=" + createdAt +
+				", updatedBy='" + updatedBy + '\'' +
+				", updatedAt=" + updatedAt +
+				", idEmployee=" + idEmployee +
+				", idContactType=" + idContactType +
+				'}';
+	}
 
 }
