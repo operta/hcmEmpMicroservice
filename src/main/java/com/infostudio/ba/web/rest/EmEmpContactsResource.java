@@ -12,6 +12,7 @@ import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpContactsDTO;
 import com.infostudio.ba.service.mapper.EmEmpContactsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
+import org.checkerframework.checker.units.qual.Time;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEventPublisher;
@@ -52,6 +53,17 @@ public class EmEmpContactsResource {
         this.emEmpContactsMapper = emEmpContactsMapper;
         this.applicationEventPublisher = applicationEventPublisher;
     }
+
+    @PostMapping("/em-emp-contacts/list")
+	@Timed
+	public ResponseEntity<Void> createEmEmpContactsFromList(@RequestBody List<EmEmpContactsDTO> emEmpContactsDTOS) throws URISyntaxException {
+		for (EmEmpContactsDTO contact : emEmpContactsDTOS) {
+			createEmEmpContacts(contact);
+		}
+		return ResponseEntity.created(new URI("/api/em-emp-contacts"))
+				.headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, null))
+				.build();
+	}
 
     /**
      * POST  /em-emp-contacts : Create a new emEmpContacts.

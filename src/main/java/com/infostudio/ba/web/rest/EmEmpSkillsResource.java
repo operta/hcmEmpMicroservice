@@ -12,6 +12,7 @@ import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpSkillsDTO;
 import com.infostudio.ba.service.mapper.EmEmpSkillsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
+import org.checkerframework.checker.units.qual.Time;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEventPublisher;
@@ -52,6 +53,18 @@ public class EmEmpSkillsResource {
         this.emEmpSkillsMapper = emEmpSkillsMapper;
         this.applicationEventPublisher = applicationEventPublisher;
     }
+
+    @PostMapping("/em-emp-skills/list")
+	@Timed
+	public ResponseEntity<Void> createEmEmpSkillsFromList(@RequestBody List<EmEmpSkillsDTO> skills) throws URISyntaxException {
+		for (EmEmpSkillsDTO skill : skills) {
+			createEmEmpSkills(skill);
+		}
+
+		return ResponseEntity.created(new URI("/api/em-emp-skills"))
+				.headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, null))
+				.build();
+	}
 
     /**
      * POST  /em-emp-skills : Create a new emEmpSkills.

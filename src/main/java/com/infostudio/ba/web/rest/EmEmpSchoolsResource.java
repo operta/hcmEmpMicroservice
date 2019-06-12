@@ -12,6 +12,7 @@ import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpSchoolsDTO;
 import com.infostudio.ba.service.mapper.EmEmpSchoolsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
+import org.checkerframework.checker.units.qual.Time;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEventPublisher;
@@ -52,6 +53,18 @@ public class EmEmpSchoolsResource {
         this.emEmpSchoolsMapper = emEmpSchoolsMapper;
         this.applicationEventPublisher = applicationEventPublisher;
     }
+
+    @PostMapping("/em-emp-schools/list")
+	@Timed
+	public ResponseEntity<Void> createEmEmpSchoolsFromList(@RequestBody List<EmEmpSchoolsDTO> schools) throws URISyntaxException {
+		for (EmEmpSchoolsDTO school : schools) {
+			createEmEmpSchools(school);
+		}
+
+		return ResponseEntity.created(new URI("/api/em-emp-schools"))
+				.headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, null))
+				.build();
+	}
 
     /**
      * POST  /em-emp-schools : Create a new emEmpSchools.

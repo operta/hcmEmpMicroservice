@@ -60,6 +60,18 @@ public class EmEmpPreviousJobsResource {
         this.applicationEventPublisher = applicationEventPublisher;
     }
 
+
+    @PostMapping("/em-emp-previous-jobs/list")
+	@Timed
+	public ResponseEntity<Void> createEmployeePreviousJobs(@RequestBody List<EmEmpPreviousJobsDTO> empPreviousJobsDTO) throws URISyntaxException {
+		for (EmEmpPreviousJobsDTO previousJob : empPreviousJobsDTO) {
+			createEmEmpPreviousJobs(previousJob);
+		}
+		return ResponseEntity.created(new URI("/api/em-emp-previous-jobs"))
+				.headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME,  null))
+				.build();
+	}
+
     /**
      * POST  /em-emp-previous-jobs : Create a new emEmpPreviousJobs.
      *

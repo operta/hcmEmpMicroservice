@@ -13,6 +13,7 @@ import com.infostudio.ba.web.rest.util.PaginationUtil;
 import com.infostudio.ba.service.dto.EmEmpDocumentsDTO;
 import com.infostudio.ba.service.mapper.EmEmpDocumentsMapper;
 import io.github.jhipster.web.util.ResponseUtil;
+import org.checkerframework.checker.units.qual.Time;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +59,17 @@ public class EmEmpDocumentsResource {
         this.emEmpDocumentsMapper = emEmpDocumentsMapper;
         this.applicationEventPublisher = applicationEventPublisher;
     }
+
+    @PostMapping("/em-emp-documents/list")
+	@Timed
+	public ResponseEntity<Void> createEmEmpDocumentsFromList(@RequestBody List<EmEmpDocumentsDTO> documents) throws URISyntaxException {
+		for (EmEmpDocumentsDTO document : documents) {
+			createEmEmpDocuments(document);
+		}
+		return ResponseEntity.created(new URI("/api/em-emp-documents"))
+				.headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, null))
+				.build();
+	}
 
     /**
      * POST  /em-emp-documents : Create a new emEmpDocuments.
