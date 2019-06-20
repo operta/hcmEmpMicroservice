@@ -26,5 +26,7 @@ public interface EmEmpOrgWorkPlacesRepository extends JpaRepository<EmEmpOrgWork
 
     List<EmEmpOrgWorkPlaces> findAllById(Long id);
 
-    List<EmEmpOrgWorkPlaces> findAllByIdEmployeeIdAndDateToIsNullOrDateToGreaterThanEqual(Long idEmployee, LocalDate dateTo);
+
+    @Query("SELECT em FROM EmEmpOrgWorkPlaces em WHERE em.idEmployee.id=?1 AND (em.dateTo IS NULL OR em.dateTo >= ?2)")
+    List<EmEmpOrgWorkPlaces> findEmEmpOrgWorkPlacesForEmployees(Long idEmployee, LocalDate dateTo);
 }
