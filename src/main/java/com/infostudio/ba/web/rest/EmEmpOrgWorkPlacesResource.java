@@ -231,7 +231,7 @@ public class EmEmpOrgWorkPlacesResource {
     @Timed
     public ResponseEntity<List<EmEmpOrgWorkPlacesDTO>> getAllEmEmpOrgWorkPlacesByEmpId(@PathVariable Long id) {
         log.debug("REST request to get all EmEmpOrgWorkPlaces by Employee id : {}", id);
-        List<EmEmpOrgWorkPlaces> emEmpOrgWorkPlacesList = emEmpOrgWorkPlacesRepository.findAllByIdEmployeeIdAndDateToIsNullOrDateToGreaterThanEqual(id,
+        List<EmEmpOrgWorkPlaces> emEmpOrgWorkPlacesList = emEmpOrgWorkPlacesRepository.findEmEmpOrgWorkPlacesForEmployees(id,
                 LocalDate.now());
         List<EmEmpOrgWorkPlacesDTO> emEmpOrgWorkPlacesDTOList = emEmpOrgWorkPlacesMapper.toDto(emEmpOrgWorkPlacesList);
         return ResponseEntity.ok(emEmpOrgWorkPlacesDTOList);

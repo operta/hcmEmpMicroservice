@@ -16,8 +16,8 @@ public interface EmEmpOrgWorkPlacesMapper extends EntityMapper<EmEmpOrgWorkPlace
     @Mapping(source = "idContractType.name", target = "idContractTypeName")
     EmEmpOrgWorkPlacesDTO toDto(EmEmpOrgWorkPlaces emEmpOrgWorkPlaces);
 
-    @Mapping(source = "idEmployeeId", target = "idEmployee")
-    @Mapping(source = "idContractTypeId", target = "idContractType")
+    @Mapping(source = "idEmployeeId", target = "idEmployee.id")
+    @Mapping(source = "idContractTypeId", target = "idContractType.id")
     EmEmpOrgWorkPlaces toEntity(EmEmpOrgWorkPlacesDTO emEmpOrgWorkPlacesDTO);
 
     default EmEmpOrgWorkPlaces fromId(Long id) {
